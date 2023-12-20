@@ -75,9 +75,9 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
                     .setBtnPositive(getString(R.string.confirm), false, new MainInterface() {
                         @Override
                         public void onCustomDialogItemClick() {
-                            AppStorage.logout();
-                            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-                            finish();
+                         .
+			 .
+			 .
                         }
                     }).setBtnNeutral(getString(R.string.cancel), new MainInterface() {
                         @Override
