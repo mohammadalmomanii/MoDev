@@ -30,6 +30,16 @@ dependencies {
 }
 ```
 
+**3-**` build.gradle.kts (module :app) `
+```gradle
+android {
+    minSdk = 27
+    dataBinding { enable = true }
+}
+```
+
+
+
 
 
 
