@@ -109,7 +109,7 @@ The Zoom ImageView component allows users to zoom in and out of images with ease
 #### Usage 
 
 ```xml
-<com.lss.mreapp.zoomImage.ZoomImageView
+<com.mohammadalmomani.modevlib.zoomImage.ZoomImageView
         android:id="@+id/iv_zoom_image"
         android:layout_width="@dimen/_150dp"
         android:layout_height="@dimen/_150dp"
