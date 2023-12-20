@@ -7,6 +7,12 @@ android {
     namespace = "com.mohammadalmomani.modevlib"
     compileSdk = 34
 
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
     defaultConfig {
         minSdk = 27
 
@@ -36,4 +42,21 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+// Maven publishing configuration
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+
+            groupId = "com.mohammadalmomani.modevlib"
+            artifactId = "modevlib"
+            version = "1.0.0"
+
+            // Optional: Customize other publication settings if needed
+            afterEvaluate {
+                from(components["release"])
+            }}
+    }
+
 }
