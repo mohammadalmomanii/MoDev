@@ -14,6 +14,7 @@ public class TopSheetDialogFragment extends AppCompatDialogFragment {
     }
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
         return new TopSheetDialog(getContext(), getTheme());
     }
 
