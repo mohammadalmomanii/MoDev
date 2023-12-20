@@ -140,20 +140,22 @@ The Zoom ImageView component allows users to zoom in and out of images with ease
 
  Make your fragment extend TopSheetDialogFragment like this
 
+**1-** `create a fragment` :
 ```java
            
             public class Fragment extends TopSheetDialogFragment {
-                                                .
-                                                .
-                                                .
-                                                .
+		.
+		.
+		.
             }
-                       --------------------------------------------------------
-
-            Fragment.newInstance().show(getSupportFragmentManager(),TAG);
-
-
+                      
 ```
+**2-** `call your fragment` :
+```java
+            Fragment.newInstance().show(getSupportFragmentManager(),TAG);
+```
+
+
 
 ![Android+Top+Sheet+Animation](https://github.com/mohammadalmomanii/MoDev/assets/91605807/9cc74bfb-56d3-4f03-895b-5052a390f668)
 
