@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_10"
+        android:maxHeight="@dimen/_150dp"
+        android:minWidth="@dimen/_210dp"
+        android:orientation="vertical"
+        android:padding="@dimen/_5dp"
+        android:showDividers="middle"
+        android:backgroundTint="@color/white"
+        tools:context=".support.CustomDialogFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/_150dp"
+            android:minWidth="@dimen/_210dp"
+            android:orientation="vertical"
+            android:padding="@dimen/_5dp"
+            android:showDividers="middle"
+            tools:context=".support.CustomDialogFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="@dimen/_17dp"
+                    android:layout_height="@dimen/_17dp"
+                    android:background="@drawable/shape_rounded_2"
+                    android:backgroundTint="@color/black"
+                    android:padding="@dimen/_2dp" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textSize="@dimen/_9sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_7sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lay_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:counterMaxLength="200"
+                android:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/notes"
+                    android:inputType="text|textVisiblePassword"
+                    android:maxLength="200"
+                    android:singleLine="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:padding="@dimen/_3dp">
+
+                <Button
+                    android:id="@+id/btn_neutral"
+                    style="@style/OutlineButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_1dp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_50dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_negative"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toTopOf="@+id/btn_positive"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:rippleColor="@color/primary_light" />
+
+                <Button
+                    android:id="@+id/btn_additional"
+                    style="@style/OutlineButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_1dp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_50dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_negative"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toTopOf="@+id/btn_positive"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:rippleColor="@color/primary_light" />
+
+                <Button
+                    android:id="@+id/btn_negative"
+                    style="@style/OutlineButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="@dimen/_1dp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_50dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_positive"
+                    app:layout_constraintHorizontal_bias="0.952"
+                    app:layout_constraintTop_toTopOf="@+id/btn_positive"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:rippleColor="@color/red" />
+
+                <Button
+                    android:id="@+id/btn_positive"
+                    style="@style/OutlineButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_1dp"
+                    android:layout_weight="1"
+                    android:minWidth="@dimen/_50dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.826"
+                    app:rippleColor="@color/green" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,111 @@
+<resources>
+
+    <!-- APP SETTING STRINGS   -->
+    <string name="top_sheet_behavior" translatable="false">com.mohammadalmomani.modev.topSheetDialog.TopSheetBehavior</string>
+
+    <!--    -->
+    <string name="app_name">MoDev</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="update">Update</string>
+    <string name="create">Create</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="confirm">Confirm</string>
+    <string name="continuea">Continue</string>
+    <string name="select">Select</string>
+    <string name="send">Send</string>
+    <string name="submit">Submit</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="language">Language</string>
+    <string name="help">Help</string>
+    <string name="feedback">Feedback</string>
+    <string name="about">About</string>
+    <string name="share">Share</string>
+    <string name="download">Download</string>
+    <string name="upload">Upload</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+    <string name="view">View</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="refresh">Refresh</string>
+    <string name="more">More</string>
+    <string name="less">Less</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="warning">Warning</string>
+    <string name="info">Info</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="calendar">Calendar</string>
+    <string name="location">Location</string>
+    <string name="contacts">Contacts</string>
+    <string name="privacy">Privacy</string>
+    <string name="terms">Terms</string>
+    <string name="conditions">Conditions</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="read">Read</string>
+    <string name="notes">Notes</string>
+    <string name="note">Note</string>
+    <string name="write">Write</string>
+
+    <!-- Common Actions -->
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="browse">Browse</string>
+
+    <!-- Internet States -->
+    <string name="internet_connected">Internet Connected</string>
+    <string name="internet_disconnected">Internet Disconnected</string>
+    <string name="connecting">Connecting...</string>
+    <string name="loading">Loading...</string>
+
+    <!-- Network Errors -->
+    <string name="network_error">Network Error</string>
+    <string name="connection_timeout">Connection Timeout</string>
+    <string name="server_unreachable">Server Unreachable</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+
+    <!-- Web Content -->
+    <string name="web_page">Web Page</string>
+    <string name="website">Website</string>
+    <string name="url">URL</string>
+    <string name="web_content">Web Content</string>
+
+    <!-- User Authentication -->
+    <string name="login_required">Login Required</string>
+    <string name="logout_confirmation">Logout Confirmation</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <!-- Security -->
+    <string name="security">Security</string>
+    <string name="terms_conditions">Terms and Conditions</string>
+
+    <!-- Notifications -->
+    <string name="new_notification">New Notification</string>
+
+    <!-- Messaging -->
+    <string name="chat">Chat</string>
+    <string name="send_message">Send Message</string>
+    <string name="receive_message">Receive Message</string>
+
+    <!-- Error Handling -->
+    <string name="try_again">Try Again</string>
+    <string name="contact_support">Contact Support</string>
+
+</resources>

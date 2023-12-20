@@ -7,6 +7,9 @@ android {
     namespace = "com.mohammadalmomani.modevlib"
     compileSdk = 34
 
+    dataBinding {
+        enable = true
+    }
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -42,6 +45,18 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+
+    /*********************|Get Image via url|*********************/
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+//    /*********************|generate excl file|*********************/
+//    implementation("org.apache.poi:poi:5.2.3")
+//    implementation("org.apache.poi:poi-ooxml:5.2.3")
+
+//    /*********************|generate pdf file|*********************/
+//    implementation("com.itextpdf:itextpdf:5.5.13.2")
+//    implementation("androidx.print:print:1.0.0")
 }
 
 // Maven publishing configuration
@@ -56,7 +71,8 @@ publishing {
             // Optional: Customize other publication settings if needed
             afterEvaluate {
                 from(components["release"])
-            }}
+            }
+        }
     }
 
 }

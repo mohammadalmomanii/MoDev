@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- APP SETTING STRINGS   -->
+    <string name="top_sheet_behavior" translatable="false">com.mohammadalmomani.modev.topSheetDialog.TopSheetBehavior</string>
+
+    <!--    -->
+    <string name="app_name">MoDev</string>
+    <string name="cancel">إلغاء</string>
+    <string name="close">إغلاق</string>
+    <string name="delete">حذف</string>
+    <string name="edit">تحرير</string>
+    <string name="update">تحديث</string>
+    <string name="create">إنشاء</string>
+    <string name="back">رجوع</string>
+    <string name="next">التالي</string>
+    <string name="confirm">تأكيد</string>
+    <string name="continuea">متابعة</string>
+    <string name="select">اختيار</string>
+    <string name="send">إرسال</string>
+    <string name="submit">إرسال</string>
+    <string name="search">بحث</string>
+    <string name="settings">إعدادات</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="notification">إشعار</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">تسجيل</string>
+    <string name="password">كلمة المرور</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="language">اللغة</string>
+    <string name="help">مساعدة</string>
+    <string name="feedback">ملاحظات</string>
+    <string name="about">عن التطبيق</string>
+    <string name="share">مشاركة</string>
+    <string name="download">تحميل</string>
+    <string name="upload">رفع</string>
+    <string name="add">إضافة</string>
+    <string name="remove">إزالة</string>
+    <string name="view">عرض</string>
+    <string name="play">تشغيل</string>
+    <string name="pause">إيقاف مؤقت</string>
+    <string name="stop">إيقاف</string>
+    <string name="refresh">تحديث</string>
+    <string name="more">المزيد</string>
+    <string name="less">أقل</string>
+    <string name="error">خطأ</string>
+    <string name="success">نجاح</string>
+    <string name="warning">تحذير</string>
+    <string name="info">معلومة</string>
+    <string name="date">تاريخ</string>
+    <string name="time">وقت</string>
+    <string name="calendar">تقويم</string>
+    <string name="location">موقع</string>
+    <string name="contacts">جهات الاتصال</string>
+    <string name="privacy">الخصوصية</string>
+    <string name="terms">الشروط</string>
+    <string name="conditions">الشروط والأحكام</string>
+    <string name="accept">قبول</string>
+    <string name="decline">رفض</string>
+    <string name="notes">الملاحظات</string>
+    <string name="note">ملاحظة</string>
+    <string name="read">قراءة</string>
+    <string name="write">كتابة</string>
+
+
+    <!-- Common Actions -->
+    <string name="connect">الاتصال</string>
+    <string name="disconnect">قطع الاتصال</string>
+    <string name="browse">تصفح</string>
+
+    <!-- Internet States -->
+    <string name="internet_connected">الاتصال بالإنترنت</string>
+    <string name="internet_disconnected">قطع الاتصال بالإنترنت</string>
+    <string name="connecting">جاري الاتصال...</string>
+    <string name="loading">جاري التحميل...</string>
+
+    <!-- Network Errors -->
+    <string name="network_error">خطأ في الشبكة</string>
+    <string name="connection_timeout">انقضاء الاتصال</string>
+    <string name="server_unreachable">الخادم غير قابل للوصول</string>
+    <string name="no_internet_connection">لا يوجد اتصال بالإنترنت</string>
+
+    <!-- Web Content -->
+    <string name="web_page">صفحة الويب</string>
+    <string name="website">موقع الويب</string>
+    <string name="url">رابط</string>
+    <string name="web_content">محتوى الويب</string>
+
+    <!-- User Authentication -->
+    <string name="login_required">يتطلب تسجيل الدخول</string>
+    <string name="logout_confirmation">تأكيد الخروج</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+
+    <!-- Security -->
+    <string name="security">الأمان</string>
+    <string name="terms_conditions">الشروط والأحكام</string>
+
+    <!-- Notifications -->
+    <string name="new_notification">إشعار جديد</string>
+
+    <!-- Messaging -->
+    <string name="chat">دردشة</string>
+    <string name="send_message">إرسال رسالة</string>
+    <string name="receive_message">استقبال رسالة</string>
+
+    <!-- Error Handling -->
+    <string name="try_again">حاول مرة أخرى</string>
+    <string name="contact_support">الاتصال بالدعم الفني</string>
+
+
+</resources>
