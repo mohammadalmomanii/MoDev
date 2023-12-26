@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoDev"
         tools:targetApi="31">
-
     </application>
 
 </manifest>

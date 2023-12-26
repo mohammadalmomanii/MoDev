@@ -45,6 +45,12 @@ public class ImageViewerFragment extends TopSheetDialogFragment implements MainI
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        dismissDialog();
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme);
