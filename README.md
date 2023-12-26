@@ -155,9 +155,46 @@ The Zoom ImageView component allows users to zoom in and out of images with ease
             Fragment.newInstance().show(getSupportFragmentManager(),TAG);
 ```
 
+### Image Viewer
+The image viewer in this library is designed to be easy to use and visually attractive, as it can be used to display images , gif and drawable. Here's a preview
 
+#### Usage 
 
-![Android+Top+Sheet+Animation](https://github.com/mohammadalmomanii/MoDev/assets/91605807/9cc74bfb-56d3-4f03-895b-5052a390f668)
+ Make your fragment extend TopSheetDialogFragment like this
+
+**2-** `java` :
+```java
+           
+         List<Object> list=new ArrayList<>();
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_1));
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_2));
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_3));
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_4));
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_5));
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_6));
+        list.add(getDrawable(com.mohammadalmomani.modevlib.R.drawable.img_7));
+
+        ImageViewerFragment.newInstance(`list`).show(getSupportFragmentManager(),"");
+   
+                      
+```
+**2-** `Manifest` :
+```Manifest
+  <application
+       ...
+       ...
+       ...
+       >
+        <activity
+            ...
+	    ...
+            android:screenOrientation="portrait">
+           
+        </activity>
+    </application>
+```
+
+![screen-20231226-080239](https://github.com/mohammadalmomanii/MoDev/assets/91605807/c262dab9-1992-49d4-9a3f-1f0ed5854e2f)
 
 
 
