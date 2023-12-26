@@ -40,6 +40,7 @@ import com.mohammadalmomani.modevlib.R;
 public class TopSheetDialog extends AppCompatDialog {
 
     private TopSheetBehavior<FrameLayout> topSheetBehavior;
+    private int state=TopSheetBehavior.STATE_EXPANDED;
 
     public TopSheetDialog(@NonNull Context context) {
         super(context, getThemeResId(context, 0));
@@ -130,7 +131,10 @@ public class TopSheetDialog extends AppCompatDialog {
     @Override
     public void show() {
         super.show();
-        //topSheetBehavior.setState(TopSheetBehavior.STATE_EXPANDED);
+        topSheetBehavior.setState(state);
+    }
+    public void setState(int state ) {
+        this.state=state;
     }
 
     private static int getThemeResId(Context context, int themeId) {

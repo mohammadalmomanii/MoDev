@@ -32,28 +32,8 @@
 
         <!-- Customize your theme here. -->
     </style>
-    <style name="Theme.Design.TopSheetDialog" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
-        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
-    </style>
 
-    <style name="Theme.Design.Light.TopSheetDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
-        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
-    </style>
-    <style name="Animation.Design.TopSheetDialog" parent="Animation.AppCompat.Dialog">
-        <item name="android:windowEnterAnimation">@anim/top_sheet_slide_in</item>
-        <item name="android:windowExitAnimation">@anim/top_sheet_slide_out</item>
-    </style>
 
-    <style name="Widget.Design.TopSheet.Modal" parent="android:Widget">
-        <item name="android:background">?android:attr/colorBackground</item>
-        <item name="android:elevation">@dimen/_5dp</item>
-        <item name="behavior_peekHeight">@dimen/_7dp</item>
-        <item name="behavior_hideable">true</item>
-    </style>
     <style name="AppBottomSheetDialogTheme" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
@@ -77,7 +57,17 @@
     <!-- BUTTON STYLE-->
 
     <!--TEXT TAP ITEM STYLE-->
+    <style name="Theme.Design.TopSheetDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/holo_blue_dark</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
+    </style>
 
+    <style name="Theme.Design.Light.TopSheetDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/holo_blue_dark</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
+    </style>
 
     <!--TEXT TAP ITEM STYLE-->
 

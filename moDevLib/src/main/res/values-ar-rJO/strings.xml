@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- APP SETTING STRINGS   -->
-    <string name="top_sheet_behavior" translatable="false">com.mohammadalmomani.modev.topSheetDialog.TopSheetBehavior</string>
+    <string name="top_sheet_behavior" >com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior</string>
 
     <!--    -->
     <string name="app_name">MoDev</string>

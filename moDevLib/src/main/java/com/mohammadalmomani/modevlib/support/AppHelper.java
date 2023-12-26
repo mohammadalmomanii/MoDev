@@ -33,6 +33,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.mohammadalmomani.modevlib.R;
+import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior;
+import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialog;
+import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialogFragment;
 
 import java.io.File;
 import java.text.ParseException;
@@ -149,6 +152,11 @@ public class AppHelper {
     static public void expandedBottomSheetDialog(BottomSheetDialogFragment fragment) {
         BottomSheetDialog dialog = (BottomSheetDialog) fragment.getDialog();
         dialog.getBehavior().setState(BottomSheetBehavior.STATE_EXPANDED);
+    }
+
+    static public void expandedTopSheetDialog(TopSheetDialogFragment fragment) {
+        TopSheetDialog dialog = (TopSheetDialog) fragment.getDialog();
+        dialog.setState(TopSheetBehavior.STATE_EXPANDED);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)

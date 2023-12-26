@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".imageView.ImageFragment">
+
+
+        <com.mohammadalmomani.modevlib.zoomImage.ZoomImageView
+            android:id="@+id/iv_zoom_image"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_150dp"
+            android:src="@drawable/ic_add_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:zoomImage_animateOnReset="true"
+            app:zoomImage_autoCenter="true"
+            app:zoomImage_autoResetMode="UNDER"
+            app:zoomImage_maxScale="8"
+            app:zoomImage_minScale="0.6"
+            app:zoomImage_restrictBounds="false"
+            app:zoomImage_translatable="true"
+            app:zoomImage_zoomable="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/shape_rounded_4" android:state_checked="false">
+    </item>
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" android:tint="@color/primary">
+                    <corners android:radius="@dimen/_4dp" />
+                </shape>
+            </item>
+            <item android:bottom="@dimen/_3dp" android:drawable="@drawable/shape_rounded_4" android:end="@dimen/_3dp" android:start="@dimen/_3dp" android:top="@dimen/_3dp" />
+
+
+        </layer-list>
+
+    </item>
+</selector>

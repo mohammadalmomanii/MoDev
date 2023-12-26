@@ -6,4 +6,5 @@ public interface MainInterface {
 
     default void onItemClick(){}
 
+    void onItemClick(Object data, int position);
 }
