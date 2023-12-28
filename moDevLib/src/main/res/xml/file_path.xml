@@ -2,7 +2,7 @@
 <paths xmlns:android="http://schemas.android.com/apk/res/android">
     <external-path
         name="files_root"
-        path="Android/data/com.lss.mreapp" />
+        path="Android/data/com.mohammadalmomani.modevlib" />
     <external-path
         name="external_files"
         path="."/>
