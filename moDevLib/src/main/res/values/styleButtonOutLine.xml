@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="styleButtonOutLine" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline
+        </item>
+        <item name="rippleColor">@color/primary</item>
+        <item name="strokeColor">@color/primary_dark</item>
+        <item name="android:minWidth">@dimen/_100dp</item>
+        <item name="android:padding">@dimen/_5dp</item>
+        <item name="cornerRadius">@dimen/_5dp</item>
+        <item name="strokeWidth">@dimen/_1dp</item>
+        <item name="iconPadding">@dimen/_3dp</item>
+        <item name="android:textSize">@dimen/_6dp</item>
+        <item name="android:textColor">@color/primary_dark</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_3dp</item>
+    </style>
+
+</resources>

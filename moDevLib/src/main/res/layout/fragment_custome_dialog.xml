@@ -56,7 +56,6 @@
                 android:id="@+id/tv_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginHorizontal="@dimen/_10dp"
                 android:layout_weight="1"
                 android:text="TextView"
@@ -93,7 +92,7 @@
 
                 <Button
                     android:id="@+id/btn_neutral"
-                    style="@style/OutlineButtonStyle"
+                    style="@style/styleButtonOutLine"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_1dp"
@@ -105,11 +104,11 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintTop_toTopOf="@+id/btn_positive"
                     app:layout_constraintVertical_bias="0.0"
-                    app:rippleColor="@color/primary_light" />
+                   />
 
                 <Button
                     android:id="@+id/btn_additional"
-                    style="@style/OutlineButtonStyle"
+                    style="@style/styleButtonOutLine"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_1dp"
@@ -121,11 +120,11 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintTop_toTopOf="@+id/btn_positive"
                     app:layout_constraintVertical_bias="0.0"
-                    app:rippleColor="@color/primary_light" />
+                 />
 
                 <Button
                     android:id="@+id/btn_negative"
-                    style="@style/OutlineButtonStyle"
+                    style="@style/styleButtonOutLine"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
 
@@ -138,11 +137,11 @@
                     app:layout_constraintHorizontal_bias="0.952"
                     app:layout_constraintTop_toTopOf="@+id/btn_positive"
                     app:layout_constraintVertical_bias="0.0"
-                    app:rippleColor="@color/red" />
+                     />
 
                 <Button
                     android:id="@+id/btn_positive"
-                    style="@style/OutlineButtonStyle"
+                    style="@style/styleButtonOutLine"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_1dp"
@@ -154,7 +153,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.826"
-                    app:rippleColor="@color/green" />
+                 />
 
             </LinearLayout>
 

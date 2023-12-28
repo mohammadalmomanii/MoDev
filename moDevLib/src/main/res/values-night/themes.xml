@@ -38,22 +38,7 @@
     </style>
 
 
-    <!-- BUTTON STYLE-->
-    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.Button.Rounded
-        </item>
-        <item name="backgroundTint">@color/primary_light</item>
-        <item name="android:padding">@dimen/_3dp</item>
-        <item name="android:width">@dimen/_100dp</item>
-        <item name="android:textSize">@dimen/_7sp</item>
-        <item name="android:textColor">@color/primary</item>
-    </style>
 
-    <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/_10dp</item>
-    </style>
-    <!-- BUTTON STYLE-->
 
     <!--TEXT TAP ITEM STYLE-->
 
@@ -70,25 +55,7 @@
     </style>
     <!--TEXT TAP ITEM STYLE-->
 
-    <!-- OUTLINE BUTTON STYLE-->
-    <style name="OutlineButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="shapeAppearanceOverlay">
-            @style/ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline
-        </item>
-        <item name="android:padding">@dimen/_3dp</item>
-        <item name="rippleColor">@color/dark_gray</item>
-        <item name="strokeColor">@color/primary_light</item>
-        <item name="strokeWidth">@dimen/_0.5dp</item>
-        <item name="iconPadding">@dimen/_3dp</item>
-        <item name="android:textSize">@dimen/_6dp</item>
-        <item name="android:textColor">@color/primary_light</item>
-    </style>
 
-    <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/_3dp</item>
-    </style>
-    <!--OUTLINE BUTTON STYLE-->
 
     <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/shape_rounded_6</item>
