@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.DialogFragment;
 
+import com.bumptech.glide.Glide;
 import com.mohammadalmomani.modevlib.R;
 import com.mohammadalmomani.modevlib.databinding.FragmentLoadingBinding;
 
@@ -20,16 +21,18 @@ public class LoadingFragment extends DialogFragment {
     private FragmentLoadingBinding binding;
     private static LoadingFragment fragment;
     private static long showTime;
+    private static int gifLoading;
 
 
     public LoadingFragment() {
     }
 
 
-    public static LoadingFragment newInstance(boolean isCancelable, long showTime) {
+    public static LoadingFragment newInstance( int gifLoading,boolean isCancelable, long showTime) {
         fragment = new LoadingFragment();
         fragment.setCancelable(isCancelable);
         fragment.showTime = showTime;
+        fragment.gifLoading = gifLoading;
         return fragment;
     }
 
@@ -47,6 +50,15 @@ public class LoadingFragment extends DialogFragment {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_loading, container, false);
         getDialog().getWindow().setBackgroundDrawableResource(R.drawable.shape_rounded_12);
         AppHelper.delay(() -> dismissDialog(), showTime);
+        if (gifLoading==0){
+            AppHelper.setVisible(binding.progressBar);
+            AppHelper.setGone(binding.imageView2);
+        }else{
+            Glide.with(this).load(gifLoading).into(binding.imageView2);
+            AppHelper.setGone(binding.progressBar);
+            AppHelper.setVisible(binding.imageView2);
+        }
+
         return binding.getRoot();
     }
 
