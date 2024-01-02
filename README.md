@@ -98,7 +98,7 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
 The loading fragment simplifies the integration of loading indicators within your app, enhancing the user experience during asynchronous operations.
 
 ```java
- LoadingFragment.newInstance().show(fragmentActivity.getSupportFragmentManager(), "");
+ LoadingFragment.newInstance(R.drawble.gif,false,5000).show(fragmentActivity.getSupportFragmentManager(), "");
 ```
        
 
