@@ -110,7 +110,7 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
 
     <com.google.android.material.appbar.AppBarLayout
         android:background="@color/primary"
-        android:id="@+id/test"
+        android:id="@+id/appBarLayout"
         android:layout_height="@dimen/_35dp"
         android:layout_width="match_parent"
         app:expanded="false">
