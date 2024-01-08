@@ -1,6 +1,5 @@
 package com.mohammadalmomani.modevlib.support;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,10 +74,10 @@ import com.mohammadalmomani.modevlib.databinding.FragmentRefrishBinding;
 
 public class RefrishFragment extends Fragment {
 
-    static FragmentRefrishBinding binding;
-    static AppBarLayout layout;
-    CollapsingToolbarLayout collapsingToolbarLayout;
-    static RefrishFragment fragment;
+    private static FragmentRefrishBinding binding;
+    private static AppBarLayout appBarLayout;
+    private static ImageView imageView;
+    private static RefrishFragment fragment;
 
     public RefrishFragment() {
         // Required empty public constructor
@@ -88,7 +87,8 @@ public class RefrishFragment extends Fragment {
          fragment = new RefrishFragment();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
         fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
-        layout = appBarLayout;
+        RefrishFragment.appBarLayout = appBarLayout;
+        RefrishFragment.imageView = imageView;
         Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
         return fragment;
     }
@@ -104,21 +104,18 @@ public class RefrishFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding =DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
-
-
         return binding.getRoot();
-
     }
 
 
-    static public void setGif(ImageView imageView,int gif) {
+    static public void setGif(int gif) {
         Glide.with(fragment).load(gif).into(imageView);
     }
     static public void showLoading() {
-        layout.setExpanded(true, true);
+        appBarLayout.setExpanded(true, true);
     }
 
     static public void hideLoading() {
-        layout.setExpanded(false, true);
+        appBarLayout.setExpanded(false, true);
     }
 }
