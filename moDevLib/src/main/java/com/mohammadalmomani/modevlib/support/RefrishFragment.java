@@ -4,16 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.mohammadalmomani.modevlib.R;
 import com.mohammadalmomani.modevlib.databinding.FragmentRefrishBinding;
 
@@ -77,18 +77,20 @@ public class RefrishFragment extends Fragment {
     private static FragmentRefrishBinding binding;
     private static AppBarLayout appBarLayout;
     private static ImageView imageView;
+    private static AppCompatActivity activity;
     private static RefrishFragment fragment;
 
     public RefrishFragment() {
         // Required empty public constructor
     }
 
-    public static RefrishFragment newInstance(FragmentManager manager, AppBarLayout appBarLayout, ImageView imageView) {
-         fragment = new RefrishFragment();
-        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+    public static RefrishFragment newInstance(AppCompatActivity activity, AppBarLayout appBarLayout, ImageView imageView) {
+        fragment = new RefrishFragment();
+        FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
         RefrishFragment.appBarLayout = appBarLayout;
         RefrishFragment.imageView = imageView;
+        RefrishFragment.activity = activity;
         Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
         return fragment;
     }
@@ -103,7 +105,7 @@ public class RefrishFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding =DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
+        binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
         return binding.getRoot();
     }
 
@@ -111,11 +113,15 @@ public class RefrishFragment extends Fragment {
     static public void setGif(int gif) {
         Glide.with(fragment).load(gif).into(imageView);
     }
+
     static public void showLoading() {
+        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         appBarLayout.setExpanded(true, true);
     }
 
     static public void hideLoading() {
+        activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         appBarLayout.setExpanded(false, true);
     }
 }
