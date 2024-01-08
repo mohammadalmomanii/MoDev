@@ -93,6 +93,68 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
 ![Screenshot 2023-12-20 121842](https://github.com/mohammadalmomanii/MoDev/assets/91605807/fbba14f3-b2e3-49c5-af70-6d4a178788db)
 
 
+### Preloder 
+
+The loading fragment simplifies the integration of loading indicators within your app, enhancing the user experience during asynchronous operations
+and add this code **`app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"`**
+
+#### Usage 
+**1-** should you add this code in your activity or fragment 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="@color/primary"
+        android:id="@+id/test"
+        android:layout_height="@dimen/_35dp"
+        android:layout_width="match_parent"
+        app:expanded="false">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            app:contentScrim="@color/primary"
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                tools:src="@tools:sample/avatars" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <your layout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+	.
+	.
+	.
+	.
+    </your layout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+```
+
+**2-** you can use it in java like this : 
+```java
+
+        RefrishFragment.newInstance(getSupportFragmentManager(),binding.appBarLayout,binding.imageView);
+
+        AppHelper.delay(()->RefrishFragment.showLoading(),1000);
+        AppHelper.delay(()->RefrishFragment.hideLoading(),10000);
+```
+
+![screen-20240108-090414~2](https://github.com/mohammadalmomanii/MoDev/assets/91605807/46499325-2eaa-4208-8c67-d24987fb67bd)
+
+
+
 ### Loading Fragment
 
 The loading fragment simplifies the integration of loading indicators within your app, enhancing the user experience during asynchronous operations.
