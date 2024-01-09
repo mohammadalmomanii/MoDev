@@ -11,6 +11,8 @@
         <item name="android:elevation">@dimen/_16dp</item>
         <item name="behavior_peekHeight">@dimen/_256dp</item>
         <item name="behavior_hideable">true</item>
+        <item name="enforceMaterialTheme">false</item>
+
     </style>
 
 </resources>

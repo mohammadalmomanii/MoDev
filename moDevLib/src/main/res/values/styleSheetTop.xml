@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="styleSheetTop" parent="Theme.Design.Light.TopSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomSheetStyleTop</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/primary_light</item>
+
+        <!-- Secondary brand color. -->
+
+    </style>
+
+    <style name="CustomSheetStyleTop" parent="Widget.Design.TopSheet.Modal">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+</resources>

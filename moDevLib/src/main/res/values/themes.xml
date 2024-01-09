@@ -43,13 +43,13 @@
 
     <!--TEXT TAP ITEM STYLE-->
     <style name="Theme.Design.TopSheetDialog" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowBackground">@android:color/holo_blue_dark</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
         <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
     </style>
 
     <style name="Theme.Design.Light.TopSheetDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@android:color/holo_blue_dark</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
         <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
     </style>
