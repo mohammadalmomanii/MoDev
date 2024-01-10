@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <View
         android:id="@+id/top_sheet_touch_outside"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:soundEffectsEnabled="false"/>
+        android:soundEffectsEnabled="false" />
 
     <FrameLayout
         android:id="@+id/design_top_sheet"
+        style="@style/Widget.Design.TopSheet.Modal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_height="300dp"
         android:layout_gravity="center_horizontal|top"
+        android:background="@color/transparent"
         android:clickable="true"
         app:layout_behavior="@string/top_sheet_behavior"
-        style="@style/Widget.Design.TopSheet.Modal"
-        />
+        tools:layout_height="300dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
