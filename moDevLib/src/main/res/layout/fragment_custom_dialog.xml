@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider_h_5"
+        android:dividerPadding="@dimen/_100dp"
+        android:minWidth="@dimen/_150dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_6dp"
+        android:paddingVertical="@dimen/_3dp"
+        android:showDividers="middle|beginning|end"
+        android:visibility="visible"
+        tools:context=".support.CustomeDialog.CustomDialogFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            >
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="@dimen/_19dp"
+                android:layout_height="@dimen/_19dp"
+                android:layout_marginHorizontal="@dimen/_2dp"
+                android:background="@drawable/shape_dialog_image"
+                android:backgroundTint="@color/primary_light"
+                android:backgroundTintMode="screen"
+                android:padding="@dimen/_2dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_7sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lay_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:counterMaxLength="200">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/notes"
+                android:inputType="text|textVisiblePassword"
+                android:maxLength="200"
+                android:singleLine="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:minWidth="@dimen/_150dp"
+            android:padding="@dimen/_3dp">
+
+            <Button
+                android:id="@+id/btn_neutral"
+                style="@style/styleButtonOutLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2dp"
+                android:gravity="center"
+                android:text="Button"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_positive" />
+
+            <Button
+                android:id="@+id/btn_negative"
+                style="@style/styleButtonOutLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2dp"
+
+                android:gravity="center"
+                android:text="Button"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/btn_neutral"
+                app:layout_constraintTop_toTopOf="@+id/btn_positive" />
+
+            <Button
+                android:id="@+id/btn_positive"
+                style="@style/styleButtonFilled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2dp"
+                android:gravity="center"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btn_negative"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

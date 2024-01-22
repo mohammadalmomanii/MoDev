@@ -2,7 +2,8 @@ package com.mohammadalmomani.modevlib.support;
 
 
 public enum StaticString {
-  a;
+  SMALL(1,""),
+  BIG(2,"");
 
     private int  id;
     private String text;

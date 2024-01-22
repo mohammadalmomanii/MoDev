@@ -1,4 +1,4 @@
-package com.mohammadalmomani.modevlib.support;
+package com.mohammadalmomani.modevlib.support.CustomeDialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,18 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.bumptech.glide.Glide;
 import com.mohammadalmomani.modevlib.R;
-import com.mohammadalmomani.modevlib.databinding.FragmentCustomeDialogBinding;
+import com.mohammadalmomani.modevlib.databinding.FragmentCustomDialogBinding;
+import com.mohammadalmomani.modevlib.support.AppHelper;
+import com.mohammadalmomani.modevlib.support.MainInterface;
 
 
 public class CustomDialogFragment extends DialogFragment {
 
-    static private FragmentCustomeDialogBinding binding;
+    static  private FragmentCustomDialogBinding binding;
     static private CustomDialogFragment fragment;
     static private MainInterface mainInterface;
+    private boolean isPassword = false;
 
     public CustomDialogFragment() {
         // Required empty public constructor
@@ -40,14 +45,31 @@ public class CustomDialogFragment extends DialogFragment {
         fragment = new CustomDialogFragment();
         return fragment;
     }
+    public CustomDialogFragment startShow(FragmentManager manager,int dialogType) {
 
+        this.showNow(manager, "");
+        return fragment;
+    }
+    public static CustomDialogFragment getFragment() {
+        return fragment;
+    }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mainInterface = null;
     }
+    public static void dismissDialog() {
+        if (fragment != null&&!fragment.isPassword) {
+            fragment.dismiss();
+        }
+    }
 
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+        fragment = null;
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,14 +81,13 @@ public class CustomDialogFragment extends DialogFragment {
         // Inflate the layout for this fragment
         getDialog().getWindow().setBackgroundDrawableResource(R.drawable.shape_rounded_12);
 
-        binding = FragmentCustomeDialogBinding.inflate(inflater, container, false);
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_custom_dialog, container, false);
 
         AppHelper.setInvisible(binding.iv);
         AppHelper.setInvisible(binding.tvTitle);
-        AppHelper.setInvisible(binding.btnNegative);
-        AppHelper.setInvisible(binding.btnAdditional);
-        AppHelper.setInvisible(binding.btnNeutral);
-        AppHelper.setInvisible(binding.btnPositive);
+        AppHelper.setGone(binding.btnNegative);
+        AppHelper.setGone(binding.btnNeutral);
+        AppHelper.setGone(binding.btnPositive);
         AppHelper.setGone(binding.layNote);
         AppHelper.setGone(binding.tvDescription);
 
@@ -74,27 +95,15 @@ public class CustomDialogFragment extends DialogFragment {
         return binding.getRoot();
     }
 
-    public static void dismissDialog() {
-        if (fragment != null) {
-            fragment.dismiss();
-        }
-    }
 
-    @Override
-    public void onDismiss(@NonNull DialogInterface dialog) {
-        super.onDismiss(dialog);
-        fragment = null;
-    }
 
-    public CustomDialogFragment startShow(FragmentManager manager) {
 
-        this.showNow(manager, "");
-        return fragment;
-    }
+
+
 
     public CustomDialogFragment setImage(Drawable drawable) {
         AppHelper.setVisible(binding.iv);
-        binding.iv.setImageDrawable(drawable);
+        Glide.with(getActivity()).load(drawable).into(binding.iv);
         return fragment;
     }
 
@@ -110,14 +119,14 @@ public class CustomDialogFragment extends DialogFragment {
         return fragment;
     }
 
-    public CustomDialogFragment setBtnPositive(String title, boolean isPassword, MainInterface mainInterface) {
+    public CustomDialogFragment setBtnPositive(String title, MainInterface mainInterface) {
         AppHelper.setVisible(binding.btnPositive);
         binding.btnPositive.setText(title);
         binding.btnPositive.setOnClickListener(v -> {
 
-            mainInterface.onItemClick();
-            if (binding.etNote.getVisibility() == View.VISIBLE && !binding.etNote.getText().toString().isEmpty() && !isPassword)
-                dismissDialog();
+
+                mainInterface.onItemClick();
+
         });
         return fragment;
     }
@@ -127,31 +136,25 @@ public class CustomDialogFragment extends DialogFragment {
         binding.btnNegative.setText(title);
         binding.btnNegative.setOnClickListener(v -> {
 
-            mainInterface.onItemClick();
-            dismissDialog();
+
+                mainInterface.onItemClick();
         });
         return fragment;
     }
 
-    public CustomDialogFragment setBtnAdditional(String title, MainInterface mainInterface) {
-        AppHelper.setVisible(binding.btnAdditional);
-        binding.btnAdditional.setText(title);
-        binding.btnAdditional.setOnClickListener(v -> {
 
-            mainInterface.onItemClick();
-            dismissDialog();
-        });
-        return fragment;
-    }
-
-    public CustomDialogFragment setNote() {
+    public CustomDialogFragment setNote(boolean isPassword) {
         AppHelper.setVisible(binding.layNote);
+        this.isPassword = isPassword;
 
         return fragment;
     }
 
-    public String getNote() {
+    public static String getNote() {
         return binding.etNote.getText() + "";
+    } public static void setErrorMessage(String message) {
+        binding.etNote.setError(message);
+
     }
 
     public CustomDialogFragment setBtnNeutral(String title, MainInterface mainInterface) {
@@ -159,8 +162,8 @@ public class CustomDialogFragment extends DialogFragment {
         binding.btnNeutral.setText(title);
         binding.btnNeutral.setOnClickListener(v -> {
 
-            mainInterface.onItemClick();
-            dismissDialog();
+
+                mainInterface.onItemClick();
         });
         return fragment;
     }
