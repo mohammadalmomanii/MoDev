@@ -45,7 +45,7 @@ public class CustomDialogFragment extends DialogFragment {
         fragment = new CustomDialogFragment();
         return fragment;
     }
-    public CustomDialogFragment startShow(FragmentManager manager,int dialogType) {
+    public CustomDialogFragment startShow(FragmentManager manager) {
 
         this.showNow(manager, "");
         return fragment;

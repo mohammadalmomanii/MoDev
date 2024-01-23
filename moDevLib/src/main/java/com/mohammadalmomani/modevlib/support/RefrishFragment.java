@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
@@ -92,6 +93,14 @@ public class RefrishFragment extends Fragment {
         return fragment;
     }
 
+    public RefrishFragment startShow(FragmentManager manager) {
+
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+        fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
+        Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,15 +112,14 @@ public class RefrishFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
-        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-        fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
-        Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
+
         return binding.getRoot();
     }
 
 
-    static public void setGif(int gif) {
+    public RefrishFragment setGif(int gif) {
         Glide.with(fragment).load(gif).into(imageView);
+        return fragment;
     }
 
     static public void showLoading() {
