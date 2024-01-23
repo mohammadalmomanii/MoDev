@@ -89,7 +89,6 @@ public class RefrishFragment extends Fragment {
         RefrishFragment.appBarLayout = appBarLayout;
         RefrishFragment.imageView = imageView;
         RefrishFragment.activity = activity;
-        Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
         return fragment;
     }
 
@@ -106,6 +105,7 @@ public class RefrishFragment extends Fragment {
         binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
+        Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
         return binding.getRoot();
     }
 
