@@ -93,6 +93,37 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
 ![Screenshot 2023-12-20 121842](https://github.com/mohammadalmomanii/MoDev/assets/91605807/fbba14f3-b2e3-49c5-af70-6d4a178788db)
 
 
+### Message Dialog Fragment
+
+This dialog fragment use to show message with image (GIF/PNG/JPG/....) .
+
+#### Usage 
+
+**1-** you can use small image by change image type to `StaticString.SMALL`
+
+![Screenshot_small](https://github.com/mohammadalmomanii/MoDev/assets/91605807/fce83fe7-45b9-498b-b3bb-7766d3a92627)
+
+**2-** you can use small image by change image type to `StaticString.BIG`
+
+![Screenshot_20240123-110500](https://github.com/mohammadalmomanii/MoDev/assets/91605807/af763fcf-df5c-4ebe-bc34-b1ad568a108b)
+
+
+```java
+  MessageDialogFragment.newInstance().startShow(getSupportFragmentManager()).setMessage("this library created by mohammad almomani\n * moDev *")
+                .setImage(getDrawable(com.mohammadalmomani.modevlib.R.drawable.ic_close),StaticString.BIG)
+                .setBtnPositive("Got it", new MainInterface() {
+                    @Override
+                    public void onItemClick() {
+                        MessageDialogFragment.dismissDialog();
+                    }
+                });
+```
+
+
+
+
+
+
 ### Preloder 
 
 The loading fragment simplifies the integration of loading indicators within your app, enhancing the user experience during asynchronous operations
@@ -145,7 +176,8 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
 **2-** you can use it in java like this : 
 ```java
 
-        RefrishFragment.newInstance(getSupportFragmentManager(),binding.appBarLayout,binding.imageView);
+       RefrishFragment.newInstance((AppCompatActivity) getActivity(), binding.appBarLayout, binding.imageView)
+                .startShow(getChildFragmentManager()).setGif(R.drawable.gif_pre_loader);
 
         AppHelper.delay(()->RefrishFragment.showLoading(),1000);
         AppHelper.delay(()->RefrishFragment.hideLoading(),10000);
