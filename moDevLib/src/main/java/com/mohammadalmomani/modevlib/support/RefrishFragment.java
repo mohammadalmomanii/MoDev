@@ -116,13 +116,17 @@ public class RefrishFragment extends Fragment {
     }
 
     static public void showLoading() {
-        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        appBarLayout.setExpanded(true, true);
+        if (fragment != null) {
+            activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            appBarLayout.setExpanded(true, true);
+        }
     }
 
     static public void hideLoading() {
-        activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-        appBarLayout.setExpanded(false, true);
+        if (fragment != null) {
+            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            appBarLayout.setExpanded(false, true);
+        }
     }
 }
