@@ -86,8 +86,6 @@ public class RefrishFragment extends Fragment {
 
     public static RefrishFragment newInstance(AppCompatActivity activity, AppBarLayout appBarLayout, ImageView imageView) {
         fragment = new RefrishFragment();
-        FragmentTransaction fragmentTransaction = fragment.getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
         RefrishFragment.appBarLayout = appBarLayout;
         RefrishFragment.imageView = imageView;
         RefrishFragment.activity = activity;
@@ -106,7 +104,8 @@ public class RefrishFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
-
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+        fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
         return binding.getRoot();
     }
 
