@@ -86,7 +86,7 @@ public class RefrishFragment extends Fragment {
 
     public static RefrishFragment newInstance(AppCompatActivity activity, AppBarLayout appBarLayout, ImageView imageView) {
         fragment = new RefrishFragment();
-        FragmentTransaction fragmentTransaction = fragment.getChildFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = fragment.getParentFragmentManager().beginTransaction();
         fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
         RefrishFragment.appBarLayout = appBarLayout;
         RefrishFragment.imageView = imageView;
