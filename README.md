@@ -69,22 +69,24 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
  Make your fragment extend TopSheetDialogFragment like this
 
 ```java
- CustomDialogFragment.newInstance().startShow(getSupportFragmentManager())
-                    .setImage(getDrawable(R.drawable.ic_logout)).setTitle(getString(R.string.confirm_logout))
-                    .setDescription("")
-                    .setBtnPositive(getString(R.string.confirm), false, new MainInterface() {
-                        @Override
-                        public void onCustomDialogItemClick() {
-                         .
-			 .
-			 .
-                        }
-                    }).setBtnNeutral(getString(R.string.cancel), new MainInterface() {
-                        @Override
-                        public void onCustomDialogItemClick() {
-                            CustomDialogFragment.dismissDialog();
-                        }
-                    });
+  CustomDialogFragment.newInstance().startShow(getSupportFragmentManager())
+                .setImage(getDrawable(R.drawable.ic_logout)).setTitle(getString(com.mohammadalmomani.modevlib.R.string.logout_confirmation))
+                .setDescription("")
+                .setBtnPositive(getString(com.mohammadalmomani.modevlib.R.string.confirm), new MainInterface() {
+                    @Override
+                    public void onItemClick() {
+			...
+			...
+			...
+                    }
+                }).setBtnNeutral(getString(com.mohammadalmomani.modevlib.R.string.cancel), new MainInterface() {
+                    @Override
+                    public void onItemClick() {
+			...
+			...
+			...
+                 }
+                });
 ```
 
 ![Screenshot 2023-12-20 121911](https://github.com/mohammadalmomanii/MoDev/assets/91605807/0a66c039-8487-42d0-827a-afe95c63b04f)
