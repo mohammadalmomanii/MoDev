@@ -80,6 +80,7 @@ public class RefrishFragment extends Fragment {
     private static ImageView imageView;
     private static AppCompatActivity activity;
     private static RefrishFragment fragment;
+    private static boolean isShowing = false;
 
     public RefrishFragment() {
         // Required empty public constructor
@@ -112,7 +113,11 @@ public class RefrishFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
-
+        appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
+            if (verticalOffset == 0 && !isShowing) {
+                hideLoading();
+            }
+        });
         return binding.getRoot();
     }
 
@@ -124,6 +129,7 @@ public class RefrishFragment extends Fragment {
 
     static public void showLoading() {
         if (fragment != null) {
+            isShowing = true;
             activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             appBarLayout.setExpanded(true, true);
@@ -132,6 +138,7 @@ public class RefrishFragment extends Fragment {
 
     static public void hideLoading() {
         if (fragment != null) {
+            isShowing = false;
             activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             appBarLayout.setExpanded(false, true);
         }
