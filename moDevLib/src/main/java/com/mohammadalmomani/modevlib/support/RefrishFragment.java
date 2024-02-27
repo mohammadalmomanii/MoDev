@@ -80,7 +80,7 @@ public class RefrishFragment extends Fragment {
     private static ImageView imageView;
     private static AppCompatActivity activity;
     private static RefrishFragment fragment;
-    private static boolean isShowing = false;
+    private static boolean isShowing = true;
 
     public RefrishFragment() {
         // Required empty public constructor
@@ -132,7 +132,7 @@ public class RefrishFragment extends Fragment {
             isShowing = true;
             activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            appBarLayout.setExpanded(true, true);
+            appBarLayout.setExpanded(isShowing, true);
         }
     }
 
@@ -140,7 +140,7 @@ public class RefrishFragment extends Fragment {
         if (fragment != null) {
             isShowing = false;
             activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            appBarLayout.setExpanded(false, true);
+            appBarLayout.setExpanded(isShowing, true);
         }
     }
 }
