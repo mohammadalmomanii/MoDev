@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:0.0.5")
+    implementation("com.github.mohammadalmomanii:MoDev:1.0.82")
 
 }
 ```
@@ -69,28 +69,61 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
  Make your fragment extend TopSheetDialogFragment like this
 
 ```java
- CustomDialogFragment.newInstance().startShow(getSupportFragmentManager())
-                    .setImage(getDrawable(R.drawable.ic_logout)).setTitle(getString(R.string.confirm_logout))
-                    .setDescription("")
-                    .setBtnPositive(getString(R.string.confirm), false, new MainInterface() {
-                        @Override
-                        public void onCustomDialogItemClick() {
-                         .
-			 .
-			 .
-                        }
-                    }).setBtnNeutral(getString(R.string.cancel), new MainInterface() {
-                        @Override
-                        public void onCustomDialogItemClick() {
-                            CustomDialogFragment.dismissDialog();
-                        }
-                    });
+  CustomDialogFragment.newInstance().startShow(getSupportFragmentManager())
+                .setImage(getDrawable(R.drawable.ic_logout)).setTitle(getString(com.mohammadalmomani.modevlib.R.string.logout_confirmation))
+                .setDescription("")
+                .setBtnPositive(getString(com.mohammadalmomani.modevlib.R.string.confirm), new MainInterface() {
+                    @Override
+                    public void onItemClick() {
+			...
+			...
+			...
+                    }
+                }).setBtnNeutral(getString(com.mohammadalmomani.modevlib.R.string.cancel), new MainInterface() {
+                    @Override
+                    public void onItemClick() {
+			...
+			...
+			...
+                 }
+                });
 ```
 
 ![Screenshot 2023-12-20 121911](https://github.com/mohammadalmomanii/MoDev/assets/91605807/0a66c039-8487-42d0-827a-afe95c63b04f)
 ![Screenshot 2023-12-20 121719](https://github.com/mohammadalmomanii/MoDev/assets/91605807/629affd9-1da4-4086-a764-e178ef688e16)
 ![Screenshot 2023-12-20 121744](https://github.com/mohammadalmomanii/MoDev/assets/91605807/b2bf378f-6e33-4e83-a9c0-837bad7cca54)
 ![Screenshot 2023-12-20 121842](https://github.com/mohammadalmomanii/MoDev/assets/91605807/fbba14f3-b2e3-49c5-af70-6d4a178788db)
+
+
+### Message Dialog Fragment
+
+This dialog fragment use to show message with image (GIF/PNG/JPG/....) .
+
+#### Usage 
+
+**1-** you can use small image by change image type to `StaticString.SMALL`
+
+![Screenshot_small](https://github.com/mohammadalmomanii/MoDev/assets/91605807/fce83fe7-45b9-498b-b3bb-7766d3a92627)
+
+**2-** you can use small image by change image type to `StaticString.BIG`
+
+![Screenshot_20240123-110500](https://github.com/mohammadalmomanii/MoDev/assets/91605807/af763fcf-df5c-4ebe-bc34-b1ad568a108b)
+
+
+```java
+  MessageDialogFragment.newInstance().startShow(getSupportFragmentManager()).setMessage("this library created by mohammad almomani\n * moDev *")
+                .setImage(getDrawable(com.mohammadalmomani.modevlib.R.drawable.ic_close),StaticString.BIG)
+                .setBtnPositive("Got it", new MainInterface() {
+                    @Override
+                    public void onItemClick() {
+                        MessageDialogFragment.dismissDialog();
+                    }
+                });
+```
+
+
+
+
 
 
 ### Preloder 
@@ -145,7 +178,8 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
 **2-** you can use it in java like this : 
 ```java
 
-        RefrishFragment.newInstance(getSupportFragmentManager(),binding.appBarLayout,binding.imageView);
+       RefrishFragment.newInstance((AppCompatActivity) getActivity(), binding.appBarLayout, binding.imageView)
+                .startShow(getChildFragmentManager()).setGif(R.drawable.gif_pre_loader);
 
         AppHelper.delay(()->RefrishFragment.showLoading(),1000);
         AppHelper.delay(()->RefrishFragment.hideLoading(),10000);
