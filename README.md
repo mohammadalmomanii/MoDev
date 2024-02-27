@@ -152,7 +152,7 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             app:contentScrim="@color/primary"
-            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:id="@+id/imageView"
