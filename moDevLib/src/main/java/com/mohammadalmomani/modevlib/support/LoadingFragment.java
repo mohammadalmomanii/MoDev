@@ -20,26 +20,26 @@ public class LoadingFragment extends DialogFragment {
 
     private FragmentLoadingBinding binding;
     private static LoadingFragment fragment;
-    private static long showTime;
-    private static int gifLoading=0;
+    private static long showTime = 0;
+    private static int gifLoading = 0;
 
 
     public LoadingFragment() {
     }
 
 
-    public static LoadingFragment newInstance( int gifLoading,boolean isCancelable, long showTime) {
+    public static LoadingFragment newInstance(int gifLoading, boolean isCancelable, long showTime) {
         fragment = new LoadingFragment();
         fragment.setCancelable(isCancelable);
         fragment.showTime = showTime;
         fragment.gifLoading = gifLoading;
         return fragment;
     }
-    public static LoadingFragment newInstance( ) {
+
+    public static LoadingFragment newInstance() {
         fragment = new LoadingFragment();
         return fragment;
     }
-
 
 
     @Override
@@ -53,11 +53,13 @@ public class LoadingFragment extends DialogFragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_loading, container, false);
         getDialog().getWindow().setBackgroundDrawableResource(R.drawable.shape_rounded_12);
-        AppHelper.delay(() -> dismissDialog(), showTime);
-        if (gifLoading==0){
+        if (showTime != 0)
+            AppHelper.delay(() -> dismissDialog(), showTime);
+
+        if (gifLoading == 0) {
             AppHelper.setVisible(binding.progressBar);
             AppHelper.setGone(binding.imageView2);
-        }else{
+        } else {
             Glide.with(this).load(gifLoading).into(binding.imageView2);
             AppHelper.setGone(binding.progressBar);
             AppHelper.setVisible(binding.imageView2);
@@ -65,7 +67,6 @@ public class LoadingFragment extends DialogFragment {
 
         return binding.getRoot();
     }
-
 
 
     public static void dismissDialog() {
