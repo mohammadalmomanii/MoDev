@@ -21,7 +21,7 @@ public class LoadingFragment extends DialogFragment {
     private FragmentLoadingBinding binding;
     private static LoadingFragment fragment;
     private static long showTime;
-    private static int gifLoading;
+    private static int gifLoading=0;
 
 
     public LoadingFragment() {
@@ -33,6 +33,10 @@ public class LoadingFragment extends DialogFragment {
         fragment.setCancelable(isCancelable);
         fragment.showTime = showTime;
         fragment.gifLoading = gifLoading;
+        return fragment;
+    }
+    public static LoadingFragment newInstance( ) {
+        fragment = new LoadingFragment();
         return fragment;
     }
 
