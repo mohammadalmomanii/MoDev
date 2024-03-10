@@ -6,7 +6,7 @@
 
 ## Overview
 
-Your library, `MoDev`, is a collection of utility classes and components for Android development. It aims to simplify common tasks, enhance user experience, and provide reusable elements that can be easily integrated into Android applications.
+ `MoDev`, is a collection of utility classes and components for Android development. It aims to simplify common tasks, enhance user experience, and provide reusable elements that can be easily integrated into Android applications.
 
 ## Installation
 
@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:1.0.82")
+    implementation("com.github.mohammadalmomanii:MoDev:1.1.3")
 
 }
 ```
