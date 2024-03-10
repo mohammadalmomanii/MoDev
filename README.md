@@ -6,7 +6,7 @@
 
 ## Overview
 
-Your library, `MoDev`, is a collection of utility classes and components for Android development. It aims to simplify common tasks, enhance user experience, and provide reusable elements that can be easily integrated into Android applications.
+ `MoDev`, is a collection of utility classes and components for Android development. It aims to simplify common tasks, enhance user experience, and provide reusable elements that can be easily integrated into Android applications.
 
 ## Installation
 
@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:1.0.82")
+    implementation("com.github.mohammadalmomanii:MoDev:1.1.3")
 
 }
 ```
@@ -152,7 +152,7 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             app:contentScrim="@color/primary"
-            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:id="@+id/imageView"
