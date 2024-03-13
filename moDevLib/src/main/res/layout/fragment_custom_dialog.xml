@@ -105,6 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2dp"
                 android:gravity="center"
+                android:maxWidth="@dimen/_55dp"
                 android:text="Button"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
@@ -121,6 +122,7 @@
                 android:layout_marginHorizontal="@dimen/_2dp"
 
                 android:gravity="center"
+                android:maxWidth="@dimen/_55dp"
                 android:text="Button"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
@@ -136,6 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2dp"
                 android:gravity="center"
+                android:maxWidth="@dimen/_55dp"
                 android:text="Button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
