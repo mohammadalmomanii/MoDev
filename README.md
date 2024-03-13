@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:1.1.7")
+    implementation("com.github.mohammadalmomanii:MoDev:1.1.8")
 
 }
 ```
