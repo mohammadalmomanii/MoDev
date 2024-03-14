@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:1.1.7")
+    implementation("com.github.mohammadalmomanii:MoDev:1.1.8")
 
 }
 ```
@@ -93,6 +93,61 @@ The custom dialog fragment provides a customizable and reusable dialog for vario
 ![Screenshot 2023-12-20 121719](https://github.com/mohammadalmomanii/MoDev/assets/91605807/629affd9-1da4-4086-a764-e178ef688e16)
 ![Screenshot 2023-12-20 121744](https://github.com/mohammadalmomanii/MoDev/assets/91605807/b2bf378f-6e33-4e83-a9c0-837bad7cca54)
 ![Screenshot 2023-12-20 121842](https://github.com/mohammadalmomanii/MoDev/assets/91605807/fbba14f3-b2e3-49c5-af70-6d4a178788db)
+
+
+### Show Notification
+
+This class use to show notification
+
+#### Usage 
+
+**1-** in your `manifest`->`AndroidManifest.xml` put this permission 
+```manifest
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        ..../>
+   </manifest>
+```
+ **2-** in your `activity` OR `fragment` put these CODES 
+
+```java
+
+  private ActivityResultLauncher launcher = registerForActivityResult(new ActivityResultContracts.RequestPermission()
+            , bool -> {
+
+                Toast.makeText(getApplicationContext(), bool ? "PERMISSION GRANTED" : "PERMISSION NOT GRANTED", Toast.LENGTH_SHORT).show();
+
+            });
+
+protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+	if (!(ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)
+	                == PackageManager.PERMISSION_GRANTED))
+	            launcher.launch(Manifest.permission.POST_NOTIFICATIONS);
+}
+```
+ **3-** create your notification 
+
+```java
+
+ NotificationHelper notificationHelper = new NotificationHelper(this);
+.
+.
+.
+
+ notificationHelper.createNotification().setContentTitle("NOTIFICATION")
+                    .setSmallIcon(com.mohammadalmomani.modevlib.R.drawable.ic_close)
+                    .setContentText("MY NOTIFICATION IS SHOWING");
+            notificationHelper.showNotification(30);
+```
+
+![screen-20240314-121127](https://github.com/mohammadalmomanii/MoDev/assets/91605807/92abd3cf-7b0e-4e5f-b20f-4052b0c6a4f6)
+
 
 
 ### Message Dialog Fragment
