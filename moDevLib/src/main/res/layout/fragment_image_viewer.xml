@@ -68,11 +68,11 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp"
             android:layout_width="0dp"
-            app:layout_constraintHeight_max="@dimen/_80dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10dp"
             app:layout_constraintBottom_toTopOf="@+id/iv_left"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="@dimen/_80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_close">
 

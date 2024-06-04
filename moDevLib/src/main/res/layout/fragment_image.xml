@@ -16,7 +16,9 @@
         <com.mohammadalmomani.modevlib.zoomImage.ZoomImageView
             android:id="@+id/iv_zoom_image"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_150dp"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/_100dp"
+            android:maxHeight="@dimen/_100dp"
             android:src="@drawable/ic_add_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
