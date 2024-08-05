@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item >
-        <shape android:shape="rectangle"></shape>
+        <shape android:shape="rectangle" />
     </item>
     <item
-        android:height="@dimen/_3dp"
+        android:height="@dimen/_3mdp"
         android:gravity="center">
         <shape android:shape="rectangle">
             <solid android:color="@color/gray" />
-            <corners android:radius="@dimen/_3dp" />
+            <corners android:radius="@dimen/_3mdp" />
         </shape>
     </item>
 </layer-list>

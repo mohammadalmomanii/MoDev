@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/iv_close"
-            android:layout_width="@dimen/_17dp"
-            android:layout_height="@dimen/_17dp"
+            android:layout_width="@dimen/_17mdp"
+            android:layout_height="@dimen/_17mdp"
             android:foreground="@drawable/ripple_30"
             android:focusable="true"  android:src="@drawable/ic_close"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,9 +30,9 @@
             android:id="@+id/tv_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingHorizontal="@dimen/_15mdp"
             android:text="1 of 14"
-            android:textSize="@dimen/_9sp"
+            android:textSize="@dimen/_9msp"
             app:layout_constraintBottom_toTopOf="@+id/rv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +41,8 @@
 
         <ImageView
             android:id="@+id/iv_left"
-            android:layout_width="@dimen/_15dp"
-            android:layout_height="@dimen/_15dp"
+            android:layout_width="@dimen/_15mdp"
+            android:layout_height="@dimen/_15mdp"
             android:focusable="true"
             android:foreground="@drawable/ripple_6"
             android:foregroundTint="@color/black"
@@ -54,8 +54,8 @@
 
         <ImageView
             android:id="@+id/iv_right"
-            android:layout_width="@dimen/_15dp"
-            android:layout_height="@dimen/_15dp"
+            android:layout_width="@dimen/_15mdp"
+            android:layout_height="@dimen/_15mdp"
             android:src="@drawable/ic_arrow_right"
             app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
             android:focusable="true"
@@ -69,10 +69,10 @@
             android:id="@+id/vp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10dp"
+            android:layout_margin="@dimen/_10mdp"
             app:layout_constraintBottom_toTopOf="@+id/iv_left"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_max="@dimen/_80dp"
+            app:layout_constraintHeight_max="@dimen/_80mdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_close">
 

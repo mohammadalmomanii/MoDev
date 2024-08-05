@@ -6,10 +6,10 @@
         <layer-list>
             <item>
                 <shape android:shape="rectangle" android:tint="@color/primary">
-                    <corners android:radius="@dimen/_4dp" />
+                    <corners android:radius="@dimen/_4mdp" />
                 </shape>
             </item>
-            <item android:bottom="@dimen/_3dp" android:drawable="@drawable/shape_rounded_4" android:end="@dimen/_3dp" android:start="@dimen/_3dp" android:top="@dimen/_3dp" />
+            <item android:bottom="@dimen/_3mdp" android:drawable="@drawable/shape_rounded_4" android:end="@dimen/_3mdp" android:start="@dimen/_3mdp" android:top="@dimen/_3mdp" />
 
 
         </layer-list>

@@ -7,16 +7,16 @@
         </item>
         <item name="backgroundTint">@color/primary_dark</item>
         <item name="rippleColor">@color/primary</item>
-        <item name="android:padding">@dimen/_5dp</item>
-        <item name="android:maxWidth">@dimen/_45dp</item>
-        <item name="android:minWidth">@dimen/_25dp</item>
-        <item name="android:textSize">@dimen/_6sp</item>
+        <item name="android:padding">@dimen/_5mdp</item>
+        <item name="android:maxWidth">@dimen/_45mdp</item>
+        <item name="android:minWidth">@dimen/_25mdp</item>
+        <item name="android:textSize">@dimen/_6msp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/_6dp</item>
+        <item name="cornerSize">@dimen/_6mdp</item>
     </style>
 
 </resources>

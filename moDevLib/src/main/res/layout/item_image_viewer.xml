@@ -14,12 +14,12 @@
            android:id="@+id/cardView"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_margin="@dimen/_2dp"
-           app:cardCornerRadius="@dimen/_4dp">
+           android:layout_margin="@dimen/_2mdp"
+           app:cardCornerRadius="@dimen/_4mdp">
 
            <androidx.constraintlayout.widget.ConstraintLayout
-               android:layout_width="@dimen/_25dp"
-               android:layout_height="@dimen/_25dp">
+               android:layout_width="@dimen/_25mdp"
+               android:layout_height="@dimen/_25mdp">
 
                <CheckBox
                    android:id="@+id/checkBox"
@@ -38,7 +38,7 @@
                    android:id="@+id/imageView"
                    android:layout_width="0dp"
                    android:layout_height="0dp"
-                   android:layout_margin="@dimen/_2dp"
+                   android:layout_margin="@dimen/_2mdp"
                    android:background="@drawable/shape_rounded_2"
                    android:clipToOutline="true"
                    android:visibility="visible"

@@ -9,11 +9,11 @@
         <item name="endIconMode">clear_text</item>
         <item name="endIconTint">@color/primary</item>
         <!-- Additional attributes for TextInputLayout -->
-        <item name="boxStrokeWidth">@dimen/_1dp</item>
-        <item name="boxCornerRadiusTopEnd">@dimen/_6dp</item>
-        <item name="boxCornerRadiusTopStart">@dimen/_6dp</item>
-        <item name="boxCornerRadiusBottomEnd">@dimen/_6dp</item>
-        <item name="boxCornerRadiusBottomStart">@dimen/_6dp</item>
+        <item name="boxStrokeWidth">@dimen/_1mdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_6mdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_6mdp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_6mdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_6mdp</item>
         <item name="android:textColor">@color/selector_primary_gray</item>
         <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
         <!-- Add any other TextInputLayout attributes as needed -->
@@ -34,7 +34,7 @@
         <item name="android:maxLength">25</item>
 
         <!-- Additional attributes for TextInputEditText -->
-        <item name="android:strokeWidth">@dimen/_3dp</item>
+        <item name="android:strokeWidth">@dimen/_3mdp</item>
         <item name="textAllCaps">true</item>
 
         <!-- IME options for handling input method actions -->

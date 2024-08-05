@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape_rounded_12"
         android:backgroundTintMode="src_atop"
-        android:padding="@dimen/_5dp">
+        android:padding="@dimen/_5mdp">
 
         <!-- TODO: Update blank fragment layout -->
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="@dimen/_40dp"
-            android:layout_height="@dimen/_40dp"
+            android:layout_width="@dimen/_40mdp"
+            android:layout_height="@dimen/_40mdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,9 +28,9 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="@dimen/_40dp"
-            android:layout_height="@dimen/_40dp"
-            android:padding="@dimen/_7dp"
+            android:layout_width="@dimen/_40mdp"
+            android:layout_height="@dimen/_40mdp"
+            android:padding="@dimen/_7mdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
