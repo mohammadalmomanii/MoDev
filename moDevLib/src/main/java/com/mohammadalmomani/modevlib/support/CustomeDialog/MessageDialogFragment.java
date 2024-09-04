@@ -10,19 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.mohammadalmomani.modevlib.R;
-import com.mohammadalmomani.modevlib.databinding.FragmentCustomDialogBinding;
 import com.mohammadalmomani.modevlib.databinding.FragmentMessageBinding;
 import com.mohammadalmomani.modevlib.support.AppHelper;
 import com.mohammadalmomani.modevlib.support.MainInterface;
 import com.mohammadalmomani.modevlib.support.StaticString;
-import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialog;
-import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialogFragment;
 
 
 public class MessageDialogFragment extends DialogFragment {
@@ -122,15 +120,13 @@ public class MessageDialogFragment extends DialogFragment {
     }
 
 
-
-    public MessageDialogFragment setBtnPositive(String title, MainInterface mainInterface) {
+    public MessageDialogFragment setBtnPositive(String title, @Nullable MainInterface mainInterface) {
         AppHelper.setVisible(binding.btnGotIt);
         binding.btnGotIt.setText(title);
         binding.btnGotIt.setOnClickListener(v -> {
-
-
-            mainInterface.onItemClick();
-
+            if (mainInterface != null)
+                mainInterface.onItemClick();
+            else dismissDialog();
         });
         return fragment;
     }
