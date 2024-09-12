@@ -13,6 +13,8 @@
         <shape  >
             <corners android:radius="@dimen/_100mdp" />
             <solid android:color="@color/primary_tran_15" />
+
+
         </shape>
     </item>
 </layer-list>

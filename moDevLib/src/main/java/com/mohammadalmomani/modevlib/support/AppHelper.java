@@ -25,6 +25,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.FileProvider;
+import androidx.core.os.LocaleListCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -229,8 +230,7 @@ public class AppHelper {
                     time.set(Calendar.HOUR_OF_DAY, selectedHour);
 
                     time.set(Calendar.MINUTE, selectedMinute);
-                    SimpleDateFormat format = new SimpleDateFormat(
-                            "hh:mm a");
+                    SimpleDateFormat format = new SimpleDateFormat("hh:mm a");
                     view2.setText(view2.getText() + "   " + (showDate ? getCurrentDate() + "\t" : "") + format.format(time.getTime()));
                 }, 1, 1, false);// Yes 24 hour time
         timePicker.setTitle(context.getString(R.string.time));
@@ -248,11 +248,25 @@ public class AppHelper {
         });
     }
 
+    /**
+     * use the new Function setLanguage_NEW.
+     *
+     * @deprecated See {@link AppHelper#setLanguage_NEW(String)}
+     *
+     * in new function you don't need to restart activity.
+     */
+    @Deprecated
     static public void setLanguage(Context context, String language) {
         Configuration configuration = context.getResources().getConfiguration();
         Locale newLocale = new Locale(language);
         configuration.setLocale(newLocale);
         context.createConfigurationContext(configuration);
+    }
+
+    static public void setLanguage_NEW(String language) {
+        AppCompatDelegate.setApplicationLocales(
+                LocaleListCompat.create(Locale.forLanguageTag(language))
+        );
     }
 
     static public View setVisible(View view) {
