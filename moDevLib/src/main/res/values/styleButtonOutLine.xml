@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="styleButtonOutLine" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="modev.styleButtonOutLine" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="shapeAppearanceOverlay">
             @style/ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline
         </item>

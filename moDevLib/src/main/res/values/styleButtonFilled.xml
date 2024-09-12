@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="styleButtonFilled" parent="Widget.MaterialComponents.Button">
+    <style name="modev.styleButtonFilled" parent="Widget.MaterialComponents.Button">
         <item name="shapeAppearanceOverlay">
             @style/ShapeAppearanceOverlay.MyApp.Button.Rounded
         </item>

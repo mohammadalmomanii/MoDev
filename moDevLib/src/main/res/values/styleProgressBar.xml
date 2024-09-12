@@ -2,7 +2,7 @@
 <resources>
 
 
-    <style name="styleProgressBar" parent="Widget.AppCompat.ProgressBar">
+    <style name="modev.styleProgressBar" parent="Widget.AppCompat.ProgressBar">
         <item name="android:indeterminateTint">@color/primary_dark</item>
 
     </style>

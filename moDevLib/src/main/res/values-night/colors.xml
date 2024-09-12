@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#8fd2c9</color>
-    <color name="primary_tran_15" >#268FD2C9</color>
-    <color name="primary_dark">#8ec63f</color>
-    <color name="primary_light">#f2ba58</color>
-    <color name="red">#4C0000</color>
-    <color name="blue">#00004C</color>
-    <color name="green">#004C00</color>
-    <color name="yellow">#4C4C00</color>
-    <color name="orange">#4C2800</color>
-    <color name="purple">#804C80</color>
-    <color name="pink">#B3A699</color>
-    <color name="brown">#A52C2C</color>
-    <color name="black">#E0E0E0</color>
-    <color name="white">#1F1F1F</color>
-    <color name="gray">#4C4C4C</color>
-    <color name="light_gray">#2F2F2F</color>
-    <color name="dark_gray">#565656</color>
-    <color name="cyan">#4C4C4C</color>
-    <color name="teal">#337373</color>
-    <color name="indigo">#7D6D5C</color>
-    <color name="lavender">#AA55B3</color>
-    <color name="mint">#676700</color>
-    <color name="coral">#9A696A</color>
-    <color name="gold">#7F7C00</color>
-    <color name="grey">#484848</color>
-    <color name="transparent">#00FFFFFF</color>
 
+    <color name="primary">#C88935</color> <!-- Darker tone of the original primary color -->
+    <color name="primary_dark">#7A5925</color>
+    <color name="primary_light">#A67430</color>
+    <color name="primary_tran_15">#264F3A2A</color>
+
+    <color name="secondary">#0F403C</color> <!-- Darker tone of secondary -->
+    <color name="secondary_dark">#092C29</color>
+    <color name="secondary_light">#30605D</color>
+
+    <color name="gray">#B4B4B4</color>
+    <color name="gray_dark">#DEDEDE</color>
+    <color name="gray_light">#737373</color>
+
+    <color name="red">#A6282A</color> <!-- Slightly muted red -->
+    <color name="red_tran_10">#1AA6282A</color>
+
+    <color name="blue">#0056A3</color> <!-- Darker blue (MidnightBlue) -->
+    <color name="green">#228B22</color> <!-- ForestGreen -->
+    <color name="yellow">#B8860B</color> <!-- DarkGoldenRod -->
+    <color name="orange">#D2691E</color> <!-- Chocolate -->
+    <color name="purple">#4B0082</color> <!-- Indigo -->
+    <color name="pink">#C71585</color> <!-- MediumVioletRed -->
+    <color name="brown">#5C3A1D</color> <!-- Darker brown -->
+    <color name="black">#D9D9D9</color> <!-- Near Black for background -->
+    <color name="white">#232323</color> <!-- Lighter tone to mimic soft light -->
+    <color name="cyan">#008B8B</color> <!-- DarkCyan -->
+    <color name="teal">#008080</color> <!-- DarkTeal -->
+    <color name="indigo">#2F4F4F</color> <!-- DarkSlateGray -->
+    <color name="lavender">#B57EDC</color> <!-- Muted Lavender -->
+    <color name="mint">#2E8B57</color> <!-- SeaGreen -->
+    <color name="coral">#CD5B45</color> <!-- IndianRed -->
+    <color name="gold">#8B7500</color> <!-- Olive -->
+    <color name="transparent">#00FFFFFF</color> <!-- Transparent -->
 
 </resources>

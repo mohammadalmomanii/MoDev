@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Modev.DialogPickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/secondary_light</item>
+        <item name="colorPrimary">@color/primary_dark</item>
+
+        <!-- Button background -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+
+        <!-- Button text color -->
+        <item name="android:textColorPrimary">@color/secondary_dark</item>
+
+    </style>
+
+    <!-- Define the custom button style -->
+    <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline
+        </item>
+        <item name="android:minWidth">@dimen/_25mdp</item>
+    </style>
+</resources>

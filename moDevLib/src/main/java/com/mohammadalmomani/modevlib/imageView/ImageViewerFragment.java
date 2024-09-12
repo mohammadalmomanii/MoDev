@@ -53,7 +53,7 @@ public class ImageViewerFragment extends TopSheetDialogFragment implements MainI
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.CustomBottomSheetDialogTheme);
+        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.Modev_CustomBottomSheetDialogTheme);
     }
 
 

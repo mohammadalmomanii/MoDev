@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- EditTextInputLayoutStyle -->
-    <style name="styleEditTextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="modev.styleEditTextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <!-- Set initial box stroke color -->
         <item name="boxStrokeColor">@color/primary</item>
-        <item name="hintTextColor">@color/selector_primary_gray</item>
-        <item name="android:textColorHint">@color/selector_primary_gray</item>
+        <item name="hintTextColor">@color/selector_primary_black</item>
+        <item name="android:textColorHint">@color/selector_primary_black</item>
         <item name="endIconMode">clear_text</item>
         <item name="endIconTint">@color/primary</item>
         <!-- Additional attributes for TextInputLayout -->
@@ -14,7 +14,7 @@
         <item name="boxCornerRadiusTopStart">@dimen/_6mdp</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/_6mdp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/_6mdp</item>
-        <item name="android:textColor">@color/selector_primary_gray</item>
+        <item name="android:textColor">@color/selector_primary_black</item>
         <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
         <!-- Add any other TextInputLayout attributes as needed -->
         <item name="counterEnabled">true</item>
@@ -30,7 +30,7 @@
     <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
         <!-- Use a selector for the box stroke color -->
         <item name="boxStrokeColor">@drawable/selector_edittext_box_stroke_color</item>
-        <item name="android:textColor">@color/selector_primary_gray</item>
+        <item name="android:textColor">@color/selector_primary_black</item>
         <item name="android:maxLength">25</item>
 
         <!-- Additional attributes for TextInputEditText -->

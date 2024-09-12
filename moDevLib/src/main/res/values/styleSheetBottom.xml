@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="styleSheetBottom" parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="modev.styleSheetBottom" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomSheetStyleBottom</item>
         <item name="android:background">@color/transparent</item>
         <item name="colorPrimary">@color/primary_dark</item>

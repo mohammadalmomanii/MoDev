@@ -100,7 +100,7 @@
 
             <Button
                 android:id="@+id/btn_neutral"
-                style="@style/styleButtonOutLine"
+                style="@style/modev.styleButtonOutLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2mdp"
@@ -116,7 +116,7 @@
 
             <Button
                 android:id="@+id/btn_negative"
-                style="@style/styleButtonOutLine"
+                style="@style/modev.styleButtonOutLine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2mdp"
@@ -133,7 +133,7 @@
 
             <Button
                 android:id="@+id/btn_positive"
-                style="@style/styleButtonFilled"
+                style="@style/modev.styleButtonFilled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2mdp"

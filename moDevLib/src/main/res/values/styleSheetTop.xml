@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="styleSheetTop" parent="Theme.Design.Light.TopSheetDialog">
+    <style name="modev.styleSheetTop" parent="Theme.Design.Light.TopSheetDialog">
         <item name="bottomSheetStyle">@style/CustomSheetStyleTop</item>
         <item name="android:background">@color/transparent</item>
         <item name="colorPrimary">@color/primary_dark</item>

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MoDev" parent="Theme.MoDevLib">
+    <style name="Theme.MoDev" parent="Modev.MainTheme">
         <!-- Primary brand color. -->
 
         <!-- Customize your theme here. -->
