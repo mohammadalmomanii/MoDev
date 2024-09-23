@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -23,11 +22,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.FileProvider;
-import androidx.core.os.LocaleListCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -195,33 +192,6 @@ public class AppHelper {
         }
     }
 
-
-    static public void activityMoveAnimation(Activity activity, int newAnim, int oldAnim) {
-        activity.overridePendingTransition(newAnim, oldAnim);
-    }
-
-    /**
-     * use the new Function showDateAndTimePickersDialog.
-     *
-     * @deprecated See {@link AppHelper#showDateAndTimePickersDialog(Context, String, String, MainInterface)}
-     *
-     * this function provide more flexibility and easy to control with picker dialog.
-     */
-    @Deprecated
-    static public void dateTimePicker(Context context, TextView view, String format) {
-        datePicker(context, view, format).setOnDismissListener(dialog -> {
-            if (format.equals("yyyy-MM-dd")) timePicker(context, view, false);
-        });
-    }
-
-    /**
-     * use the new Function showDateAndTimePickersDialog.
-     *
-     * @deprecated See {@link AppHelper#showDateAndTimePickersDialog(Context, String, String, MainInterface)}
-     *
-     * this function provide more flexibility and easy to control with picker dialog.
-     */
-    @Deprecated
     static public DatePickerDialog datePicker(Context context, TextView view2, String format) {
         view2.setText("");
         Calendar calendar = Calendar.getInstance();
@@ -250,14 +220,6 @@ public class AppHelper {
         return datePickerDialog;
     }
 
-    /**
-     * use the new Function showDateAndTimePickersDialog.
-     *
-     * @deprecated See {@link AppHelper#showDateAndTimePickersDialog(Context, String, String, MainInterface)}
-     *
-     * this function provide more flexibility and easy to control with picker dialog.
-     */
-    @Deprecated
     static public TimePickerDialog timePicker(Context context, TextView view2, boolean showDate) {
         TimePickerDialog timePicker = new TimePickerDialog(context,
                 (timePicker1, selectedHour, selectedMinute) -> {
@@ -267,7 +229,8 @@ public class AppHelper {
                     time.set(Calendar.HOUR_OF_DAY, selectedHour);
 
                     time.set(Calendar.MINUTE, selectedMinute);
-                    SimpleDateFormat format = new SimpleDateFormat("hh:mm a");
+                    SimpleDateFormat format = new SimpleDateFormat(
+                            "hh:mm a");
                     view2.setText(view2.getText() + "   " + (showDate ? getCurrentDate() + "\t" : "") + format.format(time.getTime()));
                 }, 1, 1, false);// Yes 24 hour time
         timePicker.setTitle(context.getString(R.string.time));
@@ -275,132 +238,21 @@ public class AppHelper {
         return timePicker;
     }
 
-    private static DatePickerDialog showDatePickerDialog(Context context, String format, MainInterface mainInterface) {
-        // Get current date
-        final Calendar calendar = Calendar.getInstance();
-        final String[] formattedDate = new String[1];
+    static public void activityMoveAnimation(Activity activity, int newAnim, int oldAnim) {
+        activity.overridePendingTransition(newAnim, oldAnim);
+    }
 
-        // Create DatePickerDialog
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                context,
-                R.style.Modev_DialogPickerTheme,
-                (view, year, monthOfYear, dayOfMonth) -> {
-                    // Update the calendar with the selected date
-                    calendar.set(Calendar.YEAR, year);
-                    calendar.set(Calendar.MONTH, monthOfYear);
-                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-                    // Format the selected date in any format (e.g., dd-MM-yyyy)
-                    SimpleDateFormat dateFormat = new SimpleDateFormat(format, Locale.getDefault());
-                    formattedDate[0] = dateFormat.format(calendar.getTime());
-
-                    // Set the formatted date to the TextView
-
-                },
-                // Set initial date for the DatePickerDialog
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
-        );
-
-        // Show the DatePickerDialog
-        datePickerDialog.show();
-        datePickerDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-                mainInterface.onDialogDismiss(formattedDate[0]);
-            }
+    static public void dateTimePicker(Context context, TextView view, String format) {
+        datePicker(context, view, format).setOnDismissListener(dialog -> {
+            if (format.equals("yyyy-MM-dd")) timePicker(context, view, false);
         });
-
-        return datePickerDialog;
     }
 
-    private static TimePickerDialog showTimePickerDialog(Context context, String format, MainInterface mainInterface) {
-        // Get current time
-        final Calendar calendar = Calendar.getInstance();
-        final String[] formattedTime = new String[1];
-        // Create TimePickerDialog
-        TimePickerDialog timePickerDialog = new TimePickerDialog(
-                context,
-                R.style.Modev_DialogPickerTheme, // Apply the custom dialog theme here
-                (view, hourOfDay, minute) -> {
-                    // Update the calendar with the selected time
-                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                    calendar.set(Calendar.MINUTE, minute);
-
-                    // Format the selected time in any format (e.g., HH:mm or hh:mm a)
-                    SimpleDateFormat timeFormat = new SimpleDateFormat(format, Locale.getDefault());
-                    formattedTime[0] = timeFormat.format(calendar.getTime());
-
-                    // Set the formatted time to the TextView
-                },
-                // Set initial time for the TimePickerDialog
-                calendar.get(Calendar.HOUR_OF_DAY),
-                calendar.get(Calendar.MINUTE),
-                false  // is24HourView: false for 12-hour format, true for 24-hour format
-        );
-
-        // Show the TimePickerDialog
-        timePickerDialog.show();
-        timePickerDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-                mainInterface.onDialogDismiss(formattedTime[0]);
-            }
-        });
-
-        return timePickerDialog;
-    }
-    public static void showDateAndTimePickersDialog
-            (Context context, @Nullable String dateFormat, @Nullable String timeFormat
-                    , MainInterface mainInterface) {
-
-        if (dateFormat != null && timeFormat != null) {
-            showDatePickerDialog(context, dateFormat, new MainInterface() {
-                @Override
-                public void onDialogDismiss(Object object) {
-                    final String[] date = {""};
-                    if (object != null)
-                        date[0] += object;
-                    showTimePickerDialog(context, timeFormat, new MainInterface() {
-                        @Override
-                        public void onDialogDismiss(Object object) {
-                            if (object != null && !date[0].isEmpty())
-                                date[0] += " | " + object;
-                            else if (object != null)
-                                date[0] += object;
-                            mainInterface.onDialogDismiss(date[0]);
-                        }
-                    });
-                }
-            });
-        } else if (dateFormat != null)
-            showDatePickerDialog(context, dateFormat, mainInterface);
-        else if (timeFormat != null)
-            showTimePickerDialog(context, timeFormat, mainInterface);
-
-    }
-    /**
-     * use the new Function setLanguage_NEW.
-     *
-     * @deprecated See {@link AppHelper#setLanguage_NEW(String)}
-     *
-     * in new function you don't need to restart activity.
-     */
-    @Deprecated
     static public void setLanguage(Context context, String language) {
         Configuration configuration = context.getResources().getConfiguration();
         Locale newLocale = new Locale(language);
         configuration.setLocale(newLocale);
         context.createConfigurationContext(configuration);
-    }
-
-    static public void setLanguage_NEW(String language) {
-        AppCompatDelegate.setApplicationLocales(
-                LocaleListCompat.create(Locale.forLanguageTag(language))
-        );
     }
 
     static public View setVisible(View view) {
