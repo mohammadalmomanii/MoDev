@@ -281,6 +281,7 @@ public class AppHelper {
         final String[] formattedDate = new String[1];
 
         // Create DatePickerDialog
+
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 context,
                 R.style.Modev_DialogPickerTheme,
