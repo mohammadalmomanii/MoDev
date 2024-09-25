@@ -49,18 +49,45 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class AppHelper {
+
+    /**
+     * use the new Function getCurrentDate.
+     *
+     * @deprecated See {@link AppHelper#getCurrentDate(String)}
+     * <p>
+     * you can add your format to get your specific date.
+     */
+    @Deprecated
     static public String getCurrentDate() {
         Date currentDate = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
         String dateString = dateFormat.format(currentDate);
         return dateString;
     }
-    static public void setTimeZone() {
-        TimeZone.setDefault(TimeZone.getTimeZone("GMT+3"));
+
+    static public String getCurrentDate(String format) {
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format, Locale.ENGLISH);
+        String dateString = dateFormat.format(currentDate);
+        return dateString;
     }
+
+    /**
+     * setTimeZone.
+     *
+     * @param GTM the time value to be formatted into a date-time string.
+     *            Like "GTM+03:00", "GTM-04:00", "GTM+02:00" ets.
+     * @return the formatted date-time string.
+     */
+    static public void setTimeZone(String GTM) {
+        TimeZone.setDefault(TimeZone.getTimeZone(GTM));
+    }
+
     static public String getShift() {
         int time = Integer.parseInt(new SimpleDateFormat("HH", Locale.ENGLISH).format(new Date()));
         if (time >= 8 && time < 16)
@@ -69,6 +96,7 @@ public class AppHelper {
             return "B";
         else return "C";
     }
+
     static public String getShift(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss a", Locale.ENGLISH);
         LocalDateTime dateTime = LocalDateTime.parse(date, formatter);
@@ -102,7 +130,7 @@ public class AppHelper {
     }
     static public void openFile(Context context, String fileName) {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), fileName);
-        Uri uri = FileProvider.getUriForFile(context, "com.lss.mreapp" + ".provider", file);
+        Uri uri = FileProvider.getUriForFile(context, context.getPackageName() + ".provider", file);
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setDataAndType(uri, "application/pdf");
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_GRANT_READ_URI_PERMISSION);
@@ -268,7 +296,7 @@ public class AppHelper {
 
                     time.set(Calendar.MINUTE, selectedMinute);
                     SimpleDateFormat format = new SimpleDateFormat("hh:mm a");
-                    view2.setText(view2.getText() + "   " + (showDate ? getCurrentDate() + "\t" : "") + format.format(time.getTime()));
+                    view2.setText(view2.getText() + "   " + (showDate ? getCurrentDate("yyyy-MM-dd") + "\t" : "") + format.format(time.getTime()));
                 }, 1, 1, false);// Yes 24 hour time
         timePicker.setTitle(context.getString(R.string.time));
         timePicker.show();
@@ -421,8 +449,16 @@ public class AppHelper {
         recyclerView.setOnTouchListener((v, event) -> true);
     }
 
-    static public void delay(Runnable runnable, long time) {
-        new Handler(Looper.getMainLooper()).postDelayed(runnable, time);
+
+
+    static public void delayOnBackground(Runnable runnable, long delayMillis) {
+        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.schedule(runnable, delayMillis, TimeUnit.MILLISECONDS);
+    }
+
+    static public void delay(Runnable runnable, long delayMillis) {
+        new Handler(Looper.getMainLooper()).postDelayed(runnable, delayMillis);
+
     }
 
     static public String getAndroidVersion() {
