@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
@@ -19,48 +20,68 @@ import com.mohammadalmomani.modevlib.databinding.FragmentCustomDialogBinding;
 import com.mohammadalmomani.modevlib.support.AppHelper;
 import com.mohammadalmomani.modevlib.support.MainInterface;
 
-
 public class CustomDialogFragment extends DialogFragment {
 
-    static  private FragmentCustomDialogBinding binding;
-    static private CustomDialogFragment fragment;
-    static private MainInterface mainInterface;
-    private boolean isPassword = false;
+    private static FragmentCustomDialogBinding binding;
+    private static CustomDialogFragment fragment;
+    private static MainInterface mainInterface;
+
+    // Temporary storage for values if binding is not yet created
+    private String pendingTitle;
+    private String pendingDescription;
+    private Drawable pendingImage;
+    private String pendingPositiveButtonTitle;
+    private String pendingNegativeButtonTitle;
+    private String pendingNeutralButtonTitle;
+    private MainInterface pendingPositiveButtonListener;
+    private MainInterface pendingNegativeButtonListener;
+    private MainInterface pendingNeutralButtonListener;
+
+    // Flag to determine if the dialog is for password input
 
     public CustomDialogFragment() {
         // Required empty public constructor
         dismissDialog();
-
     }
-
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (mainInterface instanceof CustomDialogFragment)
+        if (context instanceof MainInterface) {
             mainInterface = (MainInterface) context;
+        }
     }
 
+    /**
+     * Creates a new instance of CustomDialogFragment.
+     * This replaces the deprecated newInstance() for improved clarity.
+     */
+    public static CustomDialogFragment builder() {
+        fragment = new CustomDialogFragment();
+        return fragment;
+    }
+
+    /**
+     * @deprecated Use {@link #builder()} instead for better clarity and modern usage.
+     */
+    @Deprecated
     public static CustomDialogFragment newInstance() {
         fragment = new CustomDialogFragment();
         return fragment;
     }
-    public CustomDialogFragment startShow(FragmentManager manager) {
 
-        this.showNow(manager, "");
-        return fragment;
-    }
-    public static CustomDialogFragment getFragment() {
-        return fragment;
+    /**
+     * Starts showing the dialog fragment using a specified tag.
+     *
+     * @param manager The FragmentManager to manage the dialog fragment.
+     * @param tag     Optional tag for the fragment.
+     */
+    public void build(@NonNull FragmentManager manager, @Nullable String tag) {
+        super.showNow(manager, tag);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mainInterface = null;
-    }
     public static void dismissDialog() {
-        if (fragment != null&&!fragment.isPassword) {
+        if (fragment != null) {
             fragment.dismiss();
         }
     }
@@ -69,103 +90,136 @@ public class CustomDialogFragment extends DialogFragment {
     public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
         fragment = null;
-    }
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        binding = null;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         getDialog().getWindow().setBackgroundDrawableResource(R.drawable.shape_rounded_12);
 
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_custom_dialog, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_custom_dialog, container, false);
 
+        // Set default visibility for dialog elements
         AppHelper.setInvisible(binding.iv);
         AppHelper.setInvisible(binding.tvTitle);
         AppHelper.setGone(binding.btnNegative);
         AppHelper.setGone(binding.btnNeutral);
         AppHelper.setGone(binding.btnPositive);
-        AppHelper.setGone(binding.layNote);
         AppHelper.setGone(binding.tvDescription);
-
 
         return binding.getRoot();
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-
-
-
-
+        // Apply pending properties if they were set before binding was ready
+        if (pendingTitle != null) {
+            setTitle(pendingTitle);
+        }
+        if (pendingDescription != null) {
+            setDescription(pendingDescription);
+        }
+        if (pendingImage != null) {
+            setImage(pendingImage);
+        }
+        if (pendingPositiveButtonTitle != null) {
+            setBtnPositive(pendingPositiveButtonTitle, pendingPositiveButtonListener);
+        }
+        if (pendingNegativeButtonTitle != null) {
+            setBtnNegative(pendingNegativeButtonTitle, pendingNegativeButtonListener);
+        }
+        if (pendingNeutralButtonTitle != null) {
+            setBtnNeutral(pendingNeutralButtonTitle, pendingNeutralButtonListener);
+        }
+    }
 
     public CustomDialogFragment setImage(Drawable drawable) {
-        AppHelper.setVisible(binding.iv);
-        Glide.with(getActivity()).load(drawable).into(binding.iv);
-        return fragment;
+        if (binding != null) {
+            AppHelper.setVisible(binding.iv);
+            Glide.with(requireActivity()).load(drawable).into(binding.iv);
+        } else {
+            pendingImage = drawable; // Store temporarily if binding is not ready
+        }
+        return this;
     }
 
     public CustomDialogFragment setTitle(String title) {
-        AppHelper.setVisible(binding.tvTitle);
-        binding.tvTitle.setText(title);
-        return fragment;
+        if (binding != null) {
+            AppHelper.setVisible(binding.tvTitle);
+            binding.tvTitle.setText(title);
+        } else {
+            pendingTitle = title; // Store temporarily if binding is not ready
+        }
+        return this;
     }
 
     public CustomDialogFragment setDescription(String description) {
-        AppHelper.setVisible(binding.tvDescription);
-        binding.tvDescription.setText(description);
-        return fragment;
+        if (binding != null) {
+            AppHelper.setVisible(binding.tvDescription);
+            binding.tvDescription.setText(description);
+        } else {
+            pendingDescription = description; // Store temporarily if binding is not ready
+        }
+        return this;
     }
 
-    public CustomDialogFragment setBtnPositive(String title, MainInterface mainInterface) {
-        AppHelper.setVisible(binding.btnPositive);
-        binding.btnPositive.setText(title);
-        binding.btnPositive.setOnClickListener(v -> {
-
-
-                mainInterface.onItemClick();
-
-        });
-        return fragment;
+    public CustomDialogFragment setBtnPositive(String title, MainInterface listener) {
+        if (binding != null) {
+            AppHelper.setVisible(binding.btnPositive);
+            binding.btnPositive.setText(title);
+            binding.btnPositive.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick();
+                }
+            });
+        } else {
+            pendingPositiveButtonTitle = title; // Store temporarily if binding is not ready
+            pendingPositiveButtonListener = listener;
+        }
+        return this;
     }
 
-    public CustomDialogFragment setBtnNegative(String title, MainInterface mainInterface) {
-        AppHelper.setVisible(binding.btnNegative);
-        binding.btnNegative.setText(title);
-        binding.btnNegative.setOnClickListener(v -> {
-
-
-                mainInterface.onItemClick();
-        });
-        return fragment;
+    public CustomDialogFragment setBtnNegative(String title, MainInterface listener) {
+        if (binding != null) {
+            AppHelper.setVisible(binding.btnNegative);
+            binding.btnNegative.setText(title);
+            binding.btnNegative.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick();
+                }
+            });
+        } else {
+            pendingNegativeButtonTitle = title; // Store temporarily if binding is not ready
+            pendingNegativeButtonListener = listener;
+        }
+        return this;
     }
 
 
-    public CustomDialogFragment setNote(boolean isPassword) {
-        AppHelper.setVisible(binding.layNote);
-        this.isPassword = isPassword;
-
-        return fragment;
+    public CustomDialogFragment setBtnNeutral(String title, MainInterface listener) {
+        if (binding != null) {
+            AppHelper.setVisible(binding.btnNeutral);
+            binding.btnNeutral.setText(title);
+            binding.btnNeutral.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onItemClick();
+                }
+            });
+        } else {
+            pendingNeutralButtonTitle = title; // Store temporarily if binding is not ready
+            pendingNeutralButtonListener = listener;
+        }
+        return this;
     }
 
-    public static String getNote() {
-        return binding.etNote.getText() + "";
-    } public static void setErrorMessage(String message) {
-        binding.etNote.setError(message);
 
-    }
-
-    public CustomDialogFragment setBtnNeutral(String title, MainInterface mainInterface) {
-        AppHelper.setVisible(binding.btnNeutral);
-        binding.btnNeutral.setText(title);
-        binding.btnNeutral.setOnClickListener(v -> {
-
-
-                mainInterface.onItemClick();
-        });
-        return fragment;
+    @Override
+    public void onPause() {
+        super.onPause();
+        dismissDialog();
     }
 
 

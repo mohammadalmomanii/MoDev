@@ -72,24 +72,6 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_7msp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/lay_note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:visibility="visible"
-            app:counterMaxLength="200">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_note"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/notes"
-                android:inputType="text|textVisiblePassword"
-                android:maxLength="200"
-                android:singleLine="false" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
