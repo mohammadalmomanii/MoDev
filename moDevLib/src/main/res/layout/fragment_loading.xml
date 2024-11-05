@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="@dimen/_40mdp"
-            android:layout_height="@dimen/_40mdp"
+            android:layout_width="@dimen/_33mdp"
+            android:layout_height="@dimen/_33mdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,8 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="@dimen/_40mdp"
-            android:layout_height="@dimen/_40mdp"
+            android:layout_width="@dimen/_33mdp"
+            android:layout_height="@dimen/_33mdp"
             android:padding="@dimen/_7mdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Modev.DialogPickerTheme" parent="Theme.AppCompat.Light.Dialog">
+    <style name="Modev.DialogPicker" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/secondary_light</item>
         <item name="colorPrimary">@color/primary_dark</item>
 

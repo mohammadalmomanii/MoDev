@@ -38,60 +38,6 @@
     </style>
 
 
-    <style name="Modev.AppBottomSheetDialogTheme" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="bottomSheetStyle">@style/AppModalStyle</item>
-    </style>
-
-
-
-
-    <!--TEXT TAP ITEM STYLE-->
-    <style name="Theme.Design.TopSheetDialog" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
-        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
-    </style>
-
-    <style name="Theme.Design.Light.TopSheetDialog" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
-        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
-    </style>
-
-    <!--TEXT TAP ITEM STYLE-->
-
-
-
-    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/shape_rounded_6</item>
-    </style>
-
-    <style name="Modev.SpinnerTheme" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
-
-        <item name="android:textColor">@color/gray_dark</item>
-        <item name="android:backgroundTint">@color/black</item>
-        <item name="android:textSize">@dimen/_8msp</item>
-    </style>
-
-
-    <style name="Modev.CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/Modev.CustomBottomSheetStyle</item>
-        <item name="colorPrimary">@color/primary_dark</item>
-        <item name="colorPrimaryVariant">@color/primary</item>
-        <item name="colorOnPrimary">@color/primary_light</item>
-
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/black</item>
-        <item name="colorSecondaryVariant">@color/black</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="Modev.CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/shape_rounded_6</item>
-        <item name="android:layout_height">match_parent</item>
-
-    </style>
 
 
 

@@ -2,12 +2,12 @@ package com.mohammadalmomani.modevlib.imageView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -17,12 +17,11 @@ import com.mohammadalmomani.modevlib.imageView.adapters.AdapterImageViewer;
 import com.mohammadalmomani.modevlib.imageView.adapters.AdapterImages;
 import com.mohammadalmomani.modevlib.support.AppHelper;
 import com.mohammadalmomani.modevlib.support.MainInterface;
-import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImageViewerFragment extends TopSheetDialogFragment implements MainInterface {
+public class ImageViewerFragment extends BottomSheetDialogFragment implements MainInterface {
     private List<Object> imageList = new ArrayList<>();
     private FragmentImageViewerBinding binding;
     private AdapterImages adapter;
@@ -53,9 +52,14 @@ public class ImageViewerFragment extends TopSheetDialogFragment implements MainI
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(BottomSheetDialogFragment.STYLE_NORMAL, R.style.Modev_CustomBottomSheetDialogTheme);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.modev_styleImageViewer);
     }
 
+
+    public ImageViewerFragment setStyleFlag(int style, int theme) {
+        super.setStyle(style, theme);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,7 +69,7 @@ public class ImageViewerFragment extends TopSheetDialogFragment implements MainI
 
 
 //        Glide.with(getActivity()).load(image).into(binding.ivZoomImage);
-        AppHelper.expandedTopSheetDialog(this);
+        AppHelper.expandedBottomSheetDialog(this);
 
 
         adapter = new AdapterImages();
@@ -109,7 +113,6 @@ public class ImageViewerFragment extends TopSheetDialogFragment implements MainI
 
     @Override
     public void onItemClick(Object object, int position) {
-        Log.d("asdfghgfd", "asderftgyh");
         if (adapter.getSelectedItem() != position) {
             adapter.setSelectedItem(position);
             binding.vp.setCurrentItem(position, true);

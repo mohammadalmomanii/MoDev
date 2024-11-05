@@ -312,7 +312,7 @@ public class AppHelper {
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 context,
-                R.style.Modev_DialogPickerTheme,
+                R.style.Modev_DialogPicker,
                 (view, year, monthOfYear, dayOfMonth) -> {
                     // Update the calendar with the selected date
                     calendar.set(Calendar.YEAR, year);
@@ -346,7 +346,7 @@ public class AppHelper {
         // Create TimePickerDialog
         TimePickerDialog timePickerDialog = new TimePickerDialog(
                 context,
-                R.style.Modev_DialogPickerTheme, // Apply the custom dialog theme here
+                R.style.Modev_DialogPicker, // Apply the custom dialog theme here
                 (view, hourOfDay, minute) -> {
                     // Update the calendar with the selected time
                     calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);

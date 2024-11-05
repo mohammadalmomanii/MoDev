@@ -7,88 +7,99 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".imageView.ImageViewerFragment">
+        android:orientation="vertical">
 
-
-        <ImageView
-            android:id="@+id/iv_close"
-            android:layout_width="@dimen/_17mdp"
-            android:layout_height="@dimen/_17mdp"
-            android:foreground="@drawable/ripple_30"
-            android:focusable="true"  android:src="@drawable/ic_close"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01" />
-
-        <TextView
-            android:id="@+id/tv_counter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_15mdp"
-            android:text="1 of 14"
-            android:textSize="@dimen/_9msp"
-            app:layout_constraintBottom_toTopOf="@+id/rv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.97" />
-
-        <ImageView
-            android:id="@+id/iv_left"
-            android:layout_width="@dimen/_15mdp"
-            android:layout_height="@dimen/_15mdp"
-            android:focusable="true"
-            android:foreground="@drawable/ripple_6"
-            android:foregroundTint="@color/black"
-            android:src="@drawable/ic_arrow_left"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
-            app:layout_constraintEnd_toStartOf="@+id/tv_counter"
-            app:layout_constraintTop_toTopOf="@+id/tv_counter"
-            app:tint="@color/primary" />
-
-        <ImageView
-            android:id="@+id/iv_right"
-            android:layout_width="@dimen/_15mdp"
-            android:layout_height="@dimen/_15mdp"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
-            android:focusable="true"
-            android:foreground="@drawable/ripple_6"
-            android:foregroundTint="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/tv_counter"
-            app:layout_constraintTop_toTopOf="@+id/tv_counter"
-            app:tint="@color/primary" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10mdp"
-            app:layout_constraintBottom_toTopOf="@+id/iv_left"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_max="@dimen/_80mdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_close">
-
-        </androidx.viewpager2.widget.ViewPager2>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:itemCount="10"
-            tools:listitem="@layout/item_image_viewer"/>
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4mdp"
+            android:background="@drawable/shape_rounded_6"
+            android:padding="@dimen/_4mdp"
+            tools:context=".imageView.ImageViewerFragment">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="@dimen/_17mdp"
+                android:layout_height="@dimen/_17mdp"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_30"
+                android:src="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.01"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.01" />
+
+            <TextView
+                android:id="@+id/tv_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_15mdp"
+                android:text="1 of 14"
+                android:textSize="@dimen/_9msp"
+                app:layout_constraintBottom_toTopOf="@+id/rv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.97" />
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="@dimen/_15mdp"
+                android:layout_height="@dimen/_15mdp"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_6"
+                android:foregroundTint="@color/black"
+                android:src="@drawable/ic_arrow_left"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
+                app:layout_constraintEnd_toStartOf="@+id/tv_counter"
+                app:layout_constraintTop_toTopOf="@+id/tv_counter"
+                app:tint="@color/primary" />
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="@dimen/_15mdp"
+                android:layout_height="@dimen/_15mdp"
+                android:focusable="true"
+                android:foreground="@drawable/ripple_6"
+                android:foregroundTint="@color/black"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_counter"
+                app:layout_constraintStart_toEndOf="@+id/tv_counter"
+                app:layout_constraintTop_toTopOf="@+id/tv_counter"
+                app:tint="@color/primary" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_170mdp"
+                android:layout_margin="@dimen/_10mdp"
+                app:layout_constraintBottom_toTopOf="@+id/iv_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_max="@dimen/_80mdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_close">
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_image_viewer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
 </layout>

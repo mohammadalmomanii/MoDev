@@ -8,12 +8,38 @@
         <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/primary_light</item>
 
-        <!-- Secondary brand color. -->
 
     </style>
 
     <style name="CustomSheetStyleTop" parent="Widget.Design.TopSheet.Modal">
         <item name="android:background">@color/transparent</item>
         <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <style name="Theme.Design.Light.TopSheetDialog" parent="Theme.AppCompat.Light.Dialog" >
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
+    </style>
+
+    <style name="Theme.Design.TopSheetDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
+    </style>
+
+    <style name="Animation.Design.TopSheetDialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/top_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/top_sheet_slide_out</item>
+    </style>
+
+    <style name="Widget.Design.TopSheet.Modal" parent="android:Widget">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:elevation">@dimen/_16mdp</item>
+        <item name="behavior_peekHeight">@dimen/_256mdp</item>
+        <item name="behavior_hideable">true</item>
+        <item name="enforceMaterialTheme">false</item>
+
     </style>
 </resources>
