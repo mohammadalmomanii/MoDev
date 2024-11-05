@@ -16,6 +16,7 @@ import com.mohammadalmomani.modevlib.databinding.FragmentImageViewerBinding;
 import com.mohammadalmomani.modevlib.imageView.adapters.AdapterImageViewer;
 import com.mohammadalmomani.modevlib.imageView.adapters.AdapterImages;
 import com.mohammadalmomani.modevlib.support.AppHelper;
+import com.mohammadalmomani.modevlib.support.CustomeDialog.CustomDialogFragment;
 import com.mohammadalmomani.modevlib.support.MainInterface;
 
 import java.util.ArrayList;
@@ -120,6 +121,10 @@ public class ImageViewerFragment extends BottomSheetDialogFragment implements Ma
             binding.rv.smoothScrollToPosition(position);
         }
 
+    }
+    public ImageViewerFragment setCancelableFlag (boolean cancelable) {
+        super.setCancelable(cancelable);
+        return this;
     }
 
     @Override

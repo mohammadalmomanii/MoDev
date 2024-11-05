@@ -119,7 +119,10 @@ public class MessageDialogFragment extends DialogFragment {
 
         return binding.getRoot();
     }
-
+    public MessageDialogFragment setCancelableFlag (boolean cancelable) {
+        super.setCancelable(cancelable);
+        return this;
+    }
     /**
      * Sets the image to be displayed in the dialog. The image size can be specified.
      * If the view is not ready, the image is stored temporarily until it can be applied.

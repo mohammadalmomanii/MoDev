@@ -136,6 +136,12 @@ public class CustomDialogFragment extends DialogFragment {
         }
     }
 
+
+    public CustomDialogFragment setCancelableFlag (boolean cancelable) {
+        super.setCancelable(cancelable);
+        return this;
+    }
+
     public CustomDialogFragment setImage(Drawable drawable) {
         if (binding != null) {
             AppHelper.setVisible(binding.iv);
