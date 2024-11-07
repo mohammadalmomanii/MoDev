@@ -303,7 +303,7 @@ public class AppHelper {
         return timePicker;
     }
 
-    private static DatePickerDialog showDatePickerDialog(Context context, String format, MainInterface mainInterface) {
+    private static DatePickerDialog showDatePickerDialog(Context context, Locale locale, String format, MainInterface mainInterface) {
         // Get current date
         final Calendar calendar = Calendar.getInstance();
         final String[] formattedDate = new String[1];
@@ -320,7 +320,7 @@ public class AppHelper {
                     calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
 
                     // Format the selected date in any format (e.g., dd-MM-yyyy)
-                    SimpleDateFormat dateFormat = new SimpleDateFormat(format, Locale.getDefault());
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(format, locale);
                     formattedDate[0] = dateFormat.format(calendar.getTime());
 
                     // Set the formatted date to the TextView
@@ -339,7 +339,7 @@ public class AppHelper {
         return datePickerDialog;
     }
 
-    private static TimePickerDialog showTimePickerDialog(Context context, String format, MainInterface mainInterface) {
+    private static TimePickerDialog showTimePickerDialog(Context context, Locale locale, String format, MainInterface mainInterface) {
         // Get current time
         final Calendar calendar = Calendar.getInstance();
         final String[] formattedTime = new String[1];
@@ -353,7 +353,7 @@ public class AppHelper {
                     calendar.set(Calendar.MINUTE, minute);
 
                     // Format the selected time in any format (e.g., HH:mm or hh:mm a)
-                    SimpleDateFormat timeFormat = new SimpleDateFormat(format, Locale.getDefault());
+                    SimpleDateFormat timeFormat = new SimpleDateFormat(format, locale);
                     formattedTime[0] = timeFormat.format(calendar.getTime());
 
                     // Set the formatted time to the TextView
@@ -376,18 +376,20 @@ public class AppHelper {
 
         return timePickerDialog;
     }
+
+
     public static void showDateAndTimePickersDialog
             (Context context, @Nullable String dateFormat, @Nullable String timeFormat
                     , MainInterface mainInterface) {
 
         if (dateFormat != null && timeFormat != null) {
-            showDatePickerDialog(context, dateFormat, new MainInterface() {
+            showDatePickerDialog(context, Locale.getDefault(), dateFormat, new MainInterface() {
                 @Override
                 public void onDialogDismiss(Object object) {
                     final String[] date = {""};
                     if (object != null)
                         date[0] += object;
-                    showTimePickerDialog(context, timeFormat, new MainInterface() {
+                    showTimePickerDialog(context, Locale.getDefault(), timeFormat, new MainInterface() {
                         @Override
                         public void onDialogDismiss(Object object) {
                             if (object != null && !date[0].isEmpty())
@@ -400,9 +402,38 @@ public class AppHelper {
                 }
             });
         } else if (dateFormat != null)
-            showDatePickerDialog(context, dateFormat, mainInterface);
+            showDatePickerDialog(context, Locale.getDefault(), dateFormat, mainInterface);
         else if (timeFormat != null)
-            showTimePickerDialog(context, timeFormat, mainInterface);
+            showTimePickerDialog(context, Locale.getDefault(), timeFormat, mainInterface);
+
+    }
+    public static void showLocaleDateAndTimePickersDialog
+            (Context context, Locale locale, @Nullable String dateFormat, @Nullable String timeFormat
+                    , MainInterface mainInterface) {
+
+        if (dateFormat != null && timeFormat != null) {
+            showDatePickerDialog(context, locale, dateFormat, new MainInterface() {
+                @Override
+                public void onDialogDismiss(Object object) {
+                    final String[] date = {""};
+                    if (object != null)
+                        date[0] += object;
+                    showTimePickerDialog(context, locale, timeFormat, new MainInterface() {
+                        @Override
+                        public void onDialogDismiss(Object object) {
+                            if (object != null && !date[0].isEmpty())
+                                date[0] += " | " + object;
+                            else if (object != null)
+                                date[0] += object;
+                            mainInterface.onDialogDismiss(date[0]);
+                        }
+                    });
+                }
+            });
+        } else if (dateFormat != null)
+            showDatePickerDialog(context, locale, dateFormat, mainInterface);
+        else if (timeFormat != null)
+            showTimePickerDialog(context, locale, timeFormat, mainInterface);
 
     }
     /**
