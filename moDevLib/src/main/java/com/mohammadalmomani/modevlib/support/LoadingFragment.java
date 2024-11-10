@@ -94,8 +94,17 @@ public class LoadingFragment extends DialogFragment {
      * @param manager The FragmentManager to manage the dialog fragment.
      * @param tag     Optional tag for the fragment.
      */
-    public void build(@NonNull FragmentManager manager, @Nullable String tag) {
+    public void buildNow(@NonNull FragmentManager manager, @Nullable String tag) {
         super.showNow(manager, tag);
+    }
+    /**
+     * Starts showing the dialog fragment using a specified tag.
+     *
+     * @param manager The FragmentManager to manage the dialog fragment.
+     * @param tag     Optional tag for the fragment.
+     */
+    public void build(@NonNull FragmentManager manager, @Nullable String tag) {
+        super.show(manager, tag);
     }
 
     @Override
