@@ -1,6 +1,7 @@
 package com.mohammadalmomani.modevlib.support;
 
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ public class LoadingFragment extends DialogFragment {
     private static LoadingFragment fragment;
     private long showTime = 0;
     private int gifLoading = 0;
+    private Drawable background ;
 
     public LoadingFragment() {
         // Empty public constructor
@@ -64,6 +66,16 @@ public class LoadingFragment extends DialogFragment {
      */
     public LoadingFragment setGifLoading(int gifLoading) {
         this.gifLoading = gifLoading;
+        return this;
+    }
+
+    /**
+     * Sets the GIF loading image resource ID.
+     * @param background Resource ID for the GIF loading image.
+     * @return The LoadingFragment instance.
+     */
+    public LoadingFragment setBackground(Drawable background) {
+        this.background = background;
         return this;
     }
 
@@ -122,6 +134,18 @@ public class LoadingFragment extends DialogFragment {
             AppHelper.delay(LoadingFragment::dismissDialog, showTime);
         }
 
+        if (background != null) {
+            getDialog().getWindow().setBackgroundDrawable(background);
+        }
+
+
+
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         if (gifLoading == 0) {
             AppHelper.setVisible(binding.progressBar);
             AppHelper.setGone(binding.imageView2);
@@ -130,8 +154,6 @@ public class LoadingFragment extends DialogFragment {
             AppHelper.setGone(binding.progressBar);
             AppHelper.setVisible(binding.imageView2);
         }
-
-        return binding.getRoot();
     }
 
     public static void dismissDialog() {

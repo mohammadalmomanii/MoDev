@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Modev.DialogPicker" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/secondary_light</item>
+    <style name="Modev.DialogPicker" parent="Theme.Material3.Light.Dialog">
+        <!-- Primary and Secondary Colors -->
         <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorSecondary">@color/secondary_light</item>
 
-        <!-- Button background -->
-        <item name="android:buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
-        <item name="android:buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+        <!-- Button styling -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/Modev.DialogButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/Modev.DialogButtonStyle</item>
 
-        <!-- Button text color -->
+        <!-- Text Color for Primary Text -->
         <item name="android:textColorPrimary">@color/secondary_dark</item>
-
     </style>
 
-    <!-- Define the custom button style -->
-    <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="shapeAppearanceOverlay">
-            @style/ShapeAppearanceOverlay.MyApp.Button.Rounded.Outline
-        </item>
-        <item name="android:minWidth">@dimen/_25mdp</item>
+    <!-- Updated custom button style for Material 3 with rounded corners and padding -->
+    <style name="Modev.DialogButtonStyle" parent="Widget.Material3.Button.OutlinedButton">
+
+        <item name="shapeAppearance">@style/Modev.ShapeAppearance.Rounded</item>
+        <item name="android:minWidth">@dimen/_20mdp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/_1mdp</item>
+        <item name="android:padding">@dimen/_2mdp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
     </style>
+
+    <!-- Custom shape for rounded corners -->
+    <style name="Modev.ShapeAppearance.Rounded" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_4mdp</item>
+    </style>
+
 </resources>

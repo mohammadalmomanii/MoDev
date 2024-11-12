@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- slide_in_left.xml -->
+    <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+        android:propertyName="translationX"
+        android:duration="300"
+        android:valueFrom="-100%"
+        android:valueTo="0%"
+        android:valueType="floatType" />
+
+</set>
