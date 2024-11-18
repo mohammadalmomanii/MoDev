@@ -145,9 +145,9 @@ public class AppHelper {
         }
     }
 
-    static public void showSnackbar(View view, String message) {
+    static public View showSnackbar(View view, String message) {
         Snackbar.make(view, message, Snackbar.LENGTH_LONG).setAnchorView(view).show();
-        }
+       return view; }
 
     static public void setAppModeNight(boolean value) {
         AppCompatDelegate.setDefaultNightMode(value ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
@@ -160,7 +160,7 @@ public class AppHelper {
             return false;
     }
 
-    static public void setAnimateVisibility(View view, int visibility, Transition transition, long duration) {
+    static public View setAnimateVisibility(View view, int visibility, Transition transition, long duration) {
 //                                       (binding.toolbarCard, View.GONE, new Slide(Gravity.TOP), 500);
 
 //        Transition transition1 = new Fade();
@@ -169,16 +169,18 @@ public class AppHelper {
         transition.addTarget(view);
         TransitionManager.beginDelayedTransition((ViewGroup) view.getParent(), transition);
         view.setVisibility(visibility);
-    }
+        return view; }
 
-    static public void setMargin(View view, int left, int top, int right, int bottom) {
+
+    static public View setMargin(View view, int left, int top, int right, int bottom) {
 
 
         ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         p.setMargins(left, top, right, bottom);
         view.requestLayout();
 
-    }
+        return view; }
+
 
     static public void expandedBottomSheetDialog(BottomSheetDialogFragment fragment) {
         BottomSheetDialog dialog = (BottomSheetDialog) fragment.getDialog();
@@ -191,13 +193,14 @@ public class AppHelper {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
-    static public void setAnimation(Context context, View view, int res, long duration) {
+    static public View setAnimation(Context context, View view, int res, long duration) {
         Animation animation = AnimationUtils.loadAnimation(context, res);
         animation.setDuration(duration);
         view.startAnimation(animation);
-    }
+        return view; }
 
-    static public void setAnimation2(View view, Float vertical, Float horizontal, long duration) {
+
+    static public View setAnimation2(View view, Float vertical, Float horizontal, long duration) {
         ViewGroup.MarginLayoutParams vlp = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         view.animate().x(vertical == null ? vlp.rightMargin | vlp.leftMargin : vertical).
                 y(horizontal == null ? vlp.topMargin : horizontal).setDuration(duration).start();
@@ -213,7 +216,8 @@ public class AppHelper {
 //                });
 
 
-    }
+        return view; }
+
 
     static public void removeFocus(Activity context) {
         View view = context.getCurrentFocus();
@@ -466,9 +470,10 @@ public class AppHelper {
         view.setVisibility(View.GONE);
     return view;}
 
-    static public void setInvisible(View view) {
+    static public View setInvisible(View view) {
         view.setVisibility(View.INVISIBLE);
-    }
+        return view; }
+
 
 
     static public int recycleViewGetCurrentPosition(RecyclerView recyclerView) {
