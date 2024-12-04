@@ -80,12 +80,12 @@ public class AppHelper {
     /**
      * setTimeZone.
      *
-     * @param GTM the time value to be formatted into a date-time string.
-     *            Like "GTM+03:00", "GTM-04:00", "GTM+02:00" ets.
+     * @param GMT the time value to be formatted into a date-time string.
+     *            Like "GMT+03:00", "GMT-04:00", "GMT+02:00" ets.
      * @return the formatted date-time string.
      */
-    static public void setTimeZone(String GTM) {
-        TimeZone.setDefault(TimeZone.getTimeZone(GTM));
+    static public void setTimeZone(String GMT) {
+        TimeZone.setDefault(TimeZone.getTimeZone(GMT.replaceAll("[GMT+:0123456789]", "")));
     }
 
     static public String getShift() {
@@ -387,7 +387,7 @@ public class AppHelper {
                     , MainInterface.DialogPicker dialogPicker) {
 
         if (dateFormat != null && timeFormat != null) {
-            showDatePickerDialog(context, Locale.getDefault(), dateFormat, new MainInterface.DialogPicker() {
+            showDatePickerDialog(context, Locale.getDefault(), dateFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX ]", ""), new MainInterface.DialogPicker() {
                 @Override
                 public void onDialogDismiss(Object object) {
                     final String[] date = {""};
@@ -406,9 +406,9 @@ public class AppHelper {
                 }
             });
         } else if (dateFormat != null)
-            showDatePickerDialog(context, Locale.getDefault(), dateFormat, dialogPicker);
+            showDatePickerDialog(context, Locale.getDefault(), dateFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX ]", ""), dialogPicker);
         else if (timeFormat != null)
-            showTimePickerDialog(context, Locale.getDefault(), timeFormat, dialogPicker);
+            showTimePickerDialog(context, Locale.getDefault(), timeFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX ]", ""), dialogPicker);
 
     }
     public static void showLocaleDateAndTimePickersDialog
@@ -416,13 +416,13 @@ public class AppHelper {
                     , MainInterface.DialogPicker dialogPicker) {
 
         if (dateFormat != null && timeFormat != null) {
-            showDatePickerDialog(context, locale, dateFormat, new MainInterface.DialogPicker() {
+            showDatePickerDialog(context, locale, dateFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX ]", ""), new MainInterface.DialogPicker() {
                 @Override
                 public void onDialogDismiss(Object object) {
                     final String[] date = {""};
                     if (object != null)
                         date[0] += object;
-                    showTimePickerDialog(context, locale, timeFormat, new MainInterface.DialogPicker() {
+                    showTimePickerDialog(context, locale, timeFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX ]", ""), new MainInterface.DialogPicker() {
                         @Override
                         public void onDialogDismiss(Object object) {
                             if (object != null && !date[0].isEmpty())

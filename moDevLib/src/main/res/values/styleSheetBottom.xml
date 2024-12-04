@@ -7,6 +7,8 @@
         <item name="colorPrimary">@color/primary_dark</item>
         <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/primary_light</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysVisible</item>
+
 
         <!-- Secondary brand color. -->
 
