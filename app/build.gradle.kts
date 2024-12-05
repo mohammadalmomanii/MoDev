@@ -10,8 +10,8 @@ android {
         applicationId = "com.mohammadalmomani.modev"
         minSdk = 27
         targetSdk = 35
-        versionCode = 40
-        versionName = "1.4.0"
+        versionCode = 41
+        versionName = "1.4.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -85,7 +85,7 @@ public class AppHelper {
      * @return the formatted date-time string.
      */
     static public void setTimeZone(String GMT) {
-        TimeZone.setDefault(TimeZone.getTimeZone(GMT.replaceAll("[GMT+:0123456789]", "")));
+        TimeZone.setDefault(TimeZone.getTimeZone(GMT.replaceAll("[^GMT+:0123456789]", "")));
     }
 
     static public String getShift() {
