@@ -8,7 +8,7 @@
         <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/primary_light</item>
         <item name="android:windowSoftInputMode">adjustResize|stateAlwaysVisible</item>
-
+        <item name="popupMenuBackground">@drawable/shape_rounded_4</item>
 
         <!-- Secondary brand color. -->
 
@@ -17,5 +17,6 @@
     <style name="CustomSheetStyleBottom" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@color/transparent</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="popupMenuBackground">@drawable/shape_rounded_4</item>
     </style>
 </resources>
