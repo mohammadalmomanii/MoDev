@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="modev.styleSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_spinner</item>
+        <item name="android:foreground">@drawable/ripple_4</item>
+        <item name="android:paddingStart">@dimen/_1mdp</item>
+        <item name="android:paddingEnd">@dimen/_13mdp</item>
+        <item name="android:dropDownListViewStyle">@style/SpinnerStyle</item>
+        <item name="android:popupBackground">@drawable/shape_rounded_4</item>
+    </style>
+    <style name="SpinnerStyle" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">#0000ff</item>
+        <item name="android:dividerHeight">0.5dp</item>
+    </style>
+
+
+</resources>
