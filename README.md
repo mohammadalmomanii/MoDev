@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:1.4.3")
+    implementation("com.github.mohammadalmomanii:MoDev:1.4.4")
 
 }
 ```
@@ -166,14 +166,12 @@ This dialog fragment use to show message with image (GIF/PNG/JPG/....) .
 
 
 ```java
-  MessageDialogFragment.newInstance().startShow(getSupportFragmentManager()).setMessage("this library created by mohammad almomani\n * moDev *")
-                .setImage(getDrawable(com.mohammadalmomani.modevlib.R.drawable.ic_close),StaticString.BIG)
-                .setBtnPositive("Got it", new MainInterface() {
-                    @Override
-                    public void onItemClick() {
-                        MessageDialogFragment.dismissDialog();
-                    }
-                });
+
+                        MessageDialogFragment.builder()
+                                .setImage(requireActivity().getDrawable(R.drawable.gif_like), StaticString.SMALL)
+                                .setMessage(getString(R.string.thanks_for_your_rating))
+                                .setCancelableFlag(true)
+                                .build(getParentFragmentManager(), "");
 ```
 
 
