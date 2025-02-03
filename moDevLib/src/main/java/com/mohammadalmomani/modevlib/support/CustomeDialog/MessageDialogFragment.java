@@ -59,6 +59,19 @@ public class MessageDialogFragment extends DialogFragment {
     }
 
     /**
+     * Dismisses the dialog if it is currently visible.
+     */
+    public static void dismissDialog() {
+        if (fragment != null) {
+            fragment.dismiss();
+        }
+    }
+
+    public static boolean isDialogShowing() {
+        return fragment != null && fragment.isVisible();
+    }
+
+    /**
      * @deprecated Use {@link #build(FragmentManager, String)} instead.
      * This method starts showing the dialog fragment.
      */
@@ -73,16 +86,7 @@ public class MessageDialogFragment extends DialogFragment {
      * Starts showing the dialog fragment using a specified tag.
      */
     public void build(@NonNull FragmentManager manager, @Nullable String tag) {
-            super.showNow(manager, tag);
-    }
-
-    /**
-     * Dismisses the dialog if it is currently visible.
-     */
-    public static void dismissDialog() {
-        if (fragment != null) {
-            fragment.dismiss();
-        }
+        super.showNow(manager, tag);
     }
 
     /**
@@ -92,11 +96,7 @@ public class MessageDialogFragment extends DialogFragment {
     public void onDismiss(@NonNull DialogInterface dialog) {
         super.onDismiss(dialog);
         fragment = null;
-        binding=null;
-    }
-
-    public static boolean isDialogShowing() {
-        return fragment != null && fragment.isVisible();
+        binding = null;
     }
 
     /**
@@ -119,10 +119,12 @@ public class MessageDialogFragment extends DialogFragment {
 
         return binding.getRoot();
     }
-    public MessageDialogFragment setCancelableFlag (boolean cancelable) {
+
+    public MessageDialogFragment setCancelableFlag(boolean cancelable) {
         super.setCancelable(cancelable);
         return this;
     }
+
     /**
      * Sets the image to be displayed in the dialog. The image size can be specified.
      * If the view is not ready, the image is stored temporarily until it can be applied.
@@ -185,7 +187,7 @@ public class MessageDialogFragment extends DialogFragment {
      * Sets the positive button text and its click listener.
      * If the view is not ready, these are stored temporarily until they can be applied.
      *
-     * @param title Text to display on the button
+     * @param title         Text to display on the button
      * @param mainInterface Interface for handling button click events
      */
     public MessageDialogFragment setBtnPositive(String title, @Nullable MainInterface mainInterface) {
@@ -207,10 +209,10 @@ public class MessageDialogFragment extends DialogFragment {
         return this;
     }
 
-
-
-
-
+    public MessageDialogFragment setAutoClose(long after) {
+        AppHelper.delay(() -> dismissDialog(), after);
+        return this;
+    }
 
 
     @Override

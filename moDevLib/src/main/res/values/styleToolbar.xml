@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="modev.styleToolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary</item> <!-- Toolbar background -->
+        <item name="titleTextColor">@color/white</item> <!-- Title text color -->
+        <item name="subtitleTextColor">@color/white</item> <!-- Subtitle text color -->
+        <item name="popupTheme">@style/modev.styleToolbarPopup</item> <!-- Popup style -->
+        <item name="elevation">4dp</item> <!-- Shadow effect -->
+    </style>
+
+    <style name="modev.styleToolbarPopup" parent="ThemeOverlay.Material3.Light">
+        <item name="android:popupBackground">@drawable/shape_rounded_2</item> <!-- Background for popups -->
+    </style>
+
+</resources>

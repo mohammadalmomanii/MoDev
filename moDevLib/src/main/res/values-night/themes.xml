@@ -16,6 +16,7 @@
         <!-- Customize your theme here. -->
         <item name="navigationViewStyle">@style/modev.styleNavigationView</item>
         <item name="floatingActionButtonStyle">@style/modev.styleFloatingActionButton</item>
+        <item name="toolbarStyle">@style/modev.styleToolbar</item>
 
     </style>
 
@@ -36,6 +37,7 @@
         <!-- Customize your theme here. -->
         <item name="navigationViewStyle">@style/modev.styleNavigationView</item>
         <item name="floatingActionButtonStyle">@style/modev.styleFloatingActionButton</item>
+        <item name="toolbarStyle">@style/modev.styleToolbar</item>
 
     </style>
 
