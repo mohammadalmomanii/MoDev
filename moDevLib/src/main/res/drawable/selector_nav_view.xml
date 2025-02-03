@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Default state -->
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="@dimen/_2mdp" />
+        </shape>
+    </item>
+    <!-- Focused state -->
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:end="@dimen/_1mdp"
+                android:start="@dimen/_1mdp"
+                android:top="@dimen/_1mdp"
+                android:bottom="@dimen/_1mdp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/primary_tran_30" />
+                    <corners android:radius="@dimen/_2mdp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>
+

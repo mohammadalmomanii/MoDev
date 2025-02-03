@@ -14,7 +14,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
+        <item name="navigationViewStyle">@style/modev.styleNavigationView</item>
+        <item name="floatingActionButtonStyle">@style/modev.styleFloatingActionButton</item>
 
     </style>
 
@@ -33,7 +34,8 @@
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
-
+        <item name="navigationViewStyle">@style/modev.styleNavigationView</item>
+        <item name="floatingActionButtonStyle">@style/modev.styleFloatingActionButton</item>
 
     </style>
 

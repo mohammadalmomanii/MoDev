@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Custom FAB Style -->
+    <style name="modev.styleFloatingActionButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="android:backgroundTint">@color/primary</item> <!-- FAB background color -->
+        <item name="tint">@color/white</item> <!-- FAB icon color -->
+        <item name="shapeAppearance">@style/ShapeAppearance.MyApplication.FAB</item> <!-- Custom shape -->
+    </style>
+
+    <!-- Custom FAB Shape -->
+    <style name="ShapeAppearance.MyApplication.FAB" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">25%</item> <!-- Makes it circular -->
+    </style>
+
+</resources>

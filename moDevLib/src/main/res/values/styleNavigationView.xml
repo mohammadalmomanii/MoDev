@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="modev.styleNavigationView"  parent="Widget.Material3.NavigationView">
+        <item name="android:itemTextAppearance">
+            @style/TextAppearance.MyApplication.NavigationViewItem
+        </item>
+        <item name="itemIconTint">@color/selector_primary_black_checked</item>
+        <item name="itemTextColor">@color/selector_primary_black_checked</item>
+        <item name="android:background">@drawable/shape_nav</item>
+        <item name="android:paddingBottom">@dimen/_5mdp</item>
+        <item name="android:paddingTop">@dimen/_15mdp</item>
+        <item name="android:paddingStart">@dimen/_5mdp</item>
+
+
+        <item name="itemBackground">@drawable/selector_nav_view</item>
+    </style>
+
+    <style name="TextAppearance.MyApplication.NavigationViewItem" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+
+</resources>
