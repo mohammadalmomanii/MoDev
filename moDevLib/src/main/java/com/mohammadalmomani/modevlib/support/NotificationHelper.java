@@ -17,6 +17,29 @@ import com.mohammadalmomani.modevlib.R;
 import java.util.Locale;
 
 public class NotificationHelper extends AppCompatActivity {
+    /**
+     * NotificationHelper is a utility class for creating and displaying notifications in Android.
+     * It simplifies the process of setting up notifications with a dedicated notification channel.
+     * <p>
+     * Usage:
+     * <p>
+     * 1. Initialize NotificationHelper:
+     *    NotificationHelper notificationHelper = new NotificationHelper(context);
+     * <p>
+     * 2. Create a Notification:
+     *    NotificationCompat.Builder builder = notificationHelper.createNotification()
+     *        .setSmallIcon(R.drawable.ic_notification) // Set notification icon
+     *        .setContentTitle("Notification Title") // Set title
+     *        .setContentText("This is the notification message.") // Set message
+     *        .setPriority(NotificationCompat.PRIORITY_HIGH);
+     * <p>
+     * 3. Show the Notification:
+     *    notificationHelper.showNotification(1001); // Pass a unique notification ID
+     * <p>
+     * Notes:
+     * - Ensure the app has notification permissions on Android 13+.
+     * - The notification channel is created automatically upon initialization.
+     */
 
     private final String CHANNEL_ID;
     private final Context context;

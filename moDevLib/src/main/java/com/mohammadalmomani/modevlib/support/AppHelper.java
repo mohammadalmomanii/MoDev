@@ -111,6 +111,7 @@ public class AppHelper {
         else
             return "C";
     }
+
     static public long getDaysBetweenDates(String date1, String date2) {
         SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -128,6 +129,7 @@ public class AppHelper {
 
         return Math.abs(TimeUnit.MILLISECONDS.toDays(duration));
     }
+
     static public void openFile(Context context, String fileName) {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), fileName);
         Uri uri = FileProvider.getUriForFile(context, context.getPackageName() + ".provider", file);
@@ -138,6 +140,7 @@ public class AppHelper {
 
 
     }
+
     static public void hideKeyboard(Activity activity) {
         if (activity.getCurrentFocus() != null) {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -147,7 +150,8 @@ public class AppHelper {
 
     static public View showSnackbar(View view, String message) {
         Snackbar.make(view, message, Snackbar.LENGTH_LONG).setAnchorView(view).show();
-       return view; }
+        return view;
+    }
 
     static public void setAppModeNight(boolean value) {
         AppCompatDelegate.setDefaultNightMode(value ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
@@ -169,7 +173,8 @@ public class AppHelper {
         transition.addTarget(view);
         TransitionManager.beginDelayedTransition((ViewGroup) view.getParent(), transition);
         view.setVisibility(visibility);
-        return view; }
+        return view;
+    }
 
 
     static public View setMargin(View view, int left, int top, int right, int bottom) {
@@ -179,7 +184,8 @@ public class AppHelper {
         p.setMargins(left, top, right, bottom);
         view.requestLayout();
 
-        return view; }
+        return view;
+    }
 
 
     static public void expandedBottomSheetDialog(BottomSheetDialogFragment fragment) {
@@ -192,12 +198,29 @@ public class AppHelper {
         dialog.setState(TopSheetBehavior.STATE_EXPANDED);
     }
 
+
+    /**
+     * use the new Function getCurrentDate.
+     *
+     * @deprecated See {@link AppHelper#setAnimation(View, int, long)}
+     * <p>
+     * you can add your format to get your specific date.
+     */
     @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
     static public View setAnimation(Context context, View view, int res, long duration) {
         Animation animation = AnimationUtils.loadAnimation(context, res);
         animation.setDuration(duration);
         view.startAnimation(animation);
-        return view; }
+        return view;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
+    static public View setAnimation(View view, int res, long duration) {
+        Animation animation = AnimationUtils.loadAnimation(view.getContext(), res);
+        animation.setDuration(duration);
+        view.startAnimation(animation);
+        return view;
+    }
 
 
     static public View setAnimation2(View view, Float vertical, Float horizontal, long duration) {
@@ -216,7 +239,8 @@ public class AppHelper {
 //                });
 
 
-        return view; }
+        return view;
+    }
 
 
     static public void removeFocus(Activity context) {
@@ -236,7 +260,7 @@ public class AppHelper {
      * use the new Function showDateAndTimePickersDialog.
      *
      * @deprecated See {@link AppHelper#showDateAndTimePickersDialog(Context, String, String, MainInterface.DialogPicker)}
-     *
+     * <p>
      * this function provide more flexibility and easy to control with picker dialog.
      */
     @Deprecated
@@ -250,7 +274,7 @@ public class AppHelper {
      * use the new Function showDateAndTimePickersDialog.
      *
      * @deprecated See {@link AppHelper#showDateAndTimePickersDialog(Context, String, String, MainInterface.DialogPicker)}
-     *
+     * <p>
      * this function provide more flexibility and easy to control with picker dialog.
      */
     @Deprecated
@@ -286,7 +310,7 @@ public class AppHelper {
      * use the new Function showDateAndTimePickersDialog.
      *
      * @deprecated See {@link AppHelper#showDateAndTimePickersDialog(Context, String, String, MainInterface.DialogPicker)}
-     *
+     * <p>
      * this function provide more flexibility and easy to control with picker dialog.
      */
     @Deprecated
@@ -411,6 +435,7 @@ public class AppHelper {
             showTimePickerDialog(context, Locale.getDefault(), timeFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX ]", ""), dialogPicker);
 
     }
+
     public static void showLocaleDateAndTimePickersDialog
             (Context context, Locale locale, @Nullable String dateFormat, @Nullable String timeFormat
                     , MainInterface.DialogPicker dialogPicker) {
@@ -440,11 +465,12 @@ public class AppHelper {
             showTimePickerDialog(context, locale, timeFormat, dialogPicker);
 
     }
+
     /**
      * use the new Function setLanguage_NEW.
      *
      * @deprecated See {@link AppHelper#setLanguage_NEW(String)}
-     *
+     * <p>
      * in new function you don't need to restart activity.
      */
     @Deprecated
@@ -468,12 +494,13 @@ public class AppHelper {
 
     static public View setGone(View view) {
         view.setVisibility(View.GONE);
-    return view;}
+        return view;
+    }
 
     static public View setInvisible(View view) {
         view.setVisibility(View.INVISIBLE);
-        return view; }
-
+        return view;
+    }
 
 
     static public int recycleViewGetCurrentPosition(RecyclerView recyclerView) {
@@ -484,7 +511,6 @@ public class AppHelper {
     static public void freezeRecyclerView(RecyclerView recyclerView) {
         recyclerView.setOnTouchListener((v, event) -> true);
     }
-
 
 
     static public void delayOnBackground(Runnable runnable, long delayMillis) {
@@ -507,7 +533,7 @@ public class AppHelper {
 
     static public void onFailure(Context context, String s, boolean b) {
         if (!b) {
-            Toast.makeText(context,  s, Toast.LENGTH_LONG).show();
+            Toast.makeText(context, s, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(context, context.getString(R.string.connection_timeout) + " : " + s, Toast.LENGTH_LONG).show();
         }

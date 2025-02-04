@@ -5,101 +5,92 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
-import com.google.android.material.appbar.AppBarLayout;
 import com.mohammadalmomani.modevlib.R;
-import com.mohammadalmomani.modevlib.databinding.FragmentRefrishBinding;
+import com.mohammadalmomani.modevlib.databinding.SwipeRefreshViewBinding;
 
 /**
- * HOW TO USE
- * In Activity {
- * repairing -> RefrishFragment.newInstance(getSupportFragmentManager(), linearLayout);
- * show -> RefrishFragment.showLoading(getDrawable(R.drawable.ic_launcher_background));
- * hide -> RefrishFragment.hideLoading();
+ * RefrishFragment is a utility fragment designed to manage a swipe-to-refresh layout with a loading indicator.
+ * It provides methods to show and hide a loading animation within an AppBarLayout.
  * <p>
+ * ## How to Use:
  * <p>
- * }
+ * ### 1. Initialize the Fragment:
+ *    ```java
+ *    RefrishFragment refreshFragment = new RefrishFragment();
+ *    getSupportFragmentManager().beginTransaction()
+ *        .replace(R.id.container, refreshFragment)
+ *        .commit();
+ *    ```
  * <p>
+ * ### 2. Show the Loading Animation:
+ *    ```java
+ *    refreshFragment.showLoading();
+ *    ```
  * <p>
- * In Activity XML{
- * <?xml version="1.0" encoding="utf-8"?>
- * <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
- * xmlns:app="http://schemas.android.com/apk/res-auto"
- * xmlns:tools="http://schemas.android.com/tools"
- * android:layout_width="match_parent"
- * android:layout_height="wrap_content"
- * tools:context=".RefrishFragment">
+ * ### 3. Hide the Loading Animation:
+ *    ```java
+ *    refreshFragment.hideLoading();
+ *    ```
  * <p>
- * <com.google.android.material.appbar.AppBarLayout
- * android:id="@+id/test"
- * android:layout_width="match_parent"
- * android:layout_height="145dp"
- * app:expanded="false">
+ * ### 4. Set a Custom GIF:
+ *    ```java
+ *    refreshFragment.setGif(R.drawable.custom_loading_gif);
+ *    ```
  * <p>
- * <com.google.android.material.appbar.CollapsingToolbarLayout
- * android:layout_width="match_parent"
- * android:layout_height="match_parent"
- * app:contentScrim="@color/primary"
- * app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed" >
+ * ## XML Example:
+ * ```xml
+ * <androidx.coordinatorlayout.widget.CoordinatorLayout
+ *     xmlns:android="http://schemas.android.com/apk/res/android"
+ *     android:layout_width="match_parent"
+ *     android:layout_height="wrap_content">
  * <p>
- * <ImageView
- * android:id="@+id/imageView"
- * android:layout_width="match_parent"
- * android:layout_height="match_parent"
- * tools:src="@tools:sample/avatars" />
- * </com.google.android.material.appbar.CollapsingToolbarLayout>
+ *     <com.google.android.material.appbar.AppBarLayout
+ *         android:id="@+id/appBar"
+ *         android:layout_width="match_parent"
+ *         android:layout_height="145dp"
+ *         app:expanded="false">
  * <p>
- * </com.google.android.material.appbar.AppBarLayout>
+ *         <com.google.android.material.appbar.CollapsingToolbarLayout
+ *             android:layout_width="match_parent"
+ *             android:layout_height="match_parent"
+ *             app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
  * <p>
- * <your layout
- * android:layout_width="match_parent"
- * android:layout_height="match_parent"
- * android:orientation="horizontal"
- * app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
- * .
- * .
- * .
- * .
- * </your layout>
+ *             <ImageView
+ *                 android:id="@+id/imageView"
+ *                 android:layout_width="match_parent"
+ *                 android:layout_height="match_parent"
+ *                 tools:src="@tools:sample/avatars" />
+ * <p>
+ *         </com.google.android.material.appbar.CollapsingToolbarLayout>
+ * <p>
+ *     </com.google.android.material.appbar.AppBarLayout>
+ * <p>
  * </androidx.coordinatorlayout.widget.CoordinatorLayout>
- * }
- **/
+ * ```
+ * <p>
+ * ## Notes:
+ * - Call `showLoading()` to disable user interactions and expand the AppBarLayout.
+ * - Call `hideLoading()` to re-enable user interactions and collapse the AppBarLayout.
+ * - The default loading GIF is `R.drawable.gif_preloader`, but you can set a custom one.
+ */
 
+@Deprecated
 public class RefrishFragment extends Fragment {
 
-    private static FragmentRefrishBinding binding;
-    private static AppBarLayout appBarLayout;
-    private static ImageView imageView;
-    private static AppCompatActivity activity;
-    private static RefrishFragment fragment;
-    private static boolean isShowing = false;
+    private static SwipeRefreshViewBinding binding;
+
 
     public RefrishFragment() {
         // Required empty public constructor
     }
 
-    public static RefrishFragment newInstance(AppCompatActivity activity, AppBarLayout appBarLayout, ImageView imageView) {
-        fragment = new RefrishFragment();
-        RefrishFragment.appBarLayout = appBarLayout;
-        RefrishFragment.imageView = imageView;
-        RefrishFragment.activity = activity;
-        return fragment;
-    }
-
-    public RefrishFragment startShow(FragmentManager manager) {
-
-        FragmentTransaction fragmentTransaction = manager.beginTransaction();
-        fragmentTransaction.replace(appBarLayout.getId(), fragment).commitNow();
-        Glide.with(fragment).load(R.drawable.gif_preloader).into(imageView);
-        return fragment;
+    public RefrishFragment getFragment() {
+        return this;
     }
 
     @Override
@@ -112,35 +103,28 @@ public class RefrishFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.fragment_refrish, container, false);
-        appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
-            if (verticalOffset == 0 && !isShowing) {
-                hideLoading();
-            }
-        });
+        binding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.swipe_refresh_view, container, false);
+
+        Glide.with(this).load(R.drawable.gif_preloader).into(binding.imageView);
+
+
         return binding.getRoot();
     }
 
 
     public RefrishFragment setGif(int gif) {
-        Glide.with(fragment).load(gif).into(imageView);
-        return fragment;
+        Glide.with(this).load(R.drawable.gif_preloader).into(binding.imageView);
+        return this;
     }
 
-    static public void showLoading() {
-        if (fragment != null) {
-            isShowing = true;
-            activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            appBarLayout.setExpanded(true, true);
-        }
-    }
+     public void showLoading() {
+         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                 WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+         binding.appBar.setExpanded(true, true);
+     }
 
-    static public void hideLoading() {
-        if (fragment != null) {
-            isShowing = false;
-            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            appBarLayout.setExpanded(false, true);
-        }
+     public void hideLoading() {
+            requireActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+            binding.appBar.setExpanded(false, true);
     }
 }

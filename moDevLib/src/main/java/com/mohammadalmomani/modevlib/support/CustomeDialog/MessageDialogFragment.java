@@ -86,6 +86,9 @@ public class MessageDialogFragment extends DialogFragment {
      * Starts showing the dialog fragment using a specified tag.
      */
     public void build(@NonNull FragmentManager manager, @Nullable String tag) {
+        super.show(manager, tag);
+    }
+    public void buildNow(@NonNull FragmentManager manager, @Nullable String tag) {
         super.showNow(manager, tag);
     }
 

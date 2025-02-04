@@ -77,6 +77,9 @@ public class CustomDialogFragment extends DialogFragment {
      * @param tag     Optional tag for the fragment.
      */
     public void build(@NonNull FragmentManager manager, @Nullable String tag) {
+        super.show(manager, tag);
+    }
+    public void buildNow(@NonNull FragmentManager manager, @Nullable String tag) {
         super.showNow(manager, tag);
     }
 

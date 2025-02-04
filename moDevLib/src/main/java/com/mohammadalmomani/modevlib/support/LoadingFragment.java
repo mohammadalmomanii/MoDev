@@ -17,7 +17,32 @@ import com.bumptech.glide.Glide;
 import com.mohammadalmomani.modevlib.R;
 import com.mohammadalmomani.modevlib.databinding.FragmentLoadingBinding;
 
+
+
 public class LoadingFragment extends DialogFragment {
+    /**
+     * LoadingFragment is a customizable loading dialog fragment that can display a progress bar or a GIF.
+     * <p>
+     * Usage:
+     * <p>
+     * 1. Basic Usage:
+     *    LoadingFragment.builder()
+     *        .setGifLoading(R.drawable.loading_gif) // Optional: Set a GIF resource
+     *        .setCancelableFlag(false) // Optional: Set if the dialog is cancelable
+     *        .setShowTime(3000) // Optional: Auto-dismiss after 3 seconds
+     *        .build(getSupportFragmentManager(), "loading");
+     * <p>
+     * 2. Dismissing the Dialog:
+     *    LoadingFragment.dismissDialog();
+     * <p>
+     * 3. Setting a Background:
+     *    Drawable background = ContextCompat.getDrawable(context, R.drawable.custom_background);
+     *    LoadingFragment.builder()
+     *        .setBackground(background)
+     *        .build(getSupportFragmentManager(), "loading");
+     */
+
+
 
     private FragmentLoadingBinding binding;
     private static LoadingFragment fragment;
