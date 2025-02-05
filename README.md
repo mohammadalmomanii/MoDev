@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 **2-**` build.gradle.kts (module :app) `
 ```gradle
 dependencies {
-    implementation("com.github.mohammadalmomanii:MoDev:1.4.3")
+    implementation("com.github.mohammadalmomanii:MoDev:1.4.4")
 
 }
 ```
@@ -166,14 +166,12 @@ This dialog fragment use to show message with image (GIF/PNG/JPG/....) .
 
 
 ```java
-  MessageDialogFragment.newInstance().startShow(getSupportFragmentManager()).setMessage("this library created by mohammad almomani\n * moDev *")
-                .setImage(getDrawable(com.mohammadalmomani.modevlib.R.drawable.ic_close),StaticString.BIG)
-                .setBtnPositive("Got it", new MainInterface() {
-                    @Override
-                    public void onItemClick() {
-                        MessageDialogFragment.dismissDialog();
-                    }
-                });
+
+                        MessageDialogFragment.builder()
+                                .setImage(requireActivity().getDrawable(R.drawable.gif_like), StaticString.SMALL)
+                                .setMessage(getString(R.string.thanks_for_your_rating))
+                                .setCancelableFlag(true)
+                                .build(getParentFragmentManager(), "");
 ```
 
 
@@ -190,32 +188,15 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
 **1-** should you add this code in your activity or fragment 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:background="@color/primary"
-        android:id="@+id/appBarLayout"
-        android:layout_height="@dimen/_35dp"
+  <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        app:expanded="false">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:layout_height="match_parent"
+        <com.mohammadalmomani.modevlib.support.SwipeRefreshView
+            android:id="@+id/refresh_view"
             android:layout_width="match_parent"
-            app:contentScrim="@color/primary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                tools:src="@tools:sample/avatars" />
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="wrap_content"
+            app:gifSrc="@drawable/gif"/>
 
     <your layout
         android:layout_height="match_parent"
