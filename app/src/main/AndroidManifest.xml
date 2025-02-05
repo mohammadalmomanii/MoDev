@@ -12,15 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoDev.NoActionBar"
         tools:targetApi="35">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"

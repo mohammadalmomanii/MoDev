@@ -22,9 +22,41 @@ import com.mohammadalmomani.modevlib.support.MainInterface;
 
 public class CustomDialogFragment extends DialogFragment {
 
+    /**
+     * CustomDialogFragment is a customizable dialog fragment used for displaying alerts,
+     * confirmations, or informational messages with optional buttons and an image.
+     *
+     * <h3>How to Use:</h3>
+     * <pre>
+     * // Create a new instance using the builder pattern
+     * CustomDialogFragment dialog = CustomDialogFragment.builder()
+     *     .setTitle("Confirmation")
+     *     .setDescription("Are you sure you want to proceed?")
+     *     .setBtnPositive("Yes", () -> {
+     *         // Handle positive button click
+     *     })
+     *     .setBtnNegative("No", () -> {
+     *         // Handle negative button click
+     *     });
+     *
+     * // Show the dialog
+     * dialog.build(getSupportFragmentManager(), "custom_dialog");
+     * </pre>
+     *
+     * <p>
+     * Additional customization options:
+     * </p>
+     * <ul>
+     *     <li>Set an image: <code>dialog.setImage(drawable);</code></li>
+     *     <li>Make it non-cancelable: <code>dialog.setCancelableFlag(false);</code></li>
+     * </ul>
+     *
+     * @author Mohammad Al Momani
+     */
+
+
     private static FragmentCustomDialogBinding binding;
     private static CustomDialogFragment fragment;
-    private static MainInterface mainInterface;
 
     // Temporary storage for values if binding is not yet created
     private String pendingTitle;
@@ -33,23 +65,15 @@ public class CustomDialogFragment extends DialogFragment {
     private String pendingPositiveButtonTitle;
     private String pendingNegativeButtonTitle;
     private String pendingNeutralButtonTitle;
-    private MainInterface pendingPositiveButtonListener;
-    private MainInterface pendingNegativeButtonListener;
-    private MainInterface pendingNeutralButtonListener;
+    private MainInterface.DialogListener pendingPositiveButtonListener;
+    private MainInterface.DialogListener pendingNegativeButtonListener;
+    private MainInterface.DialogListener pendingNeutralButtonListener;
 
     // Flag to determine if the dialog is for password input
 
     public CustomDialogFragment() {
         // Required empty public constructor
         dismissDialog();
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof MainInterface) {
-            mainInterface = (MainInterface) context;
-        }
     }
 
     /**
@@ -70,6 +94,18 @@ public class CustomDialogFragment extends DialogFragment {
         return fragment;
     }
 
+    public static void dismissDialog() {
+        if (fragment != null) {
+            fragment.dismiss();
+        }
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+    }
+
     /**
      * Starts showing the dialog fragment using a specified tag.
      *
@@ -79,14 +115,9 @@ public class CustomDialogFragment extends DialogFragment {
     public void build(@NonNull FragmentManager manager, @Nullable String tag) {
         super.show(manager, tag);
     }
+
     public void buildNow(@NonNull FragmentManager manager, @Nullable String tag) {
         super.showNow(manager, tag);
-    }
-
-    public static void dismissDialog() {
-        if (fragment != null) {
-            fragment.dismiss();
-        }
     }
 
     @Override
@@ -140,7 +171,7 @@ public class CustomDialogFragment extends DialogFragment {
     }
 
 
-    public CustomDialogFragment setCancelableFlag (boolean cancelable) {
+    public CustomDialogFragment setCancelableFlag(boolean cancelable) {
         super.setCancelable(cancelable);
         return this;
     }
@@ -175,7 +206,7 @@ public class CustomDialogFragment extends DialogFragment {
         return this;
     }
 
-    public CustomDialogFragment setBtnPositive(String title, MainInterface listener) {
+    public CustomDialogFragment setBtnPositive(String title, MainInterface.DialogListener listener) {
         if (binding != null) {
             AppHelper.setVisible(binding.btnPositive);
             binding.btnPositive.setText(title);
@@ -183,6 +214,9 @@ public class CustomDialogFragment extends DialogFragment {
                 if (listener != null) {
                     listener.onItemClick();
                 }
+                dismissDialog();
+
+
             });
         } else {
             pendingPositiveButtonTitle = title; // Store temporarily if binding is not ready
@@ -191,7 +225,7 @@ public class CustomDialogFragment extends DialogFragment {
         return this;
     }
 
-    public CustomDialogFragment setBtnNegative(String title, MainInterface listener) {
+    public CustomDialogFragment setBtnNegative(String title, MainInterface.DialogListener listener) {
         if (binding != null) {
             AppHelper.setVisible(binding.btnNegative);
             binding.btnNegative.setText(title);
@@ -199,6 +233,8 @@ public class CustomDialogFragment extends DialogFragment {
                 if (listener != null) {
                     listener.onItemClick();
                 }
+                dismissDialog();
+
             });
         } else {
             pendingNegativeButtonTitle = title; // Store temporarily if binding is not ready
@@ -208,7 +244,7 @@ public class CustomDialogFragment extends DialogFragment {
     }
 
 
-    public CustomDialogFragment setBtnNeutral(String title, MainInterface listener) {
+    public CustomDialogFragment setBtnNeutral(String title, MainInterface.DialogListener listener) {
         if (binding != null) {
             AppHelper.setVisible(binding.btnNeutral);
             binding.btnNeutral.setText(title);
@@ -216,6 +252,8 @@ public class CustomDialogFragment extends DialogFragment {
                 if (listener != null) {
                     listener.onItemClick();
                 }
+                dismissDialog();
+
             });
         } else {
             pendingNeutralButtonTitle = title; // Store temporarily if binding is not ready

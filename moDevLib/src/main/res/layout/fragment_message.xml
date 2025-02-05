@@ -93,14 +93,14 @@
             android:backgroundTint="@color/primary_tran_15"
             android:backgroundTintMode="screen"
             android:clipToOutline="true"
-            android:elevation="@dimen/_10mdp"
+            android:elevation="@dimen/_100mdp"
             android:padding="@dimen/_3mdp"
-            app:tint="@color/primary_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
+            app:tint="@color/primary_dark"
             tools:src="@drawable/ic_close" />
 
 

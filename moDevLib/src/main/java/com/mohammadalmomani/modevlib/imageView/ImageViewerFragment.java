@@ -23,6 +23,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageViewerFragment extends BottomSheetDialogFragment implements MainInterface {
+
+
+    /**
+     * ImageViewerFragment is a BottomSheetDialogFragment used to display a list of images
+     * in a ViewPager2 with navigation controls.
+     *
+     * <p>
+     * This fragment supports viewing images in a scrollable view with left/right navigation buttons
+     * and a page indicator.
+     * </p>
+     *
+     * <h3>How to Use:</h3>
+     * <pre>
+     * // Create a list of images (URLs or drawable resources)
+     * List<Object> imageList = new ArrayList<>();
+     * imageList.add("https://example.com/image1.jpg");
+     * imageList.add("https://example.com/image2.jpg");
+     *
+     * // Create a new instance of ImageViewerFragment and show it
+     * ImageViewerFragment viewer = ImageViewerFragment.newInstance(imageList);
+     * viewer.show(getSupportFragmentManager(), "image_viewer");
+     * </pre>
+     *
+     * <p>
+     * Additional customization options:
+     * </p>
+     * <ul>
+     *     <li>Set custom style: <code>viewer.setStyleFlag(DialogFragment.STYLE_NORMAL, R.style.MyStyle);</code></li>
+     *     <li>Make it non-cancelable: <code>viewer.setCancelableFlag(false);</code></li>
+     * </ul>
+     *
+     * @author Mohammad Al Momani
+     */
+
+
     private List<Object> imageList = new ArrayList<>();
     private FragmentImageViewerBinding binding;
     private AdapterImages adapter;

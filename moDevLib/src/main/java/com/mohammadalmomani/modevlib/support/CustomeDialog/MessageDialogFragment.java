@@ -18,20 +18,48 @@ import com.mohammadalmomani.modevlib.R;
 import com.mohammadalmomani.modevlib.databinding.FragmentMessageBinding;
 import com.mohammadalmomani.modevlib.support.AppHelper;
 import com.mohammadalmomani.modevlib.support.MainInterface;
-import com.mohammadalmomani.modevlib.support.StaticString;
 
 public class MessageDialogFragment extends DialogFragment {
 
+    /**
+     * MessageDialogFragment is a simple, customizable dialog fragment used for displaying
+     * informational messages with an optional image and a single button.
+     *
+     * <h3>How to Use:</h3>
+     * <pre>
+     * // Create a new instance using the builder pattern
+     * MessageDialogFragment dialog = MessageDialogFragment.builder()
+     *     .setMessage("This is an important message.")
+     *     .setBtnPositive("OK", () -> {
+     *         // Handle button click
+     *     });
+     *
+     * // Show the dialog
+     * dialog.build(getSupportFragmentManager(), "message_dialog");
+     * </pre>
+     *
+     * <p>
+     * Additional customization options:
+     * </p>
+     * <ul>
+     *     <li>Set an image: <code>dialog.setImage(drawable, MessageDialogStrings.SMALL);</code></li>
+     *     <li>Make it non-cancelable: <code>dialog.setCancelableFlag(false);</code></li>
+     *     <li>Auto close after delay: <code>dialog.setAutoClose(3000);</code> (closes after 3 seconds)</li>
+     * </ul>
+     *
+     * @author Mohammad Al Momani
+     */
+
+
     private static FragmentMessageBinding binding;
     private static MessageDialogFragment fragment;
-    private static MainInterface mainInterface;
 
     // Temporary storage for values if binding is not yet created
     private String pendingMessage;
     private Drawable pendingImage;
-    private StaticString pendingImageSize;
+    private MessageDialogStrings pendingImageSize;
     private String pendingButtonTitle;
-    private MainInterface pendingButtonListener;
+    private MainInterface.DialogListener pendingButtonListener;
 
     public MessageDialogFragment() {
         // Constructor
@@ -88,6 +116,7 @@ public class MessageDialogFragment extends DialogFragment {
     public void build(@NonNull FragmentManager manager, @Nullable String tag) {
         super.show(manager, tag);
     }
+
     public void buildNow(@NonNull FragmentManager manager, @Nullable String tag) {
         super.showNow(manager, tag);
     }
@@ -135,9 +164,9 @@ public class MessageDialogFragment extends DialogFragment {
      * @param drawable The image to display
      * @param size     The size specification for the image (small or large)
      */
-    public MessageDialogFragment setImage(Drawable drawable, StaticString size) {
+    public MessageDialogFragment setImage(Drawable drawable, MessageDialogStrings size) {
         if (binding != null) {
-            if (size.getId() == StaticString.SMALL.getId()) {
+            if (size.getId() == MessageDialogStrings.SMALL.getId()) {
                 AppHelper.setVisible(binding.ivSmall);
                 Glide.with(getActivity()).load(drawable).into(binding.ivSmall);
             } else {
@@ -193,16 +222,16 @@ public class MessageDialogFragment extends DialogFragment {
      * @param title         Text to display on the button
      * @param mainInterface Interface for handling button click events
      */
-    public MessageDialogFragment setBtnPositive(String title, @Nullable MainInterface mainInterface) {
+    public MessageDialogFragment setBtnPositive(String title, @Nullable MainInterface.DialogListener mainInterface) {
         if (binding != null) {
             AppHelper.setVisible(binding.btnGotIt);
             binding.btnGotIt.setText(title);
             binding.btnGotIt.setOnClickListener(v -> {
                 if (mainInterface != null) {
                     mainInterface.onItemClick();
-                } else {
-                    dismissDialog();
                 }
+                dismissDialog();
+
             });
         } else {
             // Store button properties temporarily until binding is ready
@@ -224,5 +253,29 @@ public class MessageDialogFragment extends DialogFragment {
         dismissDialog();
     }
 
+    public enum MessageDialogStrings {
+        SMALL(1, ""),
+        BIG(2, "");
+
+        private int id;
+        private String text;
+
+        MessageDialogStrings(int id, String text) {
+            this.id = id;
+            this.text = text;
+
+        }
+
+        MessageDialogStrings() {
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getText() {
+            return text;
+        }
+    }
 
 }
