@@ -3,6 +3,7 @@ package com.mohammadalmomani.modevlib.support.CustomeDialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,10 +88,20 @@ public class MessageDialogFragment extends DialogFragment {
     }
 
     /**
+     * Dismisses the dialog depends on tag if it is currently visible.
+     */
+    public static void dismissDialog(String tag) {
+        if (fragment != null && fragment.getTag().equalsIgnoreCase(tag)) {
+            fragment.dismiss();
+        }
+    }
+
+    /**
      * Dismisses the dialog if it is currently visible.
      */
     public static void dismissDialog() {
         if (fragment != null) {
+            Log.d("safsafsa", "dismissDialog: tag is "+fragment.getTag());
             fragment.dismiss();
         }
     }
@@ -115,6 +126,7 @@ public class MessageDialogFragment extends DialogFragment {
      */
     public void build(@NonNull FragmentManager manager, @Nullable String tag) {
         super.show(manager, tag);
+
     }
 
     public void buildNow(@NonNull FragmentManager manager, @Nullable String tag) {
