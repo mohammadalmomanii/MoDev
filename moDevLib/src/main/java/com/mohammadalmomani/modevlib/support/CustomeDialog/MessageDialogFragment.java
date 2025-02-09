@@ -91,7 +91,7 @@ public class MessageDialogFragment extends DialogFragment {
      * Dismisses the dialog depends on tag if it is currently visible.
      */
     public static void dismissDialog(String tag) {
-        if (fragment != null && fragment.getTag().equalsIgnoreCase(tag)) {
+        if (fragment != null && (fragment.getTag() != null && fragment.getTag().equalsIgnoreCase(tag))) {
             fragment.dismiss();
         }
     }
@@ -254,7 +254,7 @@ public class MessageDialogFragment extends DialogFragment {
     }
 
     public MessageDialogFragment setAutoClose(long after) {
-        AppHelper.delay(() -> dismissDialog(), after);
+        AppHelper.delay(() -> dismissDialog(this.getTag()), after);
         return this;
     }
 
