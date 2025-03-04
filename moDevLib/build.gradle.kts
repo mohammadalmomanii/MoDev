@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mohammadalmomani.modevlib"
-    compileSdk = 34
+    compileSdk = 35
 
     dataBinding {
         enable = true
@@ -73,7 +73,7 @@ publishing {
 
             groupId = "com.mohammadalmomani.modevlib"
             artifactId = "modevlib"
-            version = "1.4.8"
+            version = "1.4.81"
 
             // Optional: Customize other publication settings if needed
             afterEvaluate {

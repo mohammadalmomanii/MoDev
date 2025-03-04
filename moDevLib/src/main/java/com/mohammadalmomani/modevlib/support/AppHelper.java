@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
@@ -156,13 +156,78 @@ public class AppHelper {
      * @param context  The context from which the file is being opened.
      * @param fileName The name of the file to open.
      */
-    static public void openFile(Context context, String fileName) {
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), fileName);
+    public static void openFile2(Context context, String fileName) {
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
+
+        if (!file.exists()) {
+            // Handle the case where the file does not exist
+            return;
+        }
+
         Uri uri = FileProvider.getUriForFile(context, context.getPackageName() + ".provider", file);
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setDataAndType(uri, "application/pdf");
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        context.startActivity(i);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "application/vnd.android.package-archive");
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
+        try {
+            context.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    public static void openFile(Context context, String fileName) {
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
+
+        if (!file.exists()) {
+            // Handle the case where the file does not exist
+            return;
+        }
+
+        Uri uri = FileProvider.getUriForFile(context, context.getPackageName() + ".provider", file);
+
+        if (fileName.endsWith(".apk")) {
+            // Handle APK files (install them)
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(uri, "application/vnd.android.package-archive");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); // Grant read permission to the URI
+            try {
+                context.startActivity(intent);
+                Log.d("Sadasdasd", "openFile: DONE");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Handle other file types (e.g., PDFs)
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(uri, getMimeType(fileName));
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            try {
+                context.startActivity(intent);
+                Log.d("Sadasdasd", "openFile: DONE");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static String getMimeType(String fileName) {
+        String type = "*/*"; // Default MIME type
+        String extension = android.webkit.MimeTypeMap.getFileExtensionFromUrl(Uri.fromFile(new File(fileName)).toString());
+
+        if (extension != null) {
+            String mimeType = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+            if (mimeType != null) {
+                type = mimeType;
+            }
+        }
+        return type;
     }
 
     /**
@@ -300,10 +365,10 @@ public class AppHelper {
     /**
      * Applies a custom animation to a view, allowing for horizontal and vertical movement.
      *
-     * @param view     The view to animate.
-     * @param vertical The vertical movement value.
+     * @param view       The view to animate.
+     * @param vertical   The vertical movement value.
      * @param horizontal The horizontal movement value.
-     * @param duration The duration of the animation in milliseconds.
+     * @param duration   The duration of the animation in milliseconds.
      * @return The view that was animated.
      */
     static public View setAnimation2(View view, Float vertical, Float horizontal, long duration) {
@@ -408,9 +473,9 @@ public class AppHelper {
     /**
      * Displays a DatePickerDialog with the specified locale and format.
      *
-     * @param context     The context to display the dialog in.
-     * @param locale      The locale to use for the dialog.
-     * @param format      The format to use for the date.
+     * @param context      The context to display the dialog in.
+     * @param locale       The locale to use for the dialog.
+     * @param format       The format to use for the date.
      * @param dialogPicker The callback to handle the dialog dismissal.
      * @return The DatePickerDialog that was shown.
      */
@@ -442,9 +507,9 @@ public class AppHelper {
     /**
      * Displays a TimePickerDialog with the specified locale and format.
      *
-     * @param context     The context to display the dialog in.
-     * @param locale      The locale to use for the dialog.
-     * @param format      The format to use for the time.
+     * @param context      The context to display the dialog in.
+     * @param locale       The locale to use for the dialog.
+     * @param format       The format to use for the time.
      * @param dialogPicker The callback to handle the dialog dismissal.
      * @return The TimePickerDialog that was shown.
      */
@@ -584,6 +649,16 @@ public class AppHelper {
     }
 
     /**
+     * Sets the visibility of multiple views to VISIBLE.
+     *
+     * @param views The views to modify.
+     */
+    static public void setVisible(View... views) {
+        for (View view : views) {
+            view.setVisibility(View.VISIBLE);
+        }
+    }
+    /**
      * Sets the visibility of a view to GONE.
      *
      * @param view The view to modify.
@@ -592,6 +667,17 @@ public class AppHelper {
     static public View setGone(View view) {
         view.setVisibility(View.GONE);
         return view;
+    }
+
+    /**
+     * Sets the visibility of multiple views to GONE.
+     *
+     * @param views The views to modify.
+     */
+    static public void setGone(View... views) {
+        for (View view : views) {
+            view.setVisibility(View.GONE);
+        }
     }
 
     /**
@@ -604,6 +690,18 @@ public class AppHelper {
         view.setVisibility(View.INVISIBLE);
         return view;
     }
+
+    /**
+     * Sets the visibility of multiple views to INVISIBLE.
+     *
+     * @param views The views to modify.
+     */
+    static public void setInvisible(View... views) {
+        for (View view : views) {
+            view.setVisibility(View.INVISIBLE);
+        }
+    }
+
 
     /**
      * Gets the current position of the first completely visible item in a RecyclerView.
@@ -652,10 +750,25 @@ public class AppHelper {
      * @return The device's brand in lowercase.
      */
     static public String getAndroidVersion() {
-        Log.d("APPPP_RELESE", Build.VERSION.RELEASE + "");
-        Log.d("APPPP_SDK_INT", Build.VERSION.SDK_INT + "");
-        Log.d("APPPP_BRAND", Build.BRAND.toLowerCase(Locale.ENGLISH));
-
+        Log.d("DEVICE_INFO", "Android Version (RELEASE): " + Build.VERSION.RELEASE);
+        Log.d("DEVICE_INFO", "SDK Level (SDK_INT): " + Build.VERSION.SDK_INT);
+        Log.d("DEVICE_INFO", "Brand: " + Build.BRAND.toLowerCase(Locale.ENGLISH));
+        Log.d("DEVICE_INFO", "Device: " + Build.DEVICE.toLowerCase(Locale.ENGLISH));
+        Log.d("DEVICE_INFO", "Model: " + Build.MODEL);
+        Log.d("DEVICE_INFO", "Manufacturer: " + Build.MANUFACTURER);
+        Log.d("DEVICE_INFO", "Board: " + Build.BOARD);
+        Log.d("DEVICE_INFO", "Hardware: " + Build.HARDWARE);
+        Log.d("DEVICE_INFO", "Product: " + Build.PRODUCT);
+        Log.d("DEVICE_INFO", "Fingerprint: " + Build.FINGERPRINT);
+        Log.d("DEVICE_INFO", "Host: " + Build.HOST);
+        Log.d("DEVICE_INFO", "ID: " + Build.ID);
+        Log.d("DEVICE_INFO", "User: " + Build.USER);
+        Log.d("DEVICE_INFO", "Type: " + Build.TYPE);
+        Log.d("DEVICE_INFO", "Tags: " + Build.TAGS);
+        Log.d("DEVICE_INFO", "Bootloader: " + Build.BOOTLOADER);
+        Log.d("DEVICE_INFO", "Radio Version: " + Build.getRadioVersion());
+        Log.d("DEVICE_INFO", "Codename: " + Build.VERSION.CODENAME);
+        Log.d("DEVICE_INFO", "Security Patch: " + Build.VERSION.SECURITY_PATCH);
         return Build.BRAND.toLowerCase(Locale.ENGLISH);
     }
 
@@ -672,5 +785,16 @@ public class AppHelper {
         } else {
             Toast.makeText(context, context.getString(R.string.connection_timeout) + " : " + s, Toast.LENGTH_LONG).show();
         }
+    }
+
+    public static String getAppName(Context context) {
+        try {
+            ApplicationInfo applicationInfo = context.getApplicationInfo();
+            return context.getPackageManager().getApplicationLabel(applicationInfo).toString();
+        } catch (Exception e) {
+            return "Unknown App";
+        }
+
+
     }
 }

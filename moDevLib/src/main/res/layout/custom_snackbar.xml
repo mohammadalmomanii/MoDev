@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_rounded_2"
+    android:padding="@dimen/_2mdp"
+    android:backgroundTint="@color/primary"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/CustomImageViewerStyle"
+        android:layout_width="@dimen/_7mdp"
+        android:layout_height="@dimen/_7mdp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Item added to cart!"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:text="UNDO"
+        android:textColor="@color/white" />
+</LinearLayout>
