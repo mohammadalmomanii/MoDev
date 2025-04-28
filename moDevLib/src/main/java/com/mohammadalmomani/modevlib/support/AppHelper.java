@@ -35,18 +35,22 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.mohammadalmomani.modevlib.R;
 import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior;
 import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialog;
 import com.mohammadalmomani.modevlib.topSheetDialog.TopSheetDialogFragment;
 
 import java.io.File;
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.Executors;
@@ -150,6 +154,13 @@ public class AppHelper {
         return Math.abs(TimeUnit.MILLISECONDS.toDays(duration));
     }
 
+    private static final Gson gson = new Gson();
+
+
+
+    public static <T> List<T> copyList(List<T> mainList, Class<T> listType) {
+        return new Gson().fromJson(new Gson().toJson(mainList),new TypeToken<List<T>>() {}.getType());
+    }
     /**
      * Opens a file from the Documents directory using an appropriate application.
      *

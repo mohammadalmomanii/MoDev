@@ -47,6 +47,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
 
 
     /*********************|Get Image via url|*********************/
@@ -73,7 +74,7 @@ publishing {
 
             groupId = "com.mohammadalmomani.modevlib"
             artifactId = "modevlib"
-            version = "1.4.81"
+            version = "1.4.82"
 
             // Optional: Customize other publication settings if needed
             afterEvaluate {

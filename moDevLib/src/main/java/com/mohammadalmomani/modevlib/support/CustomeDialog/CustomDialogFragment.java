@@ -130,7 +130,7 @@ public class CustomDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getDialog().getWindow().setBackgroundDrawableResource(R.drawable.shape_rounded_12);
+        getDialog().getWindow().setBackgroundDrawableResource(R.drawable.shape_rounded_8);
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_custom_dialog, container, false);
 
@@ -176,7 +176,7 @@ public class CustomDialogFragment extends DialogFragment {
         return this;
     }
 
-    public CustomDialogFragment setImage(Drawable drawable) {
+    public CustomDialogFragment setImage(Drawable drawable ) {
         if (binding != null) {
             AppHelper.setVisible(binding.iv);
             Glide.with(requireActivity()).load(drawable).into(binding.iv);
