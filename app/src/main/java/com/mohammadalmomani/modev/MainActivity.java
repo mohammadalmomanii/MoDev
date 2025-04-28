@@ -10,8 +10,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.databinding.DataBindingUtil;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.mohammadalmomani.modev.databinding.ActivityMainBinding;
 import com.mohammadalmomani.modevlib.support.AppHelper;
 
