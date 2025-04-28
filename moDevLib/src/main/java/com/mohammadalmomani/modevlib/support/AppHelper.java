@@ -59,6 +59,8 @@ import java.util.concurrent.TimeUnit;
 
 public class AppHelper {
 
+    private static final Gson gson = new Gson();
+
     /**
      * use the new Function getCurrentDate.
      *
@@ -154,13 +156,13 @@ public class AppHelper {
         return Math.abs(TimeUnit.MILLISECONDS.toDays(duration));
     }
 
-    private static final Gson gson = new Gson();
-
-
-
     public static <T> List<T> copyList(List<T> mainList, Class<T> listType) {
-        return new Gson().fromJson(new Gson().toJson(mainList),new TypeToken<List<T>>() {}.getType());
+        if (mainList == null) return null;
+        Gson gson = new Gson();
+        Type type = TypeToken.getParameterized(List.class, listType).getType();
+        return gson.fromJson(gson.toJson(mainList), type);
     }
+
     /**
      * Opens a file from the Documents directory using an appropriate application.
      *
@@ -669,6 +671,7 @@ public class AppHelper {
             view.setVisibility(View.VISIBLE);
         }
     }
+
     /**
      * Sets the visibility of a view to GONE.
      *
