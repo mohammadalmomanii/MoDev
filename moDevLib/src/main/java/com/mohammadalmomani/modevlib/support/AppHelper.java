@@ -2,6 +2,7 @@ package com.mohammadalmomani.modevlib.support;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -162,6 +163,25 @@ public class AppHelper {
         Type type = TypeToken.getParameterized(List.class, listType).getType();
         return gson.fromJson(gson.toJson(mainList), type);
     }
+
+
+    /**
+     * Disables the drag functionality of a {@link BottomSheetDialogFragment} to prevent the user
+     * from swiping it up or down, and optionally makes it non-cancelable.
+     *
+     * @param fragment The {@link BottomSheetDialogFragment} whose drag behavior is to be disabled.
+     *                 This method will also make the fragment non-cancelable, preventing it from being dismissed
+     *                 by tapping outside or pressing the back button.
+     */
+    public static void disableBottomSheetDrag(BottomSheetDialogFragment fragment) {
+        Dialog baseDialog = fragment.getDialog();
+        if (baseDialog instanceof BottomSheetDialog) {
+            BottomSheetDialog bottomSheetDialog = (BottomSheetDialog) baseDialog;
+            bottomSheetDialog.getBehavior().setDraggable(false); // Disable drag
+        }
+        fragment.setCancelable(false); // Optional: prevent dismiss
+    }
+
 
     /**
      * Opens a file from the Documents directory using an appropriate application.

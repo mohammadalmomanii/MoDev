@@ -63,7 +63,9 @@
         <attr name="android:elevation" />
 
     </declare-styleable>
-
+    <declare-styleable name="MovableView">
+        <attr name="movable" format="boolean" />
+    </declare-styleable>
     <declare-styleable name="zoomImageView">
         <attr name="zoomImage_zoomable" format="boolean" />
         <attr name="zoomImage_translatable" format="boolean" />
@@ -90,7 +92,6 @@
         <!-- Attribute for controlling loading visibility -->
         <attr name="expanded" format="boolean" />
     </declare-styleable>
-
 
 
 </resources>

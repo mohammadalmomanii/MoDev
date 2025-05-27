@@ -10,13 +10,14 @@ android {
         applicationId = "com.mohammadalmomani.modev"
         minSdk = 27
         targetSdk = 35
-        versionCode = 53
-        versionName = "1.4.9"
+        versionCode = 54
+        versionName = "1.5.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildFeatures { dataBinding = true
+    buildFeatures {
+        dataBinding = true
         viewBinding = true
     }
 
