@@ -33,12 +33,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        binding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "FFFFF", Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
 
     }
