@@ -100,6 +100,15 @@ public class CustomDialogFragment extends DialogFragment {
         }
     }
 
+    /**
+     * Dismisses the dialog depends on tag if it is currently visible.
+     */
+    public static void dismissDialog(String tag) {
+        if (fragment != null && (fragment.getTag() != null && fragment.getTag().equalsIgnoreCase(tag))) {
+            fragment.dismiss();
+        }
+    }
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);

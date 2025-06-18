@@ -180,6 +180,14 @@ public class LoadingFragment extends DialogFragment {
             AppHelper.setVisible(binding.imageView2);
         }
     }
+    /**
+     * Dismisses the dialog depends on tag if it is currently visible.
+     */
+    public static void dismissDialog(String tag) {
+        if (fragment != null && (fragment.getTag() != null && fragment.getTag().equalsIgnoreCase(tag))) {
+            fragment.dismiss();
+        }
+    }
 
     public static void dismissDialog() {
         if (fragment != null) {

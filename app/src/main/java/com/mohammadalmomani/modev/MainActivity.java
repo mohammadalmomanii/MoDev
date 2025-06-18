@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.mohammadalmomani.modev.databinding.ActivityMainBinding;
 import com.mohammadalmomani.modevlib.support.AppHelper;
+import com.mohammadalmomani.modevlib.support.CheckNetworkConnection;
 
 import java.util.ArrayList;
 import java.util.List;
