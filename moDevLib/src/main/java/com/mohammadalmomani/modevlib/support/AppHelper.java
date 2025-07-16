@@ -60,7 +60,6 @@ import java.util.concurrent.TimeUnit;
 
 public class AppHelper {
 
-    private static final Gson gson = new Gson();
 
     /**
      * use the new Function getCurrentDate.

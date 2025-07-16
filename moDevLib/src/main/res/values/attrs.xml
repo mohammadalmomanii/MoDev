@@ -66,6 +66,9 @@
     <declare-styleable name="MovableView">
         <attr name="movable" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="FloatingView">
+        <attr name="enableSnapToSide" format="boolean" />
+    </declare-styleable>
     <declare-styleable name="zoomImageView">
         <attr name="zoomImage_zoomable" format="boolean" />
         <attr name="zoomImage_translatable" format="boolean" />
