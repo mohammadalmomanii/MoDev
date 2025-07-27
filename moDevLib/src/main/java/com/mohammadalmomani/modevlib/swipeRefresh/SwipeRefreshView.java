@@ -1,4 +1,4 @@
-package com.mohammadalmomani.modevlib.support.SwipeRefresh;
+package com.mohammadalmomani.modevlib.swipeRefresh;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -32,7 +32,7 @@ public class SwipeRefreshView extends AppBarLayout {
      * <p>
      * ### 1. Add to XML Layout:
      * ```xml
-     * <com.mohammadalmomani.modevlib.support.SwipeRefresh.SwipeRefreshView
+     * <com.mohammadalmomani.modevlib.eee.SwipeRefreshView
      *     android:layout_width="match_parent"
      *     android:layout_height="wrap_content"
      *     app:gifSrc="@drawable/loading_animation"

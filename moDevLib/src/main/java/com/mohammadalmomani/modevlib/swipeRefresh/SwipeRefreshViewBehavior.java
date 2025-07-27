@@ -1,4 +1,4 @@
-package com.mohammadalmomani.modevlib.support.SwipeRefresh;
+package com.mohammadalmomani.modevlib.swipeRefresh;
 
 import android.content.Context;
 import android.util.AttributeSet;
