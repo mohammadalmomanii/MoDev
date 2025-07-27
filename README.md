@@ -182,7 +182,7 @@ This dialog fragment use to show message with image (GIF/PNG/JPG/....) .
 ### Preloder 
 
 The loading fragment simplifies the integration of loading indicators within your app, enhancing the user experience during asynchronous operations
-and add this code **`app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"`**
+and add this code **`app:layout_behavior="com.mohammadalmomani.modevlib.swipeRefresh.SwipeRefreshViewBehavior"`**
 
 #### Usage 
 **1-** should you add this code in your activity or fragment 
@@ -202,7 +202,7 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        app:layout_behavior="com.mohammadalmomani.modevlib.swipeRefresh.SwipeRefreshViewBehavior">
 	.
 	.
 	.
@@ -214,11 +214,7 @@ and add this code **`app:layout_behavior="com.google.android.material.appbar.App
 **2-** you can use it in java like this : 
 ```java
 
-       RefrishFragment.newInstance((AppCompatActivity) getActivity(), binding.appBarLayout, binding.imageView)
-                .startShow(getChildFragmentManager()).setGif(R.drawable.gif_pre_loader);
-
-        AppHelper.delay(()->RefrishFragment.showLoading(),1000);
-        AppHelper.delay(()->RefrishFragment.hideLoading(),10000);
+      binding.refreshView.show(true)
 ```
 
 ![screen-20240108-090414~2](https://github.com/mohammadalmomanii/MoDev/assets/91605807/46499325-2eaa-4208-8c67-d24987fb67bd)
