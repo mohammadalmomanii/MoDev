@@ -56,7 +56,7 @@ public class NotificationHelper extends AppCompatActivity {
 
     private void createChannel() {
         NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
-                Build.BRAND.toLowerCase(Locale.ENGLISH),
+                AppHelper.getAppName(context).toLowerCase(Locale.ENGLISH),
                 NotificationManager.IMPORTANCE_HIGH);
         channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
         NotificationManager notificationManager = context.getSystemService(NotificationManager.class);

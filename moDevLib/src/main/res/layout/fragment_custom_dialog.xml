@@ -17,21 +17,24 @@
         android:paddingHorizontal="@dimen/_6mdp"
         android:paddingVertical="@dimen/_3mdp"
         android:showDividers="middle|beginning|end"
+        android:tag="layout/fragment_custom_dialog_0"
         android:visibility="visible"
         tools:context=".support.CustomeDialog.CustomDialogFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:id="@+id/linearLayout10"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            >
+            android:minWidth="@dimen/_150mdp"
+            android:orientation="vertical"
+            android:showDividers="middle|beginning|end"
+            android:tag="layout/fragment_custom_dialog_0"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/iv"
-                android:layout_width="@dimen/_19mdp"
-                android:layout_height="@dimen/_19mdp"
-                android:layout_marginHorizontal="@dimen/_2mdp"
+                android:layout_width="@dimen/_15mdp"
+                android:layout_height="@dimen/_15mdp"
                 android:background="@drawable/shape_dialog_image"
                 android:backgroundTint="@color/primary_light"
                 android:backgroundTintMode="screen"
@@ -41,6 +44,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="UseAppTint"
                 tools:src="@tools:sample/avatars" />
 
@@ -49,35 +53,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2mdp"
-                android:gravity="center"
                 android:text="TextView"
+                android:textAlignment="viewStart"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_9msp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toEndOf="@+id/iv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_10mdp"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_7msp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:minWidth="@dimen/_150mdp"
-            android:padding="@dimen/_3mdp">
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_7msp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
             <Button
                 android:id="@+id/btn_neutral"
@@ -85,16 +85,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2mdp"
+                android:layout_marginTop="@dimen/_10mdp"
                 android:gravity="center"
                 android:maxWidth="@dimen/_55mdp"
                 android:minWidth="@dimen/_40mdp"
                 android:text="Button"
+                android:textSize="@dimen/_5mdp"
                 android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_positive" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_description" />
 
             <Button
                 android:id="@+id/btn_negative"
@@ -102,15 +102,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_2mdp"
-
                 android:gravity="center"
+
                 android:maxWidth="@dimen/_55mdp"
                 android:minWidth="@dimen/_40mdp"
                 android:text="Button"
+                android:textSize="@dimen/_5mdp"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_positive"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@+id/btn_positive"
+                app:layout_constraintHorizontal_bias="0.93"
                 app:layout_constraintStart_toEndOf="@+id/btn_neutral"
                 app:layout_constraintTop_toTopOf="@+id/btn_positive" />
 
@@ -124,14 +125,14 @@
                 android:maxWidth="@dimen/_55mdp"
                 android:minWidth="@dimen/_40mdp"
                 android:text="Button"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/_5mdp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_neutral"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/btn_negative"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/btn_neutral" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
 
+    </LinearLayout>
 </layout>
+
