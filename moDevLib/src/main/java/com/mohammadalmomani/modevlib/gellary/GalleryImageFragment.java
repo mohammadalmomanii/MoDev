@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.mohammadalmomani.modevlib.R;
 import com.mohammadalmomani.modevlib.databinding.FragmentImageBinding;
 
 
 public class GalleryImageFragment extends Fragment {
 
 
-    private FragmentImageBinding binding;
-
     private static Object image;
+    private FragmentImageBinding binding;
 
 
     public GalleryImageFragment() {
@@ -40,7 +40,10 @@ public class GalleryImageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentImageBinding.inflate(inflater, container, false);
-        Glide.with(getActivity()).load(image).into(binding.ivZoomImage);
+        Glide.with(requireActivity())
+                .load(image)
+                .error(R.drawable.ic_img_broken)
+                .into(binding.ivZoomImage);
         return binding.getRoot();
     }
 }
