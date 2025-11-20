@@ -77,7 +77,7 @@ publishing {
 
             groupId = "com.mohammadalmomani.modevlib"
             artifactId = "modevlib"
-            version = "1.5.63"
+            version = "1.5.7"
 
             // Optional: Customize other publication settings if needed
             afterEvaluate {
