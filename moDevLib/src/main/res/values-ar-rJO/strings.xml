@@ -108,6 +108,7 @@
     <!-- Error Handling -->
     <string name="try_again">حاول مرة أخرى</string>
     <string name="contact_support">الاتصال بالدعم الفني</string>
+    <string name="of">من</string>
 
 
 </resources>

@@ -10,6 +10,10 @@ import com.mohammadalmomani.modevlib.imageView.ImageFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @deprecated Use {@link com.mohammadalmomani.modevlib.gellary.adapter.AdapterMediaViewer} instead
+ */
+@Deprecated
 public class AdapterImageViewer extends FragmentStateAdapter {
 
     private List<Object> list=new ArrayList<>();

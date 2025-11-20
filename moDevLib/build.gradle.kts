@@ -49,6 +49,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
 
+    implementation("androidx.media3:media3-exoplayer:1.1.1")
+    implementation("androidx.media3:media3-ui:1.1.1")
+
 
     /*********************|Get Image via url|*********************/
     implementation("com.github.bumptech.glide:glide:4.16.0")

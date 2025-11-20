@@ -22,6 +22,14 @@ import com.mohammadalmomani.modevlib.support.MainInterface;
 import java.util.ArrayList;
 import java.util.List;
 
+
+// -----------------------------------------------------
+//                DEPRECATED NEW INSTANCE
+// -----------------------------------------------------
+/**
+ * @deprecated Use {@link com.mohammadalmomani.modevlib.gellary.GalleryFragment} instead
+ */
+@Deprecated
 public class ImageViewerFragment extends BottomSheetDialogFragment implements MainInterface {
 
 

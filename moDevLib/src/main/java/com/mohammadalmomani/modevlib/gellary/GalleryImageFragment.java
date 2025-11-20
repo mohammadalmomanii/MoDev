@@ -1,4 +1,4 @@
-package com.mohammadalmomani.modevlib.imageView;
+package com.mohammadalmomani.modevlib.gellary;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,9 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.mohammadalmomani.modevlib.databinding.FragmentImageBinding;
-import com.mohammadalmomani.modevlib.gellary.GalleryImageFragment;
 
-/**
- * @deprecated Use {@link GalleryImageFragment} instead
- */
-@Deprecated
-public class ImageFragment extends Fragment {
+
+public class GalleryImageFragment extends Fragment {
 
 
     private FragmentImageBinding binding;
@@ -23,13 +19,13 @@ public class ImageFragment extends Fragment {
     private static Object image;
 
 
-    public ImageFragment() {
+    public GalleryImageFragment() {
         // Required empty public constructor
     }
 
-    public static ImageFragment newInstance(Object image) {
-        ImageFragment fragment = new ImageFragment();
-        ImageFragment.image = image;
+    public static GalleryImageFragment builder(Object image) {
+        GalleryImageFragment fragment = new GalleryImageFragment();
+        GalleryImageFragment.image = image;
         return fragment;
     }
 

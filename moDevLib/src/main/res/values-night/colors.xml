@@ -6,6 +6,7 @@
     <color name="primary_light">#A67430</color>
     <color name="primary_tran_15">#26C88935</color>
     <color name="primary_tran_30">#4DC88935</color>
+    <color name="primary_tran_45">#73C88935</color>
 
     <color name="secondary">#0F403C</color> <!-- Darker tone of secondary -->
     <color name="secondary_dark">#092C29</color>

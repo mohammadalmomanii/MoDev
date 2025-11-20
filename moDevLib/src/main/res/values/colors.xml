@@ -6,6 +6,7 @@
     <color name="primary_light">#FFD78F</color>
     <color name="primary_tran_15">#26F3AF4A</color>
     <color name="primary_tran_30">#4DF3AF4A</color>
+    <color name="primary_tran_45">#73F3AF4A</color>
 
     <color name="secondary">#175753</color>
     <color name="secondary_dark">#0F403C</color>

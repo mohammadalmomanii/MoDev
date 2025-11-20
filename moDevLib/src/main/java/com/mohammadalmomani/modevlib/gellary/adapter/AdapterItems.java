@@ -1,4 +1,4 @@
-package com.mohammadalmomani.modevlib.imageView.adapters;
+package com.mohammadalmomani.modevlib.gellary.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -14,17 +14,13 @@ import com.mohammadalmomani.modevlib.support.MainInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @deprecated Use {@link com.mohammadalmomani.modevlib.gellary.adapter.AdapterItems} instead
- */
-@Deprecated
-public class AdapterImages extends RecyclerView.Adapter<AdapterImages.VHolder> {
+public class AdapterItems extends RecyclerView.Adapter<AdapterItems.VHolder> {
     private List<Object> list=new ArrayList<>();
     private MainInterface mainInterface;
 
     private int selectedItem;
 
-    public AdapterImages() {
+    public AdapterItems() {
     }
 
     public void setList(List<Object> list) {

@@ -109,5 +109,6 @@
     <string name="contact_support">Contact Support</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="of">Of</string>
 
 </resources>
