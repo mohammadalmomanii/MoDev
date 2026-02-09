@@ -37,5 +37,7 @@
     <color name="gold">#DAA520</color> <!-- GoldenRod -->
     <color name="transparent">#00FFFFFF</color> <!-- Transparent -->
 
+    <color name="black_tran_70">#B3000000</color> <!-- DarkGray/Charcoal -->
+
 
 </resources>

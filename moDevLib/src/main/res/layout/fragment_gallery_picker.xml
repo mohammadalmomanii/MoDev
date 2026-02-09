@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!-- هنا يمكن إضافة أي Binding Variables لو تحب -->
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!-- عنوان أو مسافة فوق -->
+        <TextView
+            android:id="@+id/galleryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="اختيار الصور"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- RecyclerView للصور -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/galleryRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="56dp"
+            android:padding="4dp"
+            android:clipToPadding="false"/>
+
+        <!-- أزرار التأكيد والإغلاق -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/closeBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close"
+                android:contentDescription="إغلاق"/>
+
+            <Button
+                android:id="@+id/confirmBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:text="تأكيد"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

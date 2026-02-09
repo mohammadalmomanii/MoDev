@@ -22,7 +22,46 @@ import com.mohammadalmomani.modevlib.support.MainInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GalleryFragment extends BottomSheetDialogFragment implements MainInterface {
+/**
+ * GalleryFragment is a custom BottomSheetDialogFragment for viewing images or media items.
+ *
+ * ## Features:
+ * - Displays a list of media items in a RecyclerView and a ViewPager2.
+ * - Supports swipe gestures to navigate between images.
+ * - Optional left/right navigation buttons.
+ * - Shows a counter indicating current position / total items.
+ * - Dismisses automatically when paused or explicitly closed.
+ *
+ * ## How to Use:
+ *
+ * ### 1. Using the Builder:
+ * ```java
+ * List<Object> images = new ArrayList<>();
+ * images.add(file1);
+ * images.add(file2);
+ *
+ * GalleryFragment.Builder builder = new GalleryFragment.Builder()
+ *     .setImages(images)            // Set the media items to display
+ *     .setStartPosition(0)          // Set the initial item position
+ *     .setCancelable(true)          // Set whether the fragment is cancelable
+ *     .setStyle(R.style.modev_styleImageViewer); // Optional: custom style
+ *
+ * // Show the gallery
+ * builder.show(getSupportFragmentManager());
+ * ```
+ *
+ * ### 2. Notes:
+ * - The fragment automatically dismisses itself when paused.
+ * - Navigation via swipe or left/right buttons updates the RecyclerView selection and counter.
+ * - The counter displays "current position of total items".
+ * - Deprecated `newInstance(List<Object> images)` exists but use Builder instead.
+ * - You can customize style and cancelable behavior via Builder.
+ */
+
+
+
+public class GalleryFragment extends BottomSheetDialogFragment implements MainInterface
+{
 
     private static GalleryFragment fragment;
     private static AdapterMediaViewer vpAdapter;

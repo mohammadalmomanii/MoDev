@@ -109,6 +109,8 @@
     <string name="try_again">حاول مرة أخرى</string>
     <string name="contact_support">الاتصال بالدعم الفني</string>
     <string name="of">من</string>
+    <string name="max_images_reached">لقد اخترت الحد الأعلى من الصور</string>
+    <string name="no_images_selected">لم تختر أي صورة</string>
 
 
 </resources>

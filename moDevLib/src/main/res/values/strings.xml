@@ -1,7 +1,7 @@
 <resources>
 
     <!-- APP SETTING STRINGS   -->
-    <string name="top_sheet_behavior" >com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior</string>
+    <string name="top_sheet_behavior">com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior</string>
 
     <!--    -->
     <string name="app_name">MoDev</string>
@@ -110,5 +110,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="of">Of</string>
+    <string name="max_images_reached">You have selected the maximum number of images</string>
+    <string name="no_images_selected">You did not choose any picture</string>
 
 </resources>

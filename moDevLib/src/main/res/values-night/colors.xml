@@ -37,4 +37,7 @@
     <color name="gold">#8B7500</color> <!-- Olive -->
     <color name="transparent">#00FFFFFF</color> <!-- Transparent -->
 
+    <color name="black_tran_70">#B3000000</color> <!-- DarkGray/Charcoal -->
+
+
 </resources>

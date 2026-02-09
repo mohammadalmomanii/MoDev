@@ -1,0 +1,97 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/takeImageBtn"
+        android:layout_width="@dimen/_40mdp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_marginBottom="@dimen/_8mdp"
+        android:src="@drawable/ic_take_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+app:tint="@color/primary_tran_30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/switchCameraBtn"
+        android:layout_width="@dimen/_17mdp"
+        android:layout_height="@dimen/_17mdp"
+        android:layout_marginEnd="@dimen/_4mdp"
+        android:background="@drawable/shape_rounded_12"
+        android:backgroundTint="@color/black_tran_70"
+        android:foreground="@drawable/ripple_14"
+        android:padding="@dimen/_2mdp"
+        android:src="@drawable/ic_rotate_camera"
+        app:tint="@color/primary_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/takeImageBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/takeImageBtn" />
+
+    <ImageView
+        android:id="@+id/toggleFlashBtn"
+        android:layout_width="@dimen/_17mdp"
+        android:layout_height="@dimen/_17mdp"
+        android:layout_marginTop="@dimen/_4mdp"
+        android:layout_marginEnd="@dimen/_4mdp"
+        android:background="@drawable/shape_rounded_12"
+        android:backgroundTint="@color/black_tran_70"
+        android:foreground="@drawable/ripple_14"
+        android:padding="@dimen/_4mdp"
+        android:src="@drawable/ic_camera_flash_off"
+        app:tint="@color/primary_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/closeBtn"
+        android:layout_width="@dimen/_17mdp"
+        android:layout_height="@dimen/_17mdp"
+        android:layout_marginStart="@dimen/_4mdp"
+        android:layout_marginTop="@dimen/_4mdp"
+        android:background="@drawable/shape_rounded_12"
+        android:backgroundTint="@color/black_tran_70"
+        android:foreground="@drawable/ripple_14"
+        android:padding="@dimen/_2mdp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary_dark" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/takenImageRv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4mdp"
+        android:layout_marginBottom="@dimen/_3mdp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/takeImageBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:itemCount="4"
+        tools:listitem="@layout/layout_taken_image" />
+
+    <ImageView
+        android:id="@+id/confirmBtn"
+        android:layout_width="@dimen/_22mdp"
+        android:layout_height="@dimen/_22mdp"
+        android:layout_marginStart="@dimen/_4mdp"
+        android:background="@drawable/shape_rounded_30"
+        android:backgroundTint="@color/primary_dark"
+        android:padding="@dimen/_6mdp"
+        android:src="@drawable/ic_select"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/takeImageBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/takeImageBtn"
+        app:tint="@color/black" />
+</androidx.constraintlayout.widget.ConstraintLayout>
