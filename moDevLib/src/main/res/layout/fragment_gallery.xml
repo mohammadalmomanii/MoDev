@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/_15mdp"
-                android:text="1 of 14"
+                tools:text="1 of 14"
                 android:textSize="@dimen/_9msp"
                 app:layout_constraintBottom_toTopOf="@+id/rv"
                 app:layout_constraintEnd_toEndOf="parent"
