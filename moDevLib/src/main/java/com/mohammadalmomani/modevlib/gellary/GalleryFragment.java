@@ -24,32 +24,32 @@ import java.util.List;
 
 /**
  * GalleryFragment is a custom BottomSheetDialogFragment for viewing images or media items.
- *
+ * <p>
  * ## Features:
  * - Displays a list of media items in a RecyclerView and a ViewPager2.
  * - Supports swipe gestures to navigate between images.
  * - Optional left/right navigation buttons.
  * - Shows a counter indicating current position / total items.
  * - Dismisses automatically when paused or explicitly closed.
- *
+ * <p>
  * ## How to Use:
- *
+ * <p>
  * ### 1. Using the Builder:
  * ```java
  * List<Object> images = new ArrayList<>();
  * images.add(file1);
  * images.add(file2);
  *
- * GalleryFragment.Builder builder = new GalleryFragment.Builder()
- *     .setImages(images)            // Set the media items to display
- *     .setStartPosition(0)          // Set the initial item position
- *     .setCancelable(true)          // Set whether the fragment is cancelable
- *     .setStyle(R.style.modev_styleImageViewer); // Optional: custom style
+ * GalleryFragment.Builder = new GalleryFragment.Builder()
+ * .setImages(images)            // Set the media items to display
+ * .setStartPosition(0)          // Set the initial item position
+ * .setCancelable(true)          // Set whether the fragment is cancelable
+ * .setStyle(R.style.modev_styleImageViewer); // Optional: custom style
  *
  * // Show the gallery
- * builder.show(getSupportFragmentManager());
+ * builder.build(getSupportFragmentManager());
  * ```
- *
+ * <p>
  * ### 2. Notes:
  * - The fragment automatically dismisses itself when paused.
  * - Navigation via swipe or left/right buttons updates the RecyclerView selection and counter.
@@ -59,9 +59,7 @@ import java.util.List;
  */
 
 
-
-public class GalleryFragment extends BottomSheetDialogFragment implements MainInterface
-{
+public class GalleryFragment extends BottomSheetDialogFragment implements MainInterface {
 
     private static GalleryFragment fragment;
     private static AdapterMediaViewer vpAdapter;
@@ -243,7 +241,7 @@ public class GalleryFragment extends BottomSheetDialogFragment implements MainIn
             return this;
         }
 
-        public GalleryFragment build() {
+        public void build(FragmentManager fm) {
             dismissDialog();
             fragment = new GalleryFragment();
             fragment.mediaList = new ArrayList<>(images);
@@ -256,12 +254,10 @@ public class GalleryFragment extends BottomSheetDialogFragment implements MainIn
             fragment.setStyle(DialogFragment.STYLE_NORMAL, style);
             fragment.setCancelable(cancelable);
 
-            return fragment;
+            fragment.show(fm, "image_viewer");
+
         }
 
-        public void show(@NonNull FragmentManager fm) {
-            GalleryFragment f = build();
-            f.show(fm, "image_viewer");
-        }
+
     }
 }
