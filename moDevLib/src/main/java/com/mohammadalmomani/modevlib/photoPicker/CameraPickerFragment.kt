@@ -83,7 +83,7 @@ class CameraPickerFragment : BottomSheetDialogFragment() {
     private var allowSwitchCamera = true
     private var showFlashButton = true
     private var enableCapture = true
-    private var maxImages = Int.MAX_VALUE
+    private var maxImages = 1
     private var resultListener: CameraResultListener? = null
     // ======================================
 
@@ -212,7 +212,7 @@ class CameraPickerFragment : BottomSheetDialogFragment() {
                     takenImageAdapter.addItem(
                         TakenImage(file = it, isSelected = false)
                     )
-                    if (takenImageAdapter.currentList.size >= maxImages) {
+                    if (takenImageAdapter.currentList.size > 10) {
                         binding.takeImageBtn.isEnabled = false
                     }
                     binding.confirmBtn.visibility = View.VISIBLE

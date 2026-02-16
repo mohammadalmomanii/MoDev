@@ -11,7 +11,7 @@ import com.mohammadalmomani.modevlib.databinding.LayoutTakenImageBinding
 
 class TakenImageAdapter(
     private val onTakenImageClickListener: OnTakenImageClickListener,
-    private val maxSelection: Int = Int.MAX_VALUE
+    private val maxSelection: Int = 1
 ) : ListAdapter<TakenImage, TakenImageAdapter.ViewHolder>(TakenImageDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder.from(parent)

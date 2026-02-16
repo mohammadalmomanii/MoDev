@@ -169,6 +169,7 @@ public class GalleryFragment extends BottomSheetDialogFragment implements MainIn
                 onItemClick(new Object(), position);
             }
         });
+        binding.tvCounter.setText(1 + " " + getString(R.string.of) + " " + adapter.getItemCount());
 
         return binding.getRoot();
     }
@@ -241,7 +242,8 @@ public class GalleryFragment extends BottomSheetDialogFragment implements MainIn
             return this;
         }
 
-        public void build(FragmentManager fm) {
+        public void build(FragmentManager fm, String tag
+        ) {
             dismissDialog();
             fragment = new GalleryFragment();
             fragment.mediaList = new ArrayList<>(images);
@@ -254,7 +256,7 @@ public class GalleryFragment extends BottomSheetDialogFragment implements MainIn
             fragment.setStyle(DialogFragment.STYLE_NORMAL, style);
             fragment.setCancelable(cancelable);
 
-            fragment.show(fm, "image_viewer");
+            fragment.show(fm, tag);
 
         }
 
