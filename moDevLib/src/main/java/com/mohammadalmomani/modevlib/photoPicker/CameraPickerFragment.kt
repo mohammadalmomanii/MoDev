@@ -3,6 +3,7 @@ package com.mohammadalmomani.modevlib.photoPicker
 import android.Manifest
 import android.content.Context
 import android.content.Context.VIBRATOR_SERVICE
+import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
@@ -22,6 +23,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.mohammadalmomani.modevlib.R
 import com.mohammadalmomani.modevlib.databinding.FragmentCameraBinding
 import com.mohammadalmomani.modevlib.support.AppHelper
+import com.mohammadalmomani.modevlib.support.LoadingFragment
 import kotlinx.coroutines.launch
 
 
@@ -291,5 +293,12 @@ class CameraPickerFragment : BottomSheetDialogFragment() {
         }
 
         binding.closeBtn.setOnClickListener { dismiss() }
+    }
+
+
+
+    override fun onPause() {
+        super.onPause()
+        dismiss()
     }
 }

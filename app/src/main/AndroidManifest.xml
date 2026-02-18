@@ -25,6 +25,7 @@
         tools:targetApi="35">
 
 
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.mohammadalmomani.modev.provider"

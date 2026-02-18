@@ -545,7 +545,12 @@ public class AppHelper {
      * @param dialogPicker The callback to handle the dialog dismissal.
      * @return The TimePickerDialog that was shown.
      */
-    private static TimePickerDialog showTimePickerDialog(Context context, Locale locale, String format, MainInterface.DialogPicker dialogPicker) {
+
+    /**
+     * @deprecated Use {@link com.mohammadalmomani.modevlib.dateTimePicker.TimePicker} class instead.
+     * This method is kept only for backward compatibility.
+     */
+    @Deprecated private static TimePickerDialog showTimePickerDialog(Context context, Locale locale, String format, MainInterface.DialogPicker dialogPicker) {
         final Calendar calendar = Calendar.getInstance();
         final String[] formattedTime = new String[1];
 
@@ -568,15 +573,11 @@ public class AppHelper {
 
         return timePickerDialog;
     }
-
     /**
-     * Displays a DatePickerDialog and/or a TimePickerDialog based on the provided formats.
-     *
-     * @param context      The context to display the dialogs in.
-     * @param dateFormat   The format to use for the date (nullable).
-     * @param timeFormat   The format to use for the time (nullable).
-     * @param dialogPicker The callback to handle the dialog dismissals.
+     * @deprecated Use {@link com.mohammadalmomani.modevlib.dateTimePicker.DatePicker} and {@link com.mohammadalmomani.modevlib.dateTimePicker.TimePicker} classes instead.
+     * This method is kept only for backward compatibility.
      */
+    @Deprecated
     public static void showDateAndTimePickersDialog
     (Context context, @Nullable String dateFormat, @Nullable String timeFormat
             , MainInterface.DialogPicker dialogPicker) {
@@ -605,15 +606,13 @@ public class AppHelper {
             showTimePickerDialog(context, Locale.getDefault(), timeFormat.replaceAll("[^-:GyYuMLwWDdFEaHhKkmsSzZX /|\\\\]", ""), dialogPicker);
     }
 
+
+
     /**
-     * Displays a DatePickerDialog and/or a TimePickerDialog with a specified locale.
-     *
-     * @param context      The context to display the dialogs in.
-     * @param locale       The locale to use for the dialogs.
-     * @param dateFormat   The format to use for the date (nullable).
-     * @param timeFormat   The format to use for the time (nullable).
-     * @param dialogPicker The callback to handle the dialog dismissals.
+     * @deprecated Use {@link com.mohammadalmomani.modevlib.dateTimePicker.DatePicker} and {@link com.mohammadalmomani.modevlib.dateTimePicker.TimePicker} classes instead.
+     * This method is kept only for backward compatibility.
      */
+    @Deprecated
     public static void showLocaleDateAndTimePickersDialog
     (Context context, Locale locale, @Nullable String dateFormat, @Nullable String timeFormat
             , MainInterface.DialogPicker dialogPicker) {
