@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="_0.1mdp">0.1dp</dimen>
+    <dimen name="_0.2mdp">0.2dp</dimen>
+    <dimen name="_0.3mdp">0.3dp</dimen>
+    <dimen name="_0.4mdp">0.4dp</dimen>
     <dimen name="_0.5mdp">0.5dp</dimen>
+    <dimen name="_0.6mdp">0.6dp</dimen>
+    <dimen name="_0.7mdp">0.7dp</dimen>
+    <dimen name="_0.8mdp">0.8dp</dimen>
+    <dimen name="_0.9mdp">0.9dp</dimen>
 
     <dimen name="_1mdp">1.00dp</dimen>
 

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- APP SETTING STRINGS   -->
-    <string name="top_sheet_behavior" >com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior</string>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <!--    -->
+    <!-- Original strings from the provided list (translated) -->
+    <string name="top_sheet_behavior">com.mohammadalmomani.modevlib.topSheetDialog.TopSheetBehavior</string>
     <string name="app_name">MoDev</string>
     <string name="cancel">إلغاء</string>
     <string name="close">إغلاق</string>
     <string name="delete">حذف</string>
-    <string name="edit">تحرير</string>
+    <string name="edit">تعديل</string>
     <string name="update">تحديث</string>
     <string name="create">إنشاء</string>
     <string name="back">رجوع</string>
@@ -19,20 +18,20 @@
     <string name="send">إرسال</string>
     <string name="submit">إرسال</string>
     <string name="search">بحث</string>
-    <string name="settings">إعدادات</string>
+    <string name="settings">الإعدادات</string>
     <string name="profile">الملف الشخصي</string>
-    <string name="home">الصفحة الرئيسية</string>
+    <string name="home">الرئيسية</string>
     <string name="notification">إشعار</string>
     <string name="logout">تسجيل الخروج</string>
     <string name="login">تسجيل الدخول</string>
-    <string name="register">تسجيل</string>
+    <string name="register">إنشاء حساب</string>
     <string name="password">كلمة المرور</string>
     <string name="email">البريد الإلكتروني</string>
     <string name="username">اسم المستخدم</string>
     <string name="language">اللغة</string>
     <string name="help">مساعدة</string>
     <string name="feedback">ملاحظات</string>
-    <string name="about">عن التطبيق</string>
+    <string name="about">حول</string>
     <string name="share">مشاركة</string>
     <string name="download">تحميل</string>
     <string name="upload">رفع</string>
@@ -48,69 +47,400 @@
     <string name="error">خطأ</string>
     <string name="success">نجاح</string>
     <string name="warning">تحذير</string>
-    <string name="info">معلومة</string>
-    <string name="date">تاريخ</string>
-    <string name="time">وقت</string>
-    <string name="calendar">تقويم</string>
-    <string name="location">موقع</string>
+    <string name="info">معلومات</string>
+    <string name="date">التاريخ</string>
+    <string name="time">الوقت</string>
+    <string name="calendar">التقويم</string>
+    <string name="location">الموقع</string>
     <string name="contacts">جهات الاتصال</string>
     <string name="privacy">الخصوصية</string>
     <string name="terms">الشروط</string>
-    <string name="conditions">الشروط والأحكام</string>
+    <string name="conditions">الأحكام</string>
     <string name="accept">قبول</string>
     <string name="decline">رفض</string>
-    <string name="notes">الملاحظات</string>
-    <string name="note">ملاحظة</string>
     <string name="read">قراءة</string>
+    <string name="notes">ملاحظات</string>
+    <string name="note">ملاحظة</string>
     <string name="write">كتابة</string>
-
-
-    <!-- Common Actions -->
-    <string name="connect">الاتصال</string>
+    <string name="connect">اتصال</string>
     <string name="disconnect">قطع الاتصال</string>
     <string name="browse">تصفح</string>
-
-    <!-- Internet States -->
-    <string name="internet_connected">الاتصال بالإنترنت</string>
-    <string name="internet_disconnected">قطع الاتصال بالإنترنت</string>
-    <string name="connecting">جاري الاتصال...</string>
-    <string name="loading">جاري التحميل...</string>
-
-    <!-- Network Errors -->
+    <string name="internet_connected">متصل بالإنترنت</string>
+    <string name="internet_disconnected">غير متصل بالإنترنت</string>
+    <string name="connecting">جاري الاتصال…</string>
+    <string name="loading">جاري التحميل…</string>
     <string name="network_error">خطأ في الشبكة</string>
-    <string name="connection_timeout">انقضاء الاتصال</string>
-    <string name="server_unreachable">الخادم غير قابل للوصول</string>
+    <string name="connection_timeout">انتهت مهلة الاتصال</string>
+    <string name="server_unreachable">الخادم غير متاح</string>
     <string name="no_internet_connection">لا يوجد اتصال بالإنترنت</string>
-
-    <!-- Web Content -->
-    <string name="web_page">صفحة الويب</string>
-    <string name="website">موقع الويب</string>
+    <string name="web_page">صفحة ويب</string>
+    <string name="website">موقع ويب</string>
     <string name="url">رابط</string>
-    <string name="web_content">محتوى الويب</string>
-
-    <!-- User Authentication -->
+    <string name="web_content">محتوى ويب</string>
     <string name="login_required">يتطلب تسجيل الدخول</string>
-    <string name="logout_confirmation">تأكيد الخروج</string>
-    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
-
-    <!-- Security -->
+    <string name="logout_confirmation">تأكيد تسجيل الخروج</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
     <string name="security">الأمان</string>
     <string name="terms_conditions">الشروط والأحكام</string>
-
-    <!-- Notifications -->
     <string name="new_notification">إشعار جديد</string>
-
-    <!-- Messaging -->
-    <string name="chat">دردشة</string>
+    <string name="chat">محادثة</string>
     <string name="send_message">إرسال رسالة</string>
-    <string name="receive_message">استقبال رسالة</string>
-
-    <!-- Error Handling -->
+    <string name="receive_message">استلام رسالة</string>
     <string name="try_again">حاول مرة أخرى</string>
-    <string name="contact_support">الاتصال بالدعم الفني</string>
+    <string name="contact_support">اتصل بالدعم</string>
     <string name="of">من</string>
-    <string name="max_images_reached">لقد اخترت الحد الأعلى من الصور</string>
+    <string name="max_images_reached">لقد اخترت العدد الأقصى من الصور</string>
     <string name="no_images_selected">لم تختر أي صورة</string>
 
+    <!-- UI Elements -->
+    <string name="menu">القائمة</string>
+    <string name="dashboard">لوحة التحكم</string>
+    <string name="explore">استكشاف</string>
+    <string name="discover">اكتشف</string>
+    <string name="favorites">المفضلة</string>
+    <string name="bookmarks">العلامات المرجعية</string>
+    <string name="history">السجل</string>
+    <string name="recent">الأخيرة</string>
+    <string name="trending">رائج</string>
+    <string name="popular">شائع</string>
+    <string name="recommended">موصى به</string>
+    <string name="featured">مميز</string>
+    <string name="new_">جديد</string>
+    <string name="old">قديم</string>
 
+    <!-- Navigation -->
+    <string name="navigation">التنقل</string>
+    <string name="previous">السابق</string>
+    <string name="go_back">العودة</string>
+    <string name="go_forward">التقدم</string>
+    <string name="go_home">الذهاب للرئيسية</string>
+    <string name="scroll_up">التمرير لأعلى</string>
+    <string name="scroll_down">التمرير لأسفل</string>
+    <string name="top">الأعلى</string>
+    <string name="bottom">الأسفل</string>
+    <string name="expand">توسيع</string>
+    <string name="collapse">طي</string>
+    <string name="show">إظهار</string>
+    <string name="hide">إخفاء</string>
+
+    <!-- Common Button Actions -->
+    <string name="ok">موافق</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="skip">تخطي</string>
+    <string name="done">تم</string>
+    <string name="save">حفظ</string>
+    <string name="save_changes">حفظ التغييرات</string>
+    <string name="discard">تجاهل</string>
+    <string name="discard_changes">تجاهل التغييرات</string>
+    <string name="apply">تطبيق</string>
+    <string name="reset">إعادة تعيين</string>
+    <string name="reset_to_default">استعادة الافتراضي</string>
+    <string name="clear">مسح</string>
+    <string name="clear_all">مسح الكل</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="resume">استئناف</string>
+    <string name="restart">إعادة تشغيل</string>
+    <string name="start">بدء</string>
+    <string name="finish">إنهاء</string>
+    <string name="complete">اكتمال</string>
+
+    <!-- Form Fields -->
+    <string name="name">الاسم</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="first_name">الاسم الأول</string>
+    <string name="last_name">اسم العائلة</string>
+    <string name="phone">الهاتف</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="mobile">الجوال</string>
+    <string name="address">العنوان</string>
+    <string name="street">الشارع</string>
+    <string name="city">المدينة</string>
+    <string name="state">الولاية</string>
+    <string name="zip_code">الرمز البريدي</string>
+    <string name="country">الدولة</string>
+    <string name="website_url">رابط الموقع</string>
+    <string name="company">الشركة</string>
+    <string name="title">العنوان</string>
+    <string name="description">الوصف</string>
+    <string name="details">التفاصيل</string>
+    <string name="category">التصنيف</string>
+    <string name="tags">الوسوم</string>
+    <string name="label">التسمية</string>
+    <string name="hint">تلميح</string>
+    <string name="placeholder">نصplaceholder</string>
+    <string name="optional">اختياري</string>
+    <string name="required">مطلوب</string>
+
+    <!-- Media -->
+    <string name="camera">الكاميرا</string>
+    <string name="gallery">المعرض</string>
+    <string name="photo">صورة</string>
+    <string name="photos">صور</string>
+    <string name="image">صورة</string>
+    <string name="images">صور</string>
+    <string name="video">فيديو</string>
+    <string name="videos">فيديوهات</string>
+    <string name="audio">صوت</string>
+    <string name="music">موسيقى</string>
+    <string name="record">تسجيل</string>
+    <string name="capture">التقاط</string>
+    <string name="take_photo">التقاط صورة</string>
+    <string name="choose_photo">اختر صورة</string>
+    <string name="choose_video">اختر فيديو</string>
+    <string name="choose_file">اختر ملفاً</string>
+    <string name="attach">إرفاق</string>
+    <string name="attachment">مرفق</string>
+    <string name="file">ملف</string>
+    <string name="files">ملفات</string>
+    <string name="document">مستند</string>
+    <string name="documents">مستندات</string>
+
+    <!-- Status Messages -->
+    <string name="empty">فارغ</string>
+    <string name="no_data">لا توجد بيانات</string>
+    <string name="no_results">لا توجد نتائج</string>
+    <string name="no_items">لا توجد عناصر</string>
+    <string name="no_messages">لا توجد رسائل</string>
+    <string name="no_notifications">لا توجد إشعارات</string>
+    <string name="no_comments">لا توجد تعليقات</string>
+    <string name="no_favorites">لا توجد مفضلات</string>
+    <string name="no_history">لا يوجد سجل</string>
+    <string name="no_connection">لا يوجد اتصال</string>
+    <string name="no_permission">لا يوجد إذن</string>
+    <string name="no_access">لا يمكن الوصول</string>
+    <string name="loading_failed">فشل التحميل</string>
+    <string name="operation_failed">فشلت العملية</string>
+    <string name="operation_successful">تمت العملية بنجاح</string>
+    <string name="completed">مكتمل</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="in_progress">قيد التنفيذ</string>
+    <string name="processing">جاري المعالجة…</string>
+    <string name="waiting">انتظار…</string>
+
+    <!-- Time & Date -->
+    <string name="today">اليوم</string>
+    <string name="yesterday">أمس</string>
+    <string name="tomorrow">غداً</string>
+    <string name="now">الآن</string>
+    <string name="later">لاحقاً</string>
+    <string name="soon">قريباً</string>
+    <string name="recently">مؤخراً</string>
+    <string name="schedule">جدول</string>
+    <string name="reminder">تذكير</string>
+    <string name="deadline">الموعد النهائي</string>
+    <string name="duration">المدة</string>
+    <string name="frequency">التكرار</string>
+
+    <!-- Sorting & Filtering -->
+    <string name="sort">ترتيب</string>
+    <string name="sort_by">ترتيب حسب</string>
+    <string name="filter">تصفية</string>
+    <string name="filter_by">تصفية حسب</string>
+    <string name="clear_filters">مسح التصفية</string>
+    <string name="apply_filters">تطبيق التصفية</string>
+    <string name="ascending">تصاعدي</string>
+    <string name="descending">تنازلي</string>
+    <string name="alphabetical">أبجدي</string>
+    <string name="chronological">زمني</string>
+    <string name="latest">الأحدث</string>
+    <string name="oldest">الأقدم</string>
+    <string name="highest">الأعلى</string>
+    <string name="lowest">الأقل</string>
+    <string name="most_viewed">الأكثر مشاهدة</string>
+    <string name="most_downloaded">الأكثر تحميلاً</string>
+    <string name="most_rated">الأكثر تقييماً</string>
+    <string name="most_popular">الأكثر شهرة</string>
+
+    <!-- Confirmation Dialogs -->
+    <string name="are_you_sure">هل أنت متأكد؟</string>
+    <string name="confirm_action">تأكيد الإجراء</string>
+    <string name="confirm_delete">تأكيد الحذف</string>
+    <string name="delete_confirmation">هل أنت متأكد أنك تريد حذف هذا؟</string>
+    <string name="exit_confirmation">هل أنت متأكد أنك تريد الخروج؟</string>
+    <string name="save_confirmation">هل تريد حفظ التغييرات؟</string>
+    <string name="discard_confirmation">هل تريد تجاهل التغييرات؟</string>
+    <string name="unsaved_changes">لديك تغييرات غير محفوظة</string>
+
+    <!-- Permissions -->
+    <string name="permission_required">الإذن مطلوب</string>
+    <string name="permission_denied">تم رفض الإذن</string>
+    <string name="permission_granted">تم منح الإذن</string>
+    <string name="allow">سماح</string>
+    <string name="deny">رفض</string>
+    <string name="dont_ask_again">لا تسأل مرة أخرى</string>
+    <string name="camera_permission">إذن الكاميرا مطلوب لالتقاط الصور</string>
+    <string name="storage_permission">إذن التخزين مطلوب للوصول إلى الملفات</string>
+    <string name="location_permission">إذن الموقع مطلوب للوصول إلى موقعك</string>
+    <string name="contacts_permission">إذن جهات الاتصال مطلوب للوصول إلى جهات الاتصال</string>
+    <string name="microphone_permission">إذن الميكروفون مطلوب لتسجيل الصوت</string>
+
+    <!-- Ratings & Reviews -->
+    <string name="rate">تقييم</string>
+    <string name="rating">التقييم</string>
+    <string name="rate_app">قيم التطبيق</string>
+    <string name="review">مراجعة</string>
+    <string name="reviews">مراجعات</string>
+    <string name="write_review">كتابة مراجعة</string>
+    <string name="submit_review">إرسال المراجعة</string>
+    <string name="stars">نجوم</string>
+    <string name="excellent">ممتاز</string>
+    <string name="good">جيد</string>
+    <string name="average">متوسط</string>
+    <string name="poor">ضعيف</string>
+    <string name="terrible">سيئ جداً</string>
+
+    <!-- Version & Updates -->
+    <string name="version">الإصدار</string>
+    <string name="update_available">يتوفر تحديث</string>
+    <string name="update_now">تحديث الآن</string>
+    <string name="later_update">ذكرني لاحقاً</string>
+    <string name="whats_new">ما الجديد</string>
+    <string name="check_for_updates">التحقق من التحديثات</string>
+    <string name="downloading_update">جاري تحميل التحديث…</string>
+    <string name="install">تثبيت</string>
+
+    <!-- App-Specific -->
+    <string name="welcome">مرحباً</string>
+    <string name="welcome_back">مرحباً بعودتك</string>
+    <string name="welcome_to">مرحباً بك في %s</string>
+    <string name="get_started">ابدأ</string>
+    <string name="lets_go">هيا بنا</string>
+    <string name="how_it_works">كيف يعمل</string>
+    <string name="tour">جولة تعريفية</string>
+    <string name="tutorial">دليل تعليمي</string>
+    <string name="guide">دليل</string>
+    <string name="tips">نصائح</string>
+    <string name="faq">الأسئلة الشائعة</string>
+    <string name="support">الدعم</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="report">تبليغ</string>
+    <string name="report_problem">الإبلاغ عن مشكلة</string>
+    <string name="feedback_thanks">شكراً لملاحظاتك!</string>
+
+    <!-- Search -->
+    <string name="search_hint">بحث…</string>
+    <string name="search_results">نتائج البحث</string>
+    <string name="recent_searches">عمليات البحث الأخيرة</string>
+    <string name="popular_searches">عمليات البحث الشائعة</string>
+    <string name="no_search_results">لا توجد نتائج لـ "%s"</string>
+    <string name="clear_search">مسح البحث</string>
+    <string name="search_history">سجل البحث</string>
+    <string name="clear_history">مسح السجل</string>
+    <string name="advanced_search">بحث متقدم</string>
+
+    <!-- Account & Profile -->
+    <string name="my_account">حسابي</string>
+    <string name="account_settings">إعدادات الحساب</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="change_email">تغيير البريد الإلكتروني</string>
+    <string name="change_phone">تغيير رقم الهاتف</string>
+    <string name="verify">تحقق</string>
+    <string name="verification">التحقق</string>
+    <string name="verify_email">تحقق من البريد الإلكتروني</string>
+    <string name="verify_phone">تحقق من الهاتف</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="current_password">كلمة المرور الحالية</string>
+    <string name="password_strength">قوة كلمة المرور</string>
+    <string name="password_match">كلمة المرور غير متطابقة</string>
+
+    <!-- Subscription & Payments -->
+    <string name="subscription">اشتراك</string>
+    <string name="subscribe">اشترك</string>
+    <string name="unsubscribe">إلغاء الاشتراك</string>
+    <string name="payment">الدفع</string>
+    <string name="checkout">إتمام الشراء</string>
+    <string name="purchase">شراء</string>
+    <string name="buy">شراء</string>
+    <string name="price">السعر</string>
+    <string name="total">الإجمالي</string>
+    <string name="subtotal">المجموع الفرعي</string>
+    <string name="tax">الضريبة</string>
+    <string name="discount">الخصم</string>
+    <string name="coupon">قسيمة</string>
+    <string name="apply_coupon">تطبيق القسيمة</string>
+    <string name="payment_method">طريقة الدفع</string>
+    <string name="credit_card">بطاقة ائتمان</string>
+    <string name="paypal">PayPal</string>
+    <string name="wallet">محفظة</string>
+    <string name="transaction">عملية</string>
+    <string name="transaction_history">سجل العمليات</string>
+    <string name="invoice">فاتورة</string>
+    <string name="receipt">إيصال</string>
+    <string name="refund">استرداد</string>
+
+    <!-- Social -->
+    <string name="follow">متابعة</string>
+    <string name="unfollow">إلغاء المتابعة</string>
+    <string name="following">متابَع</string>
+    <string name="followers">متابعون</string>
+    <string name="like">إعجاب</string>
+    <string name="unlike">إلغاء الإعجاب</string>
+    <string name="likes">الإعجابات</string>
+    <string name="comment">تعليق</string>
+    <string name="comments">تعليقات</string>
+    <string name="reply">رد</string>
+    <string name="replies">الردود</string>
+    <string name="share_with">مشاركة مع</string>
+    <string name="share_via">مشاركة عبر</string>
+    <string name="post">نشر</string>
+    <string name="update_status">تحديث الحالة</string>
+    <string name="mention">ذكر</string>
+    <string name="tag">وسم</string>
+    <string name="block">حظر</string>
+    <string name="unblock">إلغاء الحظر</string>
+    <string name="report_user">الإبلاغ عن المستخدم</string>
+    <string name="mute">كتم</string>
+    <string name="unmute">إلغاء الكتم</string>
+
+    <!-- Connectivity -->
+    <string name="wifi">Wi-Fi</string>
+    <string name="bluetooth">بلوتوث</string>
+    <string name="airplane_mode">وضع الطيران</string>
+    <string name="hotspot">نقطة اتصال</string>
+    <string name="scan">مسح</string>
+    <string name="pair">إقران</string>
+    <string name="unpair">إلغاء الإقران</string>
+    <string name="connected">متصل</string>
+    <string name="disconnected">غير متصل</string>
+
+    <!-- Quantity (plurals) - Arabic has complex plural rules -->
+    <plurals name="items_selected">
+        <item quantity="zero">لم يتم تحديد أي عناصر</item>
+        <item quantity="one">عنصر واحد محدد</item>
+        <item quantity="two">عنصران محددان</item>
+        <item quantity="few">%d عناصر محددة</item>
+        <item quantity="many">%d عنصراً محدداً</item>
+        <item quantity="other">%d عنصر محدد</item>
+    </plurals>
+
+    <plurals name="days_ago">
+        <item quantity="zero">منذ 0 يوم</item>
+        <item quantity="one">منذ يوم واحد</item>
+        <item quantity="two">منذ يومين</item>
+        <item quantity="few">منذ %d أيام</item>
+        <item quantity="many">منذ %d يوماً</item>
+        <item quantity="other">منذ %d يوم</item>
+    </plurals>
+
+    <plurals name="hours_ago">
+        <item quantity="zero">منذ 0 ساعة</item>
+        <item quantity="one">منذ ساعة واحدة</item>
+        <item quantity="two">منذ ساعتين</item>
+        <item quantity="few">منذ %d ساعات</item>
+        <item quantity="many">منذ %d ساعة</item>
+        <item quantity="other">منذ %d ساعة</item>
+    </plurals>
+
+    <plurals name="minutes_ago">
+        <item quantity="zero">منذ 0 دقيقة</item>
+        <item quantity="one">منذ دقيقة واحدة</item>
+        <item quantity="two">منذ دقيقتين</item>
+        <item quantity="few">منذ %d دقائق</item>
+        <item quantity="many">منذ %d دقيقة</item>
+        <item quantity="other">منذ %d دقيقة</item>
+    </plurals>
 </resources>
